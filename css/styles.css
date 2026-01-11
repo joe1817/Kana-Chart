@@ -1,0 +1,695 @@
+/* Main Page */
+
+:root {
+	/* Koshi */
+	--oyster-shell: #FFFFF3;
+	--fresh-washi: #F8F5F0;
+	--washi: #FAF9F6;
+	--koshi: #FDF5E6;
+	--polished-white: #F9F9F9;
+
+	/* Miko */
+	--miko-red: #BC242C;
+	--shinto-gold: #D4AF37;
+	--great-wave-blue: #19448E;
+
+	/* Shodo */
+	--keshizumi-iro: #434343;
+	--warm-oil-soot: #3C2F2F;
+	--cool-pine-soot: #26282B;
+	--washed-ink: #323232;
+
+	/* Shinjuku */
+	--indigo-void: #0F1726;
+	--indigo-cloth: #1E293B;
+	--denim-fade: #94A3B8;
+	--vintage-bone: #E0E4E8;
+	--coral-red: #FF4D4D;
+	--asagi-iro: #33A6B8;
+
+	/* Sakura */
+	--sakura-petal: #FFF5F7;
+	--sakura-blossom: #FCE7F3;
+	--sakura-deep: #DF709D;
+	--sakura-branch: #4A373E;
+	--sakura-dust: #9F717C;
+	--sakura-border: #F9A8D4;
+
+	/* Tsukiyo */
+	--midnight-forest: #060B10;  /* Deepest Navy-Teal */
+	--moon-shadow: #0F1720;      /* Dark Slate Blue */
+	--starlight-silver: #E2E8F0; /* Bright Silver */
+	--fog-blue: #475569;         /* Muted Blue-Grey */
+	--harvest-moon: #FB923C;     /* Vibrant Orange */
+	--ember-glow: #FDBA74;       /* Pale Orange */
+	--starlight-border: #1E293B;
+
+	/* Tatami */
+	--dried-straw: #E6E2CF;      /* Aged Tatami */
+	--fresh-igusa: #D9D4B8;      /* Slightly greener */
+	--woven-border: #4A5D4E;     /* The 'Heri' fabric edge */
+	--tatami-ink: #33312C;       /* Deep Carbon */
+	--faded-weave: #8C8878;      /* Dusty Straw */
+	--mat-border: #C2BEA9;       /* Subtle Divider */
+
+	/* Kintsugi */
+	--kintsugi-black: #1A1A1A;   /* Matte Ceramic */
+	--kintsugi-stone: #242424;   /* Slightly lighter ceramic */
+	--bone-white: #E5E5E0;       /* Soft & Organic */
+	--kintsugi-gold: #EAC283;
+	--faded-gold: #85714D;       /* Muted Bronze */
+	--pale-gold: #f4e9d1;        /* Metallic Gold */
+	--gold-glow: #F97316;        /* Warm Amber */
+
+	/* Mochi */
+	--mochi-flour: #FAF7F2;
+	--ichigo-pink: #F9D5D3;
+	--melon-green: #D4E9D7;
+	--taro-blue: #D1D1F0;
+	--mochi-cocoa: #5C5452;
+	--mochi-sugar: #A89F9D;
+
+	--title-bar-shadow: 0 2px 8px rgba(0 0 0 / 0.2);
+	--chart-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+	--img-github-light: url("../imgs/github-mark-white.png");
+	--img-github-dark: url("../imgs/github-mark-black.png");
+
+	--default-font: "Helvetica Neue", Arial, sans-serif;
+	--title-font: "EB Garamond", var(--default-font);
+	--kana-font: "Yu Gothic", "Meiryo", "Hina Mincho", serif;
+	--mobile-kana-font: "IBM Plex Sans JP", sans-serif;
+	--fancy-font: "Hina Mincho", serif;
+}
+
+/* Ceramic Cracks */
+:root.theme-kintsugi {
+	--title-bg: var(--kintsugi-black);
+	--body-bg: var(--kintsugi-black);
+	--card-bg: var(--kintsugi-stone);
+	--label-bg: #876852;
+
+	--title-color: var(--bone-white);
+	--header-color: var(--bone-white);
+	--header-ja-color: var(--bone-white);
+	--label-color: var(--kintsugi-black);
+	--hira-color: var(--pale-gold);
+	--kata-color: var(--pale-gold);
+	--romaji-color: var(--faded-gold);
+	--accent-color: var(--kintsugi-gold);
+	--settings-color: var(--pale-gold);
+
+	--border-color: var(--pale-gold);
+
+	--chart-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--img-github: var(--img-github-light);
+
+	.en {
+		font-family: var(--title-font);
+	}
+
+	.title-bar {
+		border-bottom: 1px solid var(--pale-gold);
+	}
+
+	td, th {
+		border: none;
+	}
+}
+
+/* Ancient Paper */
+:root.theme-koshi {
+	--title-bg: var(--fresh-washi);
+	--body-bg: var(--fresh-washi);
+	--card-bg: var(--oyster-shell);
+	--label-bg: var(--koshi);
+
+	--title-color: var(--warm-oil-soot);
+	--header-color: var(--warm-oil-soot);
+	--header-ja-color: var(--warm-oil-soot);
+	--label-color: #8FA0B3;
+	--hira-color: var(--warm-oil-soot);
+	--kata-color: var(--warm-oil-soot);
+	--romaji-color: #8FA0B3;
+	--accent-color: var(--warm-oil-soot);
+	--settings-color: var(--warm-oil-soot);
+
+	--border-color: #CBD5E1;
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--img-github: var(--img-github-dark);
+
+	.en {
+		font-family: var(--title-font);
+	}
+}
+
+/* Miko Shrine Maiden */
+:root.theme-miko {
+	--title-bg: var(--polished-white);
+	--body-bg: var(--polished-white);
+	--card-bg: var(--polished-white);
+	--label-bg: var(--polished-white);
+
+	--title-color: var(--miko-red);
+	--header-color: var(--miko-red);
+	--header-ja-color: var(--miko-red);
+	--label-color: var(--washed-ink);
+	--hira-color: var(--washed-ink);
+	--kata-color: var(--washed-ink);
+	--romaji-color: var(--shinto-gold);
+	--accent-color: var(--miko-red);
+	--settings-color: var(--washed-ink);
+
+	--border-color: var(--washi);
+
+	--chart-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--title-bar-shadow: none;
+
+	--img-github: var(--img-github-dark);
+
+	.title-bar {
+		border-bottom: 2px dashed var(--miko-red);
+	}
+}
+
+:root.theme-mochi {
+	--title-bg: var(--mochi-flour);
+	--body-bg: var(--mochi-flour);
+	--card-bg: var(--mochi-flour);
+	--label-bg: var(--mochi-flour);
+
+	--title-color: var(--mochi-cocoa);
+	--header-color: var(--mochi-cocoa);
+	--header-ja-color: var(--mochi-cocoa);
+	--label-color: var(--mochi-cocoa);
+	--hira-color: var(--mochi-cocoa);
+	--kata-color: var(--mochi-cocoa);
+	--romaji-color: var(--mochi-cocoa);
+	--accent-color: #8ec576;
+	--settings-color: var(--mochi-cocoa);
+
+	--border-color: var(--mochi-flour);
+
+	--chart-shadow: none;
+
+	--img-github: var(--img-github-dark);
+
+	table {
+		background-color: transparent;
+	}
+
+	td {
+		border-radius: 20px;
+	}
+
+	td:nth-child(2) {
+		background-color: var(--ichigo-pink);
+	}
+	td:nth-child(3) {
+		background-color: var(--melon-green);
+	}
+	td:nth-child(4) {
+		background-color: var(--taro-blue);
+	}
+	td:nth-child(5) {
+		background-color: #d6ae97;
+	}
+	td:nth-child(6){
+		background-color: #f6efd4;
+	}
+
+	.empty-cell {
+		background-color: transparent !important;
+	}
+
+	.kana {
+		text-shadow:  0 0 5px rgba(255, 255, 255, 0.7);
+	}
+}
+
+/* Black Cat */
+:root.theme-sakamoto {
+	--title-bg: #111;
+	--body-bg: #111;
+	--card-bg: #111;
+	--label-bg: #111;
+
+	--title-color: #EEE;
+	--header-color: #EEE;
+	--header-ja-color: #AAA;
+	--label-color: #AAA;
+	--hira-color: #EEE;
+	--kata-color: #EEE;
+	--romaji-color: #AAA;
+	--accent-color: #BB3E3E;
+	--settings-color: #EEE;
+
+	--border-color: #111;
+
+	--title-bar-shadow: none;
+	--chart-shadow: none;
+
+	--img-github: var(--img-github-light);
+}
+
+/* Cherry Blossoms */
+:root.theme-sakura {
+	--title-bg: var(--sakura-petal);
+	--body-bg: var(--sakura-petal);
+	--card-bg: var(--sakura-blossom);
+	--label-bg: var(--sakura-deep);
+
+	--title-color: var(--sakura-branch);
+	--header-color: var(--sakura-branch);
+	--header-ja-color: var(--sakura-branch);
+	--label-color: #FFFFFF;      /* White text on the deep pink label */
+	--hira-color: var(--sakura-branch);
+	--kata-color: var(--sakura-branch);
+	--romaji-color: var(--sakura-dust);
+	--accent-color: var(--sakura-deep);
+	--settings-color: var(--sakura-branch);
+
+	--border-color: var(--sakura-border);
+
+	--img-github: var(--img-github-dark);
+}
+
+/* Neon City Lights */
+:root.theme-shinjuku {
+	--title-bg: var(--indigo-void);
+	--body-bg: var(--indigo-void);
+	--card-bg: var(--indigo-cloth);
+	--label-bg: #223044;
+
+	--title-color: var(--vintage-bone);
+	--header-color: var(--vintage-bone);
+	--header-ja-color: var(--denim-fade);
+	--label-color: var(--denim-fade);
+	--hira-color: var(--coral-red);
+	--kata-color: var(--asagi-iro);
+	--romaji-color: var(--denim-fade);
+	--accent-color: var(--coral-red);
+	--settings-color: var(--vintage-bone);
+
+	--border-color: #334155;
+
+	--img-github: var(--img-github-light);
+}
+
+/* Calligraphy */
+:root.theme-shodo {
+	--title-bg: var(--washi);
+	--body-bg: var(--washi);
+	--card-bg: var(--washi);
+	--label-bg: var(--washi);
+
+	--title-color: var(--cool-pine-soot);
+	--header-color: var(--cool-pine-soot);
+	--header-ja-color: var(--keshizumi-iro);
+	--label-color: var(--keshizumi-iro);
+	--hira-color: var(--cool-pine-soot);
+	--kata-color: var(--cool-pine-soot);
+	--romaji-color: var(--keshizumi-iro);
+	--accent-color: var(--cool-pine-soot);
+	--settings-color: var(--cool-pine-soot);
+
+	--border-color: var(--washi);
+
+	--title-bar-shadow: none;
+	--chart-shadow: none;
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--img-github: var(--img-github-dark);
+
+	.en {
+		font-family: var(--title-font);
+	}
+
+	/*
+	.kana {
+		text-shadow:
+			0.5px 0.5px 1px rgba(38, 40, 43, 0.3),
+			0px 0px 3px rgba(50, 60, 70, 0.1),
+			1px 1px 6px rgba(0, 0, 0, 0.08);
+	}
+	*/
+}
+
+:root.theme-tatami {
+	--title-bg: var(--dried-straw);
+	--body-bg: var(--dried-straw);
+	--card-bg: var(--fresh-igusa);
+	--label-bg: var(--woven-border);
+
+	--title-color: var(--tatami-ink);
+	--header-color: var(--tatami-ink);
+	--header-ja-color: var(--tatami-ink);
+	--label-color: #F1F0E8;
+	--hira-color: var(--tatami-ink);
+	--kata-color: var(--tatami-ink);
+	--romaji-color: var(--faded-weave);
+	--accent-color: var(--woven-border);
+	--settings-color: var(--tatami-ink);
+
+	--border-color: var(--mat-border);
+
+	--img-github: var(--img-github-dark);
+}
+
+/* Moonlit Forest Tones */
+:root.theme-tsukiyo {
+	--title-bg: var(--midnight-forest);
+	--body-bg: var(--midnight-forest);
+	--card-bg: var(--moon-shadow);
+	--label-bg: var(--starlight-border);
+
+	--title-color: var(--starlight-silver);
+	--header-color: var(--starlight-silver);
+	--header-ja-color: var(--starlight-silver);
+	--label-color: var(--starlight-silver);
+	--hira-color: var(--harvest-moon);
+	--kata-color: var(--harvest-moon);
+	--romaji-color: var(--fog-blue);
+	--accent-color: var(--harvest-moon);
+	--settings-color: var(--starlight-silver);
+
+	--border-color: var(--starlight-border);
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--img-github: var(--img-github-light);
+
+	.chart-header {
+		text-shadow: 0 0 8px rgba(226, 232, 240, 0.3);
+	}
+
+	.kana {
+		text-shadow: 0 0 8px rgba(249, 115, 22, 0.2);
+	}
+}
+
+:root.hide-header {
+	#main-title-bar {
+		height: 0;
+		overflow: hidden;
+		border: none;
+		box-shadow: none;
+	}
+
+	#button-hide-header {
+		top: 10px;
+		opacity: 0.3;
+	}
+}
+
+:root.transitions-disabled * {
+	transition: none !important;
+}
+
+body {
+	font-family: var(--default-font);
+	background-color: var(--body-bg);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.noselect {
+	user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+h2 {
+	font-size: 1.0rem;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+/* Title Bar */
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.title-bar {
+	font-family: var(--title-font);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	color: var(--title-color);
+	background-color: var(--title-bg);
+	width: 100%;
+	box-sizing: border-box;
+	box-shadow: var(--title-bar-shadow);
+	transition: all 0.3s ease-out;
+}
+
+.page-title {
+	font-family: var(--title-font);
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-align: center;
+	font-weight: bold;
+}
+
+.left-button-group {
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	gap: 15px;
+}
+
+.right-button-group {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	gap: 15px;
+}
+
+.icon-btn {
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: var(--accent-color);
+}
+
+#github-img {
+	background-image: var(--img-github);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 29px;
+	width: 30px;
+}
+
+#button-hide-header {
+	font-family: monospace;
+	color: var(--accent-color);
+	position: absolute;
+	left: 10px;
+	top: 70px;
+	transition: all 0.3s ease-out;
+	z-index: 1000;
+}
+
+/* Settings Drawer */
+
+/* The Drawer Container */
+.drawer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 300px;
+	max-width: 80%;
+	height: 100%;
+	background-color: var(--card-bg);
+	box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+	z-index: 2000;
+
+	/* The Slide Secret: Push it off screen */
+	transform: translateX(100%);
+	transition: transform 0.3s ease-out;
+}
+
+/* Slide in state */
+.drawer.open {
+	transform: translateX(0);
+}
+
+.drawer-content {
+	padding: 0 15px;
+	overflow-y: auto;
+	scrollbar-color: var(--accent-color) var(--body-bg);
+}
+
+.drawer-content h2 {
+	color: var(--header-color);
+	margin: 20px 0 0;
+}
+
+/* Darken the background behind the menu */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+	z-index: 1500;
+}
+
+.overlay.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Slider Toggle */
+
+/* Layout for the menu row */
+.settings-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid var(--border-color);
+	color: var(--settings-color);
+}
+
+/* The Switch Container */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 26px;
+}
+
+/* Hide the ugly default checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The Track */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: #CCC; /* OFF Color */
+	transition: .3s;
+	border-radius: 34px;
+}
+
+/* The Knob */
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 3px;
+	bottom: 3px;
+	background-color: white;
+	transition: .3s;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ON State: Change Track Color */
+input:checked + .slider {
+	background-color: var(--accent-color);
+}
+
+/* ON State: Slide the Circle */
+input:checked + .slider:before {
+	transform: translateX(24px);
+}
+
+input:disabled + .slider {
+	opacity: 0.5;
+}
+
+.switch:has(input:disabled)::before {
+	content: "🔒";
+	font-size: 0.9em;
+	opacity: 1.0;
+
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 9999;
+	line-height: 24px;
+	cursor: not-allowed;
+}
+
+/* Dropdown */
+
+select {
+	/* Remove default styling */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	/* Modern Box Styling */
+	width: 100%;
+	padding: 10px 15px;
+	color: var(--settings-color);
+	background-color: var(--body-bg);
+	border: 1px solid var(--accent-color);
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: center;
+	/* transition: all 0.1s ease; */
+}
+
+/* Button */
+
+button {
+	width: 100%;
+	padding: 10px 15px;
+	color: var(--settings-color);
+	background-color: var(--body-bg);
+	border: 1px solid var(--accent-color);
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 0.1s ease;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" href="imgs/favicon.png"/>
+	<title>Kana Flashcards</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- very brushy font-->
+	<link href="https://fonts.googleapis.com/css2?family=Hina+Mincho:wght@400;700&display=swap" rel="stylesheet">
+	<!-- sans-serif, better looking than the Android default -->
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/flashcard-styles.css">
+
+	 <script src="scripts/settings.js"></script>
+	 <script src="scripts/flashcards.js"></script>
+</head>
+<body>
+
+	<header id="main-title-bar" class="title-bar">
+		<div class="header-spacer"></div>
+
+		<div class="left-button-group">
+			<a href="https://github.com/joe1817/kana-chart" class="icon-btn noselect" title="Source Code"><div id="github-img"></div></a>
+		</div>
+
+		<h1 class="page-title noselect">Kana Flashcards</h1>
+
+		<div class="right-button-group">
+			<a href="index.html" class="icon-btn noselect" title="Chart">⧉</a>
+			<button id="settings-btn" class="icon-btn noselect" title="Settings">☰</button>
+		</div>
+	</header>
+
+	<div id="button-hide-header" class="noselect">[-]</div>
+
+	<div id="central-wrapper">
+
+		<div id="stack-wrapper">
+			<div id="stack"></div>
+			<div id="results">
+				<header class="noselect">That's all!</header>
+				<div id="results-summary" class="noselect"></div>
+				<div id="results-hints"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div id="reset-wrapper">
+			<button class="reset-btn" onclick="initDeck()">Reset Deck</button>
+		</div>
+		<div id="cards-left" class="noselect">0 / 0</div>
+		<div id="progress-container-bottom">
+			<div id="progress-bar"></div>
+		</div>
+	</div>
+
+	<div id="settings-drawer" class="drawer">
+
+		<header class="title-bar">
+			<div class="header-spacer"></div>
+
+			<h1 class="page-title noselect">Settings</h1>
+
+			<div class="right-button-group">
+				<button id="close-drawer" class="icon-btn noselect" title="Close">✕</button>
+			</div>
+		</header>
+
+		<div class="drawer-content">
+			<h2 class="noselect">General</h2>
+
+			<div class="settings-item">
+				<span class="noselect">Hiragana</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-hiragana" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Katakana</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-katakana" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Include Obsolete</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-obsolete">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Theme</span>
+				<label class="dropdown">
+					<select name="theme" id="select-theme">
+						<option value="kintsugi">Kintsugi</option>
+						<option value="koshi">Koshi</option>
+						<option value="miko">Miko</option>
+						<option value="mochi">Mochi</option>
+						<option value="sakura">Sakura</option>
+						<option value="sakamoto">Sakamoto</option>
+						<option value="shinjuku" selected>Shinjuku</option>
+						<option value="shodo">Shodo</option>
+						<option value="tatami">Tatami</option>
+						<option value="tsukiyo">Tsukiyo</option>
+					</select>
+				</label>
+			</div>
+
+			<h2 class="noselect">Chart</h2>
+
+			<div class="settings-item">
+				<span class="noselect">Show Labels</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-labels" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Show Romaji</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-romaji" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Compact View</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-compact" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Columns</span>
+				<label class="button">
+					<button id="button-columns">Auto</button>
+				</label>
+			</div>
+
+			<h2 class="noselect">Flashcards</h2>
+
+			<div class="settings-item">
+				<span class="noselect">Endless Loop</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-endless">
+					<span class="slider"></span>
+				</label>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="drawer-overlay" class="overlay"></div>
+</body>
+</html>
