@@ -22,7 +22,36 @@
 	if (savedMode === "endless") document.documentElement.classList.add("mode-endless");
 })();
 
+window.addEventListener("hashchange", () => {
+	const currentHash = window.location.hash || "#chart";
+
+	const pageTitle = document.getElementById("page-title");
+	const switchViewButton = document.getElementById("switch-view-btn");
+
+	if (currentHash === "#chart") {
+		document.title = "Kana Chart";
+		pageTitle.innerText = "Kana Chart";
+		switchViewButton.href = "#flashcards";
+		switchViewButton.title = "Flashcards";
+	} else {
+		document.title = "Kana Flashcards";
+		pageTitle.innerText = "Kana Flashcards";
+		switchViewButton.href = "#chart";
+		switchViewButton.title = "Chart";
+	}
+
+	document.querySelectorAll(".view").forEach((view) => {
+		view.style.display = "none";
+	});
+
+	const activeView = document.querySelector(currentHash);
+	if (activeView) {
+		activeView.style.display = "block";
+	}
+});
+
 window.addEventListener("load", () => {
+	window.dispatchEvent(new HashChangeEvent("hashchange")); // show default view
 
 	//settings drawer
 
