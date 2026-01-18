@@ -172,13 +172,36 @@ function initDeck() {
 
 function fillBuffer() {
     const stack = document.getElementById("stack");
+    const isEndless = document.getElementById("toggle-endless").checked;
 
-    // count only cards that aren't currently flying away
-    const activeCards = Array.from(stack.children).filter(c => !c.classList.contains("exit"));
+    let activeCards = Array.from(stack.children).filter(c => !c.classList.contains("exit"));
 
-    while (activeCards.length < STACK_BUFFER_LIMIT && currentIndex < deck.length) {
+    while (activeCards.length < STACK_BUFFER_LIMIT) {
+        if (currentIndex >= deck.length) {
+            if (isEndless) {
+                // Reset stack pointer
+                currentIndex = 0;
+
+                // Shuffle everything EXCEPT the items currently in the buffer
+                // This prevents a card in the 'waiting' stack from being
+                // swapped with a duplicate from the reshuffled deck.
+                const protectedCount = activeCards.length;
+                shuffleDeckPartially(deck, protectedCount);
+            } else {
+                break;
+            }
+        }
+
         renderNextCard();
         activeCards.length++;
+    }
+}
+
+// Shuffles the deck but leaves the first 'skip' elements alone
+function shuffleDeckPartially(array, skip) {
+    for (let i = array.length - 1; i > skip; i--) {
+        const j = Math.floor(Math.random() * (i - skip + 1)) + skip;
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
@@ -216,25 +239,19 @@ function dismissCard(card) {
 	if (isEndless) {
 		const wasHinted = card.dataset.hinted === "true";
 		const cardData = card.cardData;
-		const remainingInDeck = deck.length - currentIndex;
-		const midpoint = Math.floor(remainingInDeck / 2);
 
-		let targetPos;
+		// Remove the old instance of the data to keep deck size consistent
+		deck.splice(deck.indexOf(cardData), 1);
+		currentIndex--;
 
 		if (wasHinted) {
-			// top half
-			const min = currentIndex + STACK_BUFFER_LIMIT;
-			const max = currentIndex + midpoint;
-			targetPos = Math.floor(Math.random() * (max - min + 1)) + min;
+			// Insert it 5-10 positions ahead, wrapping around if necessary
+			const targetPos = (STACK_BUFFER_LIMIT + Math.floor(Math.random() * 5)) % deck.length;
+			deck.splice(targetPos, 0, cardData);
 		} else {
-			// bottom half
-			const min = currentIndex + midpoint + 1;
-			const max = deck.length;
-			targetPos = Math.floor(Math.random() * (max - min + 1)) + min;
+			// push it to the very end of the array, where it will be included in an upcomng shuffle
+			deck.push(cardData);
 		}
-
-		targetPos = Math.max(0, Math.min(targetPos, deck.length));
-		deck.splice(targetPos, 0, cardData);
 	} else {
 		remainingCount--;
 		updateCounter();
