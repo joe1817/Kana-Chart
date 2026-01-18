@@ -127,57 +127,125 @@ const obsoleteKataData = [
 	{ k: "ヱ", r: "we", c: "kata"},
 ];
 
-let remainingCount = null;
-let totalCount = null;
-let startX, startY, isHolding = false, holdTimer;
+const STACK_BUFFER_LIMIT = 5; // How many cards to keep "ready"
+
+let deck = [];
+let currentIndex = 0; // Track which card we are on
+let totalCount = 0;
+let remainingCount = 0;
+let startX, startY, holdTimer;
 
 function initDeck() {
+    const stack = document.getElementById("stack");
+    const summary = document.getElementById("results-summary");
+    const hints = document.getElementById("results-hints");
+
+    stack.style.display = "block";
+    summary.innerText = "✨No hints used. Congrats!✨";
+    hints.replaceChildren();
+
+    const includeHiragana = document.getElementById("toggle-hiragana").checked;
+    const includeKatakana = document.getElementById("toggle-katakana").checked;
+    const includeObsolete = document.getElementById("toggle-obsolete").checked;
+
+    deck = [];
+    if (includeHiragana) deck = [...deck, ...hiraData];
+    if (includeHiragana && includeObsolete) deck = [...deck, ...obsoleteHiraData];
+    if (includeKatakana) deck = [...deck, ...kataData];
+    if (includeKatakana && includeObsolete) deck = [...deck, ...obsoleteKataData];
+
+    totalCount = deck.length;
+    remainingCount = totalCount;
+    currentIndex = 0;
+    updateCounter();
+
+    // Shuffle the data array
+    for (let i = deck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+
+    stack.innerHTML = "";
+
+    fillBuffer();
+}
+
+function fillBuffer() {
+    const stack = document.getElementById("stack");
+
+    // count only cards that aren't currently flying away
+    const activeCards = Array.from(stack.children).filter(c => !c.classList.contains("exit"));
+
+    while (activeCards.length < STACK_BUFFER_LIMIT && currentIndex < deck.length) {
+        renderNextCard();
+        activeCards.length++;
+    }
+}
+
+function renderNextCard() {
+    const stack = document.getElementById("stack");
+
+    if (currentIndex >= deck.length) return;
+
+    const item = deck[currentIndex];
+    const card = document.createElement("div");
+
+    card.className = "kana-card " + item.c;
+    card.cardData = item;
+    card.innerHTML = `
+        <div class="romaji noselect">${item.r}</div>
+        <div class="kana noselect">${item.k}</div>
+    `;
+
+    setupCardEvents(card, item);
+    stack.prepend(card);
+
+    currentIndex++;
+}
+
+function dismissCard(card) {
 	const stack = document.getElementById("stack");
-	const summary = document.getElementById("results-summary");
-	const hints = document.getElementById("results-hints");
+	const isEndless = document.getElementById("toggle-endless").checked;
 
-	stack.style.display = "block";
-	summary.innerText = `✨No hints used. Congrats!✨`;
-	hints.replaceChildren();
+	card.classList.add("exit");
 
-	const includeHiragana = document.getElementById("toggle-hiragana").checked;
-	const includeKatakana = document.getElementById("toggle-katakana").checked;
-	const includeObsolete = document.getElementById("toggle-obsolete").checked;
+	fillBuffer();
 
-	deck = [];
-	if (includeHiragana) {
-		deck = [...deck, ...hiraData];
-	}
-	if (includeHiragana && includeObsolete) {
-		deck = [...deck, ...obsoleteHiraData];
-	}
-	if (includeKatakana) {
-		deck = [...deck, ...kataData];
-	}
-	if (includeKatakana && includeObsolete) {
-		deck = [...deck, ...obsoleteKataData];
-	}
-	remainingCount = deck.length;
-	totalCount = deck.length;
-	updateCounter();
+	if (navigator.vibrate) navigator.vibrate(10);
 
-	// shuffle
-	for (let i = deck.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[deck[i], deck[j]] = [deck[j], deck[i]];
+	if (isEndless) {
+		const wasHinted = card.dataset.hinted === "true";
+		const cardData = card.cardData;
+		const remainingInDeck = deck.length - currentIndex;
+		const midpoint = Math.floor(remainingInDeck / 2);
+
+		let targetPos;
+
+		if (wasHinted) {
+			// top half
+			const min = currentIndex + STACK_BUFFER_LIMIT;
+			const max = currentIndex + midpoint;
+			targetPos = Math.floor(Math.random() * (max - min + 1)) + min;
+		} else {
+			// bottom half
+			const min = currentIndex + midpoint + 1;
+			const max = deck.length;
+			targetPos = Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		targetPos = Math.max(0, Math.min(targetPos, deck.length));
+		deck.splice(targetPos, 0, cardData);
+	} else {
+		remainingCount--;
+		updateCounter();
 	}
 
-	stack.innerHTML = "";
-	deck.forEach(item => {
-		const card = document.createElement("div");
-		card.className = `kana-card ${item.c}`;
-		card.innerHTML = `
-			<div class="romaji noselect">${item.r}</div>
-			<div class="kana noselect">${item.k}</div>
-		`;
-		setupCardEvents(card, item);
-		stack.appendChild(card);
-	});
+	setTimeout(() => {
+		card.remove();
+		if (!isEndless && remainingCount === 0 && stack.children.length === 0) {
+			stack.style.display = "none";
+		}
+	}, 600);
 }
 
 function updateCounter() {
@@ -189,42 +257,6 @@ function updateCounter() {
 	progressBar.style.width = percentage + "%";
 }
 
-function dismissCard(card) {
-	const stack = document.getElementById("stack");
-
-	if (document.getElementById("toggle-endless").checked) {
-		// random re-entry
-		card.classList.add("exit");
-		if (navigator.vibrate) navigator.vibrate(10);
-
-		setTimeout(() => {
-			card.classList.remove("exit", "show-romaji");
-			const stack = document.getElementById("stack");
-			const remainingCards = stack.children.length;
-
-			// Pick a random spot in the bottom half of cards
-			const randomSpot = Math.floor(Math.random() * Math.min(Math.floor(deck.length / 2), remainingCards));
-			stack.insertBefore(card, stack.children[randomSpot]);
-
-			// Reset transition
-			card.style.transition = "none";
-			void card.offsetWidth;
-			card.style.transition = "";
-		}, 600);
-	} else {
-		//removal
-		card.classList.add("exit");
-		remainingCount--;
-		updateCounter();
-		if (navigator.vibrate) navigator.vibrate(10);
-		// Cleanup DOM after animation
-		setTimeout(() => card.remove(), 600);
-		if (remainingCount === 0) {
-			stack.style.display = "none";
-		}
-	}
-}
-
 function setupCardEvents(card, item) {
 	const summary = document.getElementById("results-summary");
 	const hints = document.getElementById("results-hints");
@@ -233,8 +265,10 @@ function setupCardEvents(card, item) {
 		startX = e.clientX;
 		startY = e.clientY;
 
-		// Start hold timer (150ms)
+		// Start hold timer (200ms)
 		holdTimer = setTimeout(() => {
+			card.dataset.hinted = true;
+
 			card.classList.add("show-romaji");
 			if (navigator.vibrate) navigator.vibrate(20);
 			// TODO add to array of hinted kana
@@ -243,7 +277,7 @@ function setupCardEvents(card, item) {
 			const hinted = document.createElement("div");
 			hinted.innerText = `${item.k} ${item.r}`;
 			hints.appendChild(hinted);
-		}, 150);
+		}, 200);
 	});
 
 	card.addEventListener("pointerup", (e) => {

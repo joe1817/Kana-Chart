@@ -81,7 +81,19 @@
 		cursor: pointer;
 		transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease;
 		touch-action: pan-y; /* Let browser handle vertical swipes */
+		z-index: 1;
 	}
+
+	.kana-card.exit {
+		pointer-events: none;
+		z-index: 20;
+	}
+
+	.kana-card:nth-last-child(1) { z-index: 10; }
+	.kana-card:nth-last-child(2) { z-index: 9; }
+	.kana-card:nth-last-child(3) { z-index: 8; }
+	.kana-card:nth-last-child(4) { z-index: 7; }
+	.kana-card:nth-last-child(5) { z-index: 6; }
 
 	.kana {
 		font-family: var(--kana-font);
