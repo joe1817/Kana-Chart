@@ -24,28 +24,28 @@
 
 <body>
 
-	<header id="main-title-bar" class="title-bar">
-		<div class="header-spacer"></div>
+	<header id="main-page-header" class="page-header noselect">
+		<div class="tri-part-header collapsible-content">
+			<div class="button-group">
+				<a href="https://github.com/joe1817/kana-chart" class="icon-button" title="Source Code"><div id="github-img"></div></a>
+			</div>
 
-		<div class="left-button-group">
-			<a href="https://github.com/joe1817/kana-chart" class="icon-btn noselect" title="Source Code"><div id="github-img"></div></a>
-		</div>
+			<h1 id="page-title">Kana Chart</h1>
 
-		<h1 id="page-title" class="noselect">Kana Chart</h1>
-
-		<div class="right-button-group">
-			<a id="switch-view-btn" href="#flashcards" class="icon-btn noselect" title="Flashcards">⧉</a>
-			<button id="settings-btn" class="icon-btn noselect" title="Settings">☰</button>
+			<div class="button-group">
+				<a id="switch-view-btn" href="#flashcards" class="text-button" title="Flashcards">⧉</a>
+				<span id="settings-btn" class="text-button" title="Settings">☰</span>
+			</div>
 		</div>
 	</header>
 
-	<div id="button-hide-header" class="noselect">[-]</div>
+	<div id="button-hide-header" class="text-button noselect">[-]</div>
 
-	<div id="chart" class="view">
+	<div id="charts" class="view">
 		<div class="central-wrapper">
 
-			<div class="chart-section hira">
-				<div class="chart-header">
+			<div class="chart hira">
+				<div class="chart-title">
 					<div class="j-word noselect">
 						<div class="en">
 							<span>H</span><span>I</span><span>R</span><span>A</span><span>G</span><span>A</span><span>N</span><span>A</span>
@@ -57,95 +57,95 @@
 				</div>
 				<table>
 					<tr>
-						<th class="consonant-label noselect"></th>
-						<th class="vowel-header noselect">a</th>
-						<th class="vowel-header noselect">i</th>
-						<th class="vowel-header noselect">u</th>
-						<th class="vowel-header noselect">e</th>
-						<th class="vowel-header noselect">o</th>
+						<th class="label vowel consonant empty noselect"></th>
+						<th class="label vowel noselect">a</th>
+						<th class="label vowel noselect">i</th>
+						<th class="label vowel noselect">u</th>
+						<th class="label vowel noselect">e</th>
+						<th class="label vowel noselect">o</th>
 					</tr>
 					<tr>
-						<td class="consonant-label noselect"></td>
-						<td><span class="kana">あ</span><span class="romaji">a</span></td>
-						<td><span class="kana">い</span><span class="romaji">i</span></td>
-						<td><span class="kana">う</span><span class="romaji">u</span></td>
-						<td><span class="kana">え</span><span class="romaji">e</span></td>
-						<td><span class="kana">お</span><span class="romaji">o</span></td></tr>
+						<td class="label consonant empty noselect"></td>
+						<td class="cell"><span class="kana">あ</span><span class="romaji">a</span></td>
+						<td class="cell"><span class="kana">い</span><span class="romaji">i</span></td>
+						<td class="cell"><span class="kana">う</span><span class="romaji">u</span></td>
+						<td class="cell"><span class="kana">え</span><span class="romaji">e</span></td>
+						<td class="cell"><span class="kana">お</span><span class="romaji">o</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">K</td>
-						<td><span class="kana">か</span><span class="romaji">ka</span></td>
-						<td><span class="kana">き</span><span class="romaji">ki</span></td>
-						<td><span class="kana">く</span><span class="romaji">ku</span></td>
-						<td><span class="kana">け</span><span class="romaji">ke</span></td>
-						<td><span class="kana">こ</span><span class="romaji">ko</span></td></tr>
+						<td class="label consonant noselect">K</td>
+						<td class="cell"><span class="kana">か</span><span class="romaji">ka</span></td>
+						<td class="cell"><span class="kana">き</span><span class="romaji">ki</span></td>
+						<td class="cell"><span class="kana">く</span><span class="romaji">ku</span></td>
+						<td class="cell"><span class="kana">け</span><span class="romaji">ke</span></td>
+						<td class="cell"><span class="kana">こ</span><span class="romaji">ko</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">S</td>
-						<td><span class="kana">さ</span><span class="romaji">sa</span></td>
-						<td><span class="kana">し</span><span class="romaji">shi</span></td>
-						<td><span class="kana">す</span><span class="romaji">su</span></td>
-						<td><span class="kana">せ</span><span class="romaji">se</span></td>
-						<td><span class="kana">そ</span><span class="romaji">so</span></td></tr>
+						<td class="label consonant noselect">S</td>
+						<td class="cell"><span class="kana">さ</span><span class="romaji">sa</span></td>
+						<td class="cell"><span class="kana">し</span><span class="romaji">shi</span></td>
+						<td class="cell"><span class="kana">す</span><span class="romaji">su</span></td>
+						<td class="cell"><span class="kana">せ</span><span class="romaji">se</span></td>
+						<td class="cell"><span class="kana">そ</span><span class="romaji">so</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">T</td>
-						<td><span class="kana">た</span><span class="romaji">ta</span></td>
-						<td><span class="kana">ち</span><span class="romaji">chi</span></td>
-						<td><span class="kana">つ</span><span class="romaji">tsu</span></td>
-						<td><span class="kana">て</span><span class="romaji">te</span></td>
-						<td><span class="kana">と</span><span class="romaji">to</span></td></tr>
+						<td class="label consonant noselect">T</td>
+						<td class="cell"><span class="kana">た</span><span class="romaji">ta</span></td>
+						<td class="cell"><span class="kana">ち</span><span class="romaji">chi</span></td>
+						<td class="cell"><span class="kana">つ</span><span class="romaji">tsu</span></td>
+						<td class="cell"><span class="kana">て</span><span class="romaji">te</span></td>
+						<td class="cell"><span class="kana">と</span><span class="romaji">to</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">N</td>
-						<td><span class="kana">な</span><span class="romaji">na</span></td>
-						<td><span class="kana">に</span><span class="romaji">ni</span></td>
-						<td><span class="kana">ぬ</span><span class="romaji">nu</span></td>
-						<td><span class="kana">ね</span><span class="romaji">ne</span></td>
-						<td><span class="kana">の</span><span class="romaji">no</span></td></tr>
+						<td class="label consonant noselect">N</td>
+						<td class="cell"><span class="kana">な</span><span class="romaji">na</span></td>
+						<td class="cell"><span class="kana">に</span><span class="romaji">ni</span></td>
+						<td class="cell"><span class="kana">ぬ</span><span class="romaji">nu</span></td>
+						<td class="cell"><span class="kana">ね</span><span class="romaji">ne</span></td>
+						<td class="cell"><span class="kana">の</span><span class="romaji">no</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">H</td>
-						<td><span class="kana">は</span><span class="romaji">ha</span></td>
-						<td><span class="kana">ひ</span><span class="romaji">hi</span></td>
-						<td><span class="kana">ふ</span><span class="romaji">fu</span></td>
-						<td><span class="kana">へ</span><span class="romaji">he</span></td>
-						<td><span class="kana">ほ</span><span class="romaji">ho</span></td></tr>
+						<td class="label consonant noselect">H</td>
+						<td class="cell"><span class="kana">は</span><span class="romaji">ha</span></td>
+						<td class="cell"><span class="kana">ひ</span><span class="romaji">hi</span></td>
+						<td class="cell"><span class="kana">ふ</span><span class="romaji">fu</span></td>
+						<td class="cell"><span class="kana">へ</span><span class="romaji">he</span></td>
+						<td class="cell"><span class="kana">ほ</span><span class="romaji">ho</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">M</td>
-						<td><span class="kana">ま</span><span class="romaji">ma</span></td>
-						<td><span class="kana">み</span><span class="romaji">mi</span></td>
-						<td><span class="kana">む</span><span class="romaji">mu</span></td>
-						<td><span class="kana">め</span><span class="romaji">me</span></td>
-						<td><span class="kana">も</span><span class="romaji">mo</span></td></tr>
+						<td class="label consonant noselect">M</td>
+						<td class="cell"><span class="kana">ま</span><span class="romaji">ma</span></td>
+						<td class="cell"><span class="kana">み</span><span class="romaji">mi</span></td>
+						<td class="cell"><span class="kana">む</span><span class="romaji">mu</span></td>
+						<td class="cell"><span class="kana">め</span><span class="romaji">me</span></td>
+						<td class="cell"><span class="kana">も</span><span class="romaji">mo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">Y</td>
-						<td><span class="kana">や</span><span class="romaji">ya</span></td>
-						<td class="empty-cell"></td>
-						<td><span class="kana">ゆ</span><span class="romaji">yu</span></td>
-						<td class="hira obsolete"><span class="kana">𛀁</span><span class="romaji">ye</span></td>
-						<td><span class="kana">よ</span><span class="romaji">yo</span></td></tr>
+						<td class="label consonant noselect">Y</td>
+						<td class="cell"><span class="kana">や</span><span class="romaji">ya</span></td>
+						<td class="cell empty"></td>
+						<td class="cell"><span class="kana">ゆ</span><span class="romaji">yu</span></td>
+						<td class="cell obsolete"><span class="kana">𛀁</span><span class="romaji">ye</span></td>
+						<td class="cell"><span class="kana">よ</span><span class="romaji">yo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">R</td>
-						<td><span class="kana">ら</span><span class="romaji">ra</span></td>
-						<td><span class="kana">り</span><span class="romaji">ri</span></td>
-						<td><span class="kana">る</span><span class="romaji">ru</span></td>
-						<td><span class="kana">れ</span><span class="romaji">re</span></td>
-						<td><span class="kana">ろ</span><span class="romaji">ro</span></td></tr>
+						<td class="label consonant noselect">R</td>
+						<td class="cell"><span class="kana">ら</span><span class="romaji">ra</span></td>
+						<td class="cell"><span class="kana">り</span><span class="romaji">ri</span></td>
+						<td class="cell"><span class="kana">る</span><span class="romaji">ru</span></td>
+						<td class="cell"><span class="kana">れ</span><span class="romaji">re</span></td>
+						<td class="cell"><span class="kana">ろ</span><span class="romaji">ro</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">W</td>
-						<td><span class="kana">わ</span><span class="romaji">wa</span></td>
-						<td class="hira obsolete"><span class="kana">ゐ</span><span class="romaji">wi</span></td>
-						<td class="empty-cell"></td>
-						<td class="hira obsolete"><span class="kana">ゑ</span><span class="romaji">we</span></td>
-						<td><span class="kana">を</span><span class="romaji">wo</span></td></tr>
+						<td class="label consonant noselect">W</td>
+						<td class="cell"><span class="kana">わ</span><span class="romaji">wa</span></td>
+						<td class="cell obsolete"><span class="kana">ゐ</span><span class="romaji">wi</span></td>
+						<td class="cell empty"></td>
+						<td class="cell obsolete"><span class="kana">ゑ</span><span class="romaji">we</span></td>
+						<td class="cell"><span class="kana">を</span><span class="romaji">wo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">N</td>
-						<td class="empty-cell"></td>
-						<td class="empty-cell"></td>
-						<td><span class="kana">ん</span><span class="romaji">n</span></td>
-						<td class="empty-cell"></td>
-						<td class="empty-cell"></td></tr>
+						<td class="label consonant noselect">N</td>
+						<td class="cell empty"></td>
+						<td class="cell empty"></td>
+						<td class="cell"><span class="kana">ん</span><span class="romaji">n</span></td>
+						<td class="cell empty"></td>
+						<td class="cell empty"></td></tr>
 				</table>
 			</div>
 
-			<div class="chart-section kata">
-				<div class="chart-header">
+			<div class="chart kata">
+				<div class="chart-title">
 					<div class="j-word noselect">
 						<div class="en">
 							<span>K</span><span>A</span><span>T</span><span>A</span><span>K</span><span>A</span><span>N</span><span>A</span>
@@ -157,90 +157,90 @@
 				</div>
 				<table>
 					<tr>
-						<th class="consonant-label noselect"></th>
-						<th class="vowel-header noselect">a</th>
-						<th class="vowel-header noselect">i</th>
-						<th class="vowel-header noselect">u</th>
-						<th class="vowel-header noselect">e</th>
-						<th class="vowel-header noselect">o</th>
+						<th class="label vowel consonant empty noselect"></th>
+						<th class="label vowel noselect">a</th>
+						<th class="label vowel noselect">i</th>
+						<th class="label vowel noselect">u</th>
+						<th class="label vowel noselect">e</th>
+						<th class="label vowel noselect">o</th>
 					</tr>
 					<tr>
-						<td class="consonant-label noselect"></td>
-						<td><span class="kana">ア</span><span class="romaji">a</span></td>
-						<td><span class="kana">イ</span><span class="romaji">i</span></td>
-						<td><span class="kana">ウ</span><span class="romaji">u</span></td>
-						<td><span class="kana">エ</span><span class="romaji">e</span></td>
-						<td><span class="kana">オ</span><span class="romaji">o</span></td></tr>
+						<td class="label consonant empty noselect"></td>
+						<td class="cell"><span class="kana">ア</span><span class="romaji">a</span></td>
+						<td class="cell"><span class="kana">イ</span><span class="romaji">i</span></td>
+						<td class="cell"><span class="kana">ウ</span><span class="romaji">u</span></td>
+						<td class="cell"><span class="kana">エ</span><span class="romaji">e</span></td>
+						<td class="cell"><span class="kana">オ</span><span class="romaji">o</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">K</td>
-						<td><span class="kana">カ</span><span class="romaji">ka</span></td>
-						<td><span class="kana">キ</span><span class="romaji">ki</span></td>
-						<td><span class="kana">ク</span><span class="romaji">ku</span></td>
-						<td><span class="kana">ケ</span><span class="romaji">ke</span></td>
-						<td><span class="kana">コ</span><span class="romaji">ko</span></td></tr>
+						<td class="label consonant noselect">K</td>
+						<td class="cell"><span class="kana">カ</span><span class="romaji">ka</span></td>
+						<td class="cell"><span class="kana">キ</span><span class="romaji">ki</span></td>
+						<td class="cell"><span class="kana">ク</span><span class="romaji">ku</span></td>
+						<td class="cell"><span class="kana">ケ</span><span class="romaji">ke</span></td>
+						<td class="cell"><span class="kana">コ</span><span class="romaji">ko</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">S</td>
-						<td><span class="kana">サ</span><span class="romaji">sa</span></td>
-						<td><span class="kana">シ</span><span class="romaji">shi</span></td>
-						<td><span class="kana">ス</span><span class="romaji">su</span></td>
-						<td><span class="kana">セ</span><span class="romaji">se</span></td>
-						<td><span class="kana">ソ</span><span class="romaji">so</span></td></tr>
+						<td class="label consonant noselect">S</td>
+						<td class="cell"><span class="kana">サ</span><span class="romaji">sa</span></td>
+						<td class="cell"><span class="kana">シ</span><span class="romaji">shi</span></td>
+						<td class="cell"><span class="kana">ス</span><span class="romaji">su</span></td>
+						<td class="cell"><span class="kana">セ</span><span class="romaji">se</span></td>
+						<td class="cell"><span class="kana">ソ</span><span class="romaji">so</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">T</td>
-						<td><span class="kana">タ</span><span class="romaji">ta</span></td>
-						<td><span class="kana">チ</span><span class="romaji">chi</span></td>
-						<td><span class="kana">ツ</span><span class="romaji">tsu</span></td>
-						<td><span class="kana">テ</span><span class="romaji">te</span></td>
-						<td><span class="kana">ト</span><span class="romaji">to</span></td></tr>
+						<td class="label consonant noselect">T</td>
+						<td class="cell"><span class="kana">タ</span><span class="romaji">ta</span></td>
+						<td class="cell"><span class="kana">チ</span><span class="romaji">chi</span></td>
+						<td class="cell"><span class="kana">ツ</span><span class="romaji">tsu</span></td>
+						<td class="cell"><span class="kana">テ</span><span class="romaji">te</span></td>
+						<td class="cell"><span class="kana">ト</span><span class="romaji">to</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">N</td>
-						<td><span class="kana">ナ</span><span class="romaji">na</span></td>
-						<td><span class="kana">ニ</span><span class="romaji">ni</span></td>
-						<td><span class="kana">ヌ</span><span class="romaji">nu</span></td>
-						<td><span class="kana">ネ</span><span class="romaji">ne</span></td>
-						<td><span class="kana">ノ</span><span class="romaji">no</span></td></tr>
+						<td class="label consonant noselect">N</td>
+						<td class="cell"><span class="kana">ナ</span><span class="romaji">na</span></td>
+						<td class="cell"><span class="kana">ニ</span><span class="romaji">ni</span></td>
+						<td class="cell"><span class="kana">ヌ</span><span class="romaji">nu</span></td>
+						<td class="cell"><span class="kana">ネ</span><span class="romaji">ne</span></td>
+						<td class="cell"><span class="kana">ノ</span><span class="romaji">no</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">H</td>
-						<td><span class="kana">ハ</span><span class="romaji">ha</span></td>
-						<td><span class="kana">ヒ</span><span class="romaji">hi</span></td>
-						<td><span class="kana">フ</span><span class="romaji">fu</span></td>
-						<td><span class="kana">ヘ</span><span class="romaji">he</span></td>
-						<td><span class="kana">ホ</span><span class="romaji">ho</span></td></tr>
+						<td class="label consonant noselect">H</td>
+						<td class="cell"><span class="kana">ハ</span><span class="romaji">ha</span></td>
+						<td class="cell"><span class="kana">ヒ</span><span class="romaji">hi</span></td>
+						<td class="cell"><span class="kana">フ</span><span class="romaji">fu</span></td>
+						<td class="cell"><span class="kana">ヘ</span><span class="romaji">he</span></td>
+						<td class="cell"><span class="kana">ホ</span><span class="romaji">ho</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">M</td>
-						<td><span class="kana">マ</span><span class="romaji">ma</span></td>
-						<td><span class="kana">ミ</span><span class="romaji">mi</span></td>
-						<td><span class="kana">ム</span><span class="romaji">mu</span></td>
-						<td><span class="kana">メ</span><span class="romaji">me</span></td>
-						<td><span class="kana">モ</span><span class="romaji">mo</span></td></tr>
+						<td class="label consonant noselect">M</td>
+						<td class="cell"><span class="kana">マ</span><span class="romaji">ma</span></td>
+						<td class="cell"><span class="kana">ミ</span><span class="romaji">mi</span></td>
+						<td class="cell"><span class="kana">ム</span><span class="romaji">mu</span></td>
+						<td class="cell"><span class="kana">メ</span><span class="romaji">me</span></td>
+						<td class="cell"><span class="kana">モ</span><span class="romaji">mo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">Y</td>
-						<td><span class="kana">ヤ</span><span class="romaji">ya</span></td>
-						<td class="empty-cell"></td>
-						<td><span class="kana">ユ</span><span class="romaji">yu</span></td>
-						<td class="empty-cell"></td>
-						<td><span class="kana">ヨ</span><span class="romaji">yo</span></td></tr>
+						<td class="label consonant noselect">Y</td>
+						<td class="cell"><span class="kana">ヤ</span><span class="romaji">ya</span></td>
+						<td class="cell empty"></td>
+						<td class="cell"><span class="kana">ユ</span><span class="romaji">yu</span></td>
+						<td class="cell empty"></td>
+						<td class="cell"><span class="kana">ヨ</span><span class="romaji">yo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">R</td>
-						<td><span class="kana">ラ</span><span class="romaji">ra</span></td>
-						<td><span class="kana">リ</span><span class="romaji">ri</span></td>
-						<td><span class="kana">ル</span><span class="romaji">ru</span></td>
-						<td><span class="kana">レ</span><span class="romaji">re</span></td>
-						<td><span class="kana">ロ</span><span class="romaji">ro</span></td></tr>
+						<td class="label consonant noselect">R</td>
+						<td class="cell"><span class="kana">ラ</span><span class="romaji">ra</span></td>
+						<td class="cell"><span class="kana">リ</span><span class="romaji">ri</span></td>
+						<td class="cell"><span class="kana">ル</span><span class="romaji">ru</span></td>
+						<td class="cell"><span class="kana">レ</span><span class="romaji">re</span></td>
+						<td class="cell"><span class="kana">ロ</span><span class="romaji">ro</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">W</td>
-						<td><span class="kana">ワ</span><span class="romaji">wa</span></td>
-						<td class="kata obsolete"><span class="kana">ヰ</span><span class="romaji">wi</span></td>
-						<td class="empty-cell"></td>
-						<td class="kata obsolete"><span class="kana">ヱ</span><span class="romaji">we</span></td></td>
-						<td><span class="kana">ヲ</span><span class="romaji">wo</span></td></tr>
+						<td class="label consonant noselect">W</td>
+						<td class="cell"><span class="kana">ワ</span><span class="romaji">wa</span></td>
+						<td class="cell obsolete"><span class="kana">ヰ</span><span class="romaji">wi</span></td>
+						<td class="cell empty"></td>
+						<td class="cell obsolete"><span class="kana">ヱ</span><span class="romaji">we</span></td></td>
+						<td class="cell"><span class="kana">ヲ</span><span class="romaji">wo</span></td></tr>
 					<tr>
-						<td class="consonant-label noselect">N</td>
-						<td class="empty-cell"></td>
-						<td class="empty-cell"></td>
-						<td><span class="kana">ン</span><span class="romaji">n</span></td>
-						<td class="empty-cell"></td>
-						<td class="empty-cell"></td></tr>
+						<td class="label consonant noselect">N</td>
+						<td class="cell empty"></td>
+						<td class="cell empty"></td>
+						<td class="cell"><span class="kana">ン</span><span class="romaji">n</span></td>
+						<td class="cell empty"></td>
+						<td class="cell empty"></td></tr>
 				</table>
 			</div>
 		</div>
@@ -248,37 +248,42 @@
 
 	<div id="flashcards" class="view">
 		<div class="central-wrapper">
-
 			<div id="stack-wrapper">
 				<div id="stack"></div>
-				<div id="results">
-					<header class="noselect">That's all!</header>
-					<div id="results-summary" class="noselect"></div>
-					<div id="results-hints"></div>
+			</div>
+
+			<div id="footer">
+				<div id="reset-wrapper">
+					<button id="reset-button" class="solid-button noselect" onclick="initDeck()">Reset Deck</button>
+				</div>
+				<div id="cards-left" class="noselect">0 / 0</div>
+				<div id="progress-container-bottom">
+					<div id="progress-bar"></div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="footer">
-			<div id="reset-wrapper">
-				<button class="reset-btn" onclick="initDeck()">Reset Deck</button>
+	<div id="results" class="view">
+		<div class="central-wrapper">
+			<div id="go-back-wrapper">
+				<button id="go-back-button" class="solid-button" onclick="goBack()">Try Again</button>
 			</div>
-			<div id="cards-left" class="noselect">0 / 0</div>
-			<div id="progress-container-bottom">
-				<div id="progress-bar"></div>
-			</div>
+			<div id="results-header" class="noselect">That's all!</div>
+			<div id="results-summary" class="noselect"></div>
+			<div id="results-hints"></div>
 		</div>
 	</div>
 
 	<div id="settings-drawer" class="drawer">
 
-		<header class="title-bar">
+		<header class="tri-part-header page-header">
 			<div class="header-spacer"></div>
 
 			<h1 class="noselect">Settings</h1>
 
 			<div class="right-button-group">
-				<button id="close-drawer" class="icon-btn noselect" title="Close">✕</button>
+				<span id="close-drawer" class="text-button noselect" title="Close">✕</span>
 			</div>
 		</header>
 
@@ -327,7 +332,7 @@
 				</label>
 			</div>
 
-			<h2 class="noselect">Chart</h2>
+			<h2 class="noselect">Charts</h2>
 
 			<div class="settings-item">
 				<span class="noselect">Show Labels</span>
@@ -354,9 +359,9 @@
 			</div>
 
 			<div class="settings-item">
-				<span class="noselect">Columns</span>
+				<span class="noselect">Layout</span>
 				<label class="button">
-					<button id="button-columns">Auto</button>
+					<button id="button-layout">Auto</button>
 				</label>
 			</div>
 

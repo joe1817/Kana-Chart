@@ -1,6 +1,15 @@
 /* Main Page */
 
 :root {
+	/* Kintsugi */
+	--kintsugi-black: #1A1A1A;   /* Matte Ceramic */
+	--kintsugi-stone: #242424;   /* Slightly lighter ceramic */
+	--bone-white: #E5E5E0;       /* Soft & Organic */
+	--kintsugi-gold: #EAC283;
+	--faded-gold: #85714D;       /* Muted Bronze */
+	--pale-gold: #f4e9d1;        /* Metallic Gold */
+	--gold-glow: #F97316;        /* Warm Amber */
+
 	/* Koshi */
 	--oyster-shell: #FFFFF3;
 	--fresh-washi: #F8F5F0;
@@ -13,11 +22,21 @@
 	--shinto-gold: #D4AF37;
 	--great-wave-blue: #19448E;
 
-	/* Shodo */
-	--keshizumi-iro: #434343;
-	--warm-oil-soot: #3C2F2F;
-	--cool-pine-soot: #26282B;
-	--washed-ink: #323232;
+	/* Mochi */
+	--mochi-flour: #FAF7F2;
+	--ichigo-pink: #F9D5D3;
+	--melon-green: #D4E9D7;
+	--taro-blue: #D1D1F0;
+	--mochi-cocoa: #5C5452;
+	--mochi-sugar: #A89F9D;
+
+	/* Sakura */
+	--sakura-petal: #FFF5F7;
+	--sakura-blossom: #FCE7F3;
+	--sakura-deep: #DF709D;
+	--sakura-branch: #4A373E;
+	--sakura-dust: #9F717C;
+	--sakura-border: #F9A8D4;
 
 	/* Shinjuku */
 	--indigo-void: #0F1726;
@@ -27,13 +46,19 @@
 	--coral-red: #FF4D4D;
 	--asagi-iro: #33A6B8;
 
-	/* Sakura */
-	--sakura-petal: #FFF5F7;
-	--sakura-blossom: #FCE7F3;
-	--sakura-deep: #DF709D;
-	--sakura-branch: #4A373E;
-	--sakura-dust: #9F717C;
-	--sakura-border: #F9A8D4;
+	/* Shodo */
+	--keshizumi-iro: #434343;
+	--warm-oil-soot: #3C2F2F;
+	--cool-pine-soot: #26282B;
+	--washed-ink: #323232;
+
+	/* Tatami */
+	--dried-straw: #E6E2CF;      /* Aged Tatami */
+	--fresh-igusa: #D9D4B8;      /* Slightly greener */
+	--woven-border: #4A5D4E;     /* The 'Heri' fabric edge */
+	--tatami-ink: #33312C;       /* Deep Carbon */
+	--faded-weave: #8C8878;      /* Dusty Straw */
+	--mat-border: #C2BEA9;       /* Subtle Divider */
 
 	/* Tsukiyo */
 	--midnight-forest: #060B10;  /* Deepest Navy-Teal */
@@ -44,36 +69,33 @@
 	--ember-glow: #FDBA74;       /* Pale Orange */
 	--starlight-border: #1E293B;
 
-	/* Tatami */
-	--dried-straw: #E6E2CF;      /* Aged Tatami */
-	--fresh-igusa: #D9D4B8;      /* Slightly greener */
-	--woven-border: #4A5D4E;     /* The 'Heri' fabric edge */
-	--tatami-ink: #33312C;       /* Deep Carbon */
-	--faded-weave: #8C8878;      /* Dusty Straw */
-	--mat-border: #C2BEA9;       /* Subtle Divider */
-
-	/* Kintsugi */
-	--kintsugi-black: #1A1A1A;   /* Matte Ceramic */
-	--kintsugi-stone: #242424;   /* Slightly lighter ceramic */
-	--bone-white: #E5E5E0;       /* Soft & Organic */
-	--kintsugi-gold: #EAC283;
-	--faded-gold: #85714D;       /* Muted Bronze */
-	--pale-gold: #f4e9d1;        /* Metallic Gold */
-	--gold-glow: #F97316;        /* Warm Amber */
-
-	/* Mochi */
-	--mochi-flour: #FAF7F2;
-	--ichigo-pink: #F9D5D3;
-	--melon-green: #D4E9D7;
-	--taro-blue: #D1D1F0;
-	--mochi-cocoa: #5C5452;
-	--mochi-sugar: #A89F9D;
-
-	--title-bar-shadow: 0 2px 8px rgba(0 0 0 / 0.2);
-	--chart-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-
 	--img-github-light: url("../imgs/github-mark-white.png");
 	--img-github-dark: url("../imgs/github-mark-black.png");
+
+
+	/******** Defaults ********/
+
+	--title-bg: #111;
+	--body-bg: #111;
+	--card-bg: #111;
+	--label-bg: #111;
+
+	--title-color: #EEE;
+	--header-color: #EEE;
+	--header-ja-color: #AAA;
+	--label-color: #AAA;
+	--hira-color: #EEE;
+	--kata-color: #EEE;
+	--romaji-color: #AAA;
+	--accent-color: #BB3E3E;
+	--settings-color: #EEE;
+
+	--border-color: #111;
+
+	--img-github: var(--img-github-light);
+
+	--page-header-shadow: 0 2px 8px rgba(0 0 0 / 0.2);
+	--chart-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 
 	--default-font: "Helvetica Neue", Arial, sans-serif;
 	--title-font: "EB Garamond", var(--default-font);
@@ -112,12 +134,20 @@
 		font-family: var(--title-font);
 	}
 
-	.title-bar {
+	.page-header {
 		border-bottom: 1px solid var(--pale-gold);
 	}
 
+	table {
+		border: 2px solid var(--pale-gold) !important;
+	}
+
 	td, th {
-		border: none;
+		border: 1px solid var(--faded-gold) !important;
+	}
+
+	.solid-button {
+		color: var(--kintsugi-black) !important;
 	}
 }
 
@@ -174,11 +204,11 @@
 	--kana-font: "Hina Mincho", serif;
 	--mobile-kana-font: "Hina Mincho", serif;
 
-	--title-bar-shadow: none;
+	--page-header-shadow: none;
 
 	--img-github: var(--img-github-dark);
 
-	.title-bar {
+	.page-header {
 		border-bottom: 2px dashed var(--miko-red);
 	}
 }
@@ -229,7 +259,7 @@
 		background-color: #f6efd4;
 	}
 
-	.empty-cell {
+	.cell.empty {
 		background-color: transparent !important;
 	}
 
@@ -257,7 +287,7 @@
 
 	--border-color: #111;
 
-	--title-bar-shadow: none;
+	--page-header-shadow: none;
 	--chart-shadow: none;
 
 	--img-github: var(--img-github-light);
@@ -326,7 +356,7 @@
 
 	--border-color: var(--washi);
 
-	--title-bar-shadow: none;
+	--page-header-shadow: none;
 	--chart-shadow: none;
 
 	--kana-font: "Hina Mincho", serif;
@@ -348,6 +378,7 @@
 	*/
 }
 
+/* Straw Flooring */
 :root.theme-tatami {
 	--title-bg: var(--dried-straw);
 	--body-bg: var(--dried-straw);
@@ -393,7 +424,7 @@
 
 	--img-github: var(--img-github-light);
 
-	.chart-header {
+	.chart-title {
 		text-shadow: 0 0 8px rgba(226, 232, 240, 0.3);
 	}
 
@@ -403,16 +434,15 @@
 }
 
 :root.hide-header {
-	#main-title-bar {
+	#main-page-header {
 		height: 0;
-		overflow: hidden;
 		border: none;
 		box-shadow: none;
 	}
 
 	#button-hide-header {
-		top: 10px;
-		opacity: 0.5;
+		top: 20px;
+		opacity: 0.3;
 	}
 
 	.view {
@@ -425,13 +455,14 @@
 }
 
 body {
+	height: 100vh;
+	margin: 0;
+	padding-bottom: 0 0 10px;
 	font-family: var(--default-font);
 	background-color: var(--body-bg);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: 10px;
-	margin: 0;
 }
 
 .view {
@@ -440,15 +471,12 @@ body {
 	height: calc(100vh - 60px);
 	box-sizing: border-box;
 	transition: height 0.3s;
-
 	scrollbar-gutter: stable both-edges;
 	overflow-y: auto;
 }
 
-.noselect {
-	user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
+.central-wrapper {
+	padding: 0px 16px;
 }
 
 h1 {
@@ -465,58 +493,75 @@ h2 {
 	margin-bottom: 15px;
 }
 
+.noselect {
+	user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
 /* Title Bar */
 
-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-}
-
-.title-bar {
-	font-family: var(--title-font);
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 60px;
-	color: var(--title-color);
-	background-color: var(--title-bg);
-	width: 100%;
-	box-sizing: border-box;
-	box-shadow: var(--title-bar-shadow);
-	transition: all 0.3s ease-out;
-}
-
-.left-button-group {
-	position: absolute;
-	left: 15px;
-	top: 50%;
-	transform: translateY(-50%);
-	display: flex;
-	gap: 15px;
-}
-
-.right-button-group {
-	position: absolute;
-	right: 15px;
-	top: 50%;
-	transform: translateY(-50%);
-	display: flex;
-	gap: 15px;
-}
-
-.icon-btn {
+.text-button {
 	background: none;
 	border: none;
 	font-size: 1.5rem;
 	cursor: pointer;
 	text-decoration: none;
+	color: var(--accent-color);
+}
+
+.icon-button {
 	display: flex;
 	align-items: center;
-	color: var(--accent-color);
+}
+
+.tri-part-header {
+	display: flex;
+	width: 100%;
+}
+
+.tri-part-header > * {
+	display: inline-block;
+	align-items: center;
+}
+
+.tri-part-header > *:nth-child(1) {
+	flex: 1;
+	padding-left: 30px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.tri-part-header > *:nth-child(2) {
+	flex: 0 0 auto;
+	padding: 0 20px;
+	justify-content: center;
+}
+
+.tri-part-header > *:nth-child(3) {
+	flex: 1;
+	padding-right: 30px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.page-header {
+	font-family: var(--title-font);
+	color: var(--title-color);
+	background-color: var(--title-bg);
+	box-shadow: var(--page-header-shadow);
+}
+
+.page-header, .page-header .collapsible-content {
+	box-sizing: border-box;
+	width: 100%;
+	height: 60px;
+	overflow: hidden;
+	transition: height 0.3s ease-out;
+}
+
+.button-group {
+	gap: 30px;
 }
 
 #github-img {
@@ -530,17 +575,17 @@ body {
 
 #button-hide-header {
 	font-family: monospace;
+	font-size: 1em;
 	color: var(--accent-color);
 	position: absolute;
 	left: 10px;
-	top: 70px;
+	top: 80px;
 	transition: all 0.3s ease-out;
 	z-index: 1000;
 }
 
 /* Settings Drawer */
 
-/* The Drawer Container */
 .drawer {
 	position: fixed;
 	top: 0;
@@ -557,7 +602,6 @@ body {
 	transition: transform 0.3s ease-out;
 }
 
-/* Slide in state */
 .drawer.open {
 	transform: translateX(0);
 }
@@ -583,7 +627,10 @@ body {
 	background: rgba(0,0,0,0.5);
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.3s;
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease;
+	transition-behavior: allow-discrete;
 	z-index: 1500;
 }
 
@@ -696,7 +743,6 @@ select {
 /* Button */
 
 button {
-	width: 100%;
 	padding: 10px 15px;
 	color: var(--settings-color);
 	background-color: var(--body-bg);
@@ -706,4 +752,9 @@ button {
 	cursor: pointer;
 	white-space: nowrap;
 	transition: all 0.1s ease;
+}
+
+.solid-button {
+	color: white;
+	background-color: var(--accent-color);
 }

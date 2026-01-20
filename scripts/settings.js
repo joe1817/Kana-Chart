@@ -8,7 +8,7 @@
 	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
-	const savedColumns  = localStorage.getItem("kana.columns")  || "auto";
+	const savedColumns  = localStorage.getItem("kana.layout")  || "auto";
 	const savedMode     = localStorage.getItem("kana.mode")     || "finite";
 
 	if (savedHiragana === "hide") document.documentElement.classList.add("hide-hiragana");
@@ -18,25 +18,30 @@
 	if (savedLabels === "hide") document.documentElement.classList.add("hide-labels");
 	if (savedRomaji === "hide") document.documentElement.classList.add("hide-romaji");
 	if (savedView === "compact") document.documentElement.classList.add("view-compact");
-	if (savedColumns === "1col") document.documentElement.classList.add("columns-1col");
+	if (savedColumns === "centered") document.documentElement.classList.add("layout-centered");
 	if (savedMode === "endless") document.documentElement.classList.add("mode-endless");
 })();
 
 window.addEventListener("hashchange", () => {
-	const currentHash = window.location.hash || "#chart";
+	const currentHash = window.location.hash || "#charts";
 
 	const pageTitle = document.getElementById("page-title");
 	const switchViewButton = document.getElementById("switch-view-btn");
 
-	if (currentHash === "#chart") {
+	if (currentHash === "#charts") {
 		document.title = "Kana Chart";
 		pageTitle.innerText = "Kana Chart";
 		switchViewButton.href = "#flashcards";
 		switchViewButton.title = "Flashcards";
-	} else {
+	} else if (currentHash === "#flashcards") {
 		document.title = "Kana Flashcards";
 		pageTitle.innerText = "Kana Flashcards";
-		switchViewButton.href = "#chart";
+		switchViewButton.href = "#charts";
+		switchViewButton.title = "Chart";
+	} else {
+		document.title = "Flashcard Results";
+		pageTitle.innerText = "Kana Flashcards";
+		switchViewButton.href = "#charts";
 		switchViewButton.title = "Chart";
 	}
 
@@ -52,6 +57,10 @@ window.addEventListener("hashchange", () => {
 
 window.addEventListener("load", () => {
 	window.dispatchEvent(new HashChangeEvent("hashchange")); // show default view
+
+	if (navigator.maxTouchPoints > 0) {
+		document.documentElement.classList.add("touchscreen");
+	}
 
 	//settings drawer
 
@@ -78,7 +87,7 @@ window.addEventListener("load", () => {
 	const labelsToggle = document.getElementById("toggle-labels");
 	const romajiToggle = document.getElementById("toggle-romaji");
 	const compactToggle = document.getElementById("toggle-compact");
-	const buttonColumns = document.getElementById("button-columns");
+	const buttonLayout = document.getElementById("button-layout");
 	const endlessToggle = document.getElementById("toggle-endless");
 
 	hiraganaToggle.addEventListener("change", function() {
@@ -157,15 +166,15 @@ window.addEventListener("load", () => {
 		}
 	});
 
-	buttonColumns.addEventListener("click", function() {
+	buttonLayout.addEventListener("click", function() {
 		if (this.innerText === "Auto") {
-			document.documentElement.classList.add("columns-1col");
-			buttonColumns.innerText = "1 Column";
-			localStorage.setItem("kana.columns", "1col");
+			document.documentElement.classList.add("layout-centered");
+			buttonLayout.innerText = "Centered";
+			localStorage.setItem("kana.layout", "centered");
 		} else {
-			document.documentElement.classList.remove("columns-1col");
-			buttonColumns.innerText = "Auto";
-			localStorage.setItem("kana.columns", "auto");
+			document.documentElement.classList.remove("layout-centered");
+			buttonLayout.innerText = "Auto";
+			localStorage.setItem("kana.layout", "auto");
 		}
 	});
 
@@ -189,7 +198,7 @@ window.addEventListener("load", () => {
 	labelsToggle.checked    = !document.documentElement.classList.contains("hide-labels");
 	romajiToggle.checked    = !document.documentElement.classList.contains("hide-romaji");
 	compactToggle.checked   = document.documentElement.classList.contains("view-compact");
-	buttonColumns.innerText = document.documentElement.classList.contains("columns-1col") ? "1 Column" : "Auto";
+	buttonLayout.innerText  = document.documentElement.classList.contains("layout-centered") ? "Centered" : "Auto";
 	endlessToggle.checked   = document.documentElement.classList.contains("mode-endless");
 
 	hiraganaToggle.disabled = !katakanaToggle.checked;

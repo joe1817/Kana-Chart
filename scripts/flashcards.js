@@ -170,6 +170,11 @@ function initDeck() {
     fillBuffer();
 }
 
+function goBack() {
+	initDeck();
+	window.location = "#flashcards";
+}
+
 function fillBuffer() {
     const stack = document.getElementById("stack");
     const isEndless = document.getElementById("toggle-endless").checked;
@@ -292,6 +297,7 @@ function setupCardEvents(card, item) {
 
 			summary.innerText = "You asked for hints on these:";
 			const hinted = document.createElement("div");
+			hinted.className = "hint";
 			hinted.innerText = `${item.k} ${item.r}`;
 			hints.appendChild(hinted);
 		}, 200);
@@ -312,10 +318,14 @@ function setupCardEvents(card, item) {
 			// Logic for Swipe
 			if ((isPortrait && diffX > 30) || (!isPortrait && diffY < -30)) {
 				dismissCard(card);
+				if (!remainingCount)
+					window.location = "#results";
 			}
 		} else {
 			// It was a simple tap
 			dismissCard(card);
+			if (!remainingCount)
+				window.location = "#results";
 		}
 	});
 

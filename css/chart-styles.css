@@ -1,76 +1,126 @@
-:root.view-compact .chart-section {
-	min-width: 0 !important;
+:root.view-compact {
+	#charts {
+		.chart {
+			min-width: 0 !important;
 
-	.chart-header .en {
-		font-size: 1.0rem !important;
-	}
+			.chart-title .en {
+				font-size: 1.0rem !important;
+			}
 
-	th, td {
-		padding: 4px !important;
-	}
+			th, td {
+				padding: 4px !important;
+			}
 
-	.consonant-label, .vowel-header {
-		font-size: 0.7rem !important;
-	}
+			.label.consonant, .label.vowel {
+				font-size: 0.7rem !important;
+			}
 
-	.kana {
-		font-size: 1.4rem !important;
-		line-height: 1.4rem !important;
-	}
+			.label.consonant {
+				width: 16px !important;
+			}
 
-	.romaji {
-		font-size: 0.6rem !important;
+			.kana {
+				font-size: 1.4rem !important;
+				line-height: 1.4rem !important;
+			}
+
+			.romaji {
+				font-size: 0.6rem !important;
+			}
+		}
 	}
 }
 
-:root.hide-obsolete .obsolete {
-	/* !important to override table styling */
-	background-color: var(--body-bg) !important;
+:root.hide-obsolete {
+	#charts {
+		.obsolete {
+			/* !important to override table styling */
+			background-color: var(--body-bg) !important;
 
-	> * {
-		display: none !important;
+			> * {
+				display: none !important;
+			}
+		}
 	}
 }
 
-:root.hide-romaji .romaji {
-	display: none !important;
+:root.hide-romaji {
+	#charts {
+		.romaji {
+			display: none !important;
+		}
+	}
 }
 
-:root.hide-hiragana .hira {
-	display: none !important;
+:root.hide-hiragana {
+	#charts {
+		.hira {
+			display: none !important;
+		}
+	}
 }
 
-:root.hide-katakana .kata {
-	display: none !important;
+:root.hide-katakana {
+	#charts {
+		.kata {
+			display: none !important;
+		}
+	}
 }
 
 :root.hide-labels {
-	.chart-header {
-		margin-bottom: 15px !important;
-	}
+	#charts {
+		.chart-title {
+			margin-bottom: 15px !important;
+		}
 
-	.vowel-header, .consonant-label {
-		display: none !important;
-	}
-}
-
-:root.columns-1col {
-	#chart .central-wrapper {
-		flex-direction: column !important;
-	}
-
-	.chart-section {
-		min-height: calc(100vh - 60px) !important;
+		.label.vowel, .label.consonant {
+			display: none !important;
+		}
 	}
 }
 
-:root.columns-1col.hide-header {
-	.chart-section {
-		min-height: 100vh !important;
+:root.layout-centered {
+	#charts {
+		.central-wrapper {
+			flex-direction: column !important;
+		}
+
+		.chart {
+			min-height: calc(100vh - 60px) !important;
+		}
+
+		.chart table {
+			margin-left: -12px !important; /* ignore the consonant column when centering */
+		}
 	}
 }
 
-#chart {
+:root.layout-centered.view-compact {
+	#charts {
+		.chart table {
+			margin-left: -12px !important; /* not sure why -8px (half of consonant label width) is not right here */
+		}
+	}
+}
+
+:root.layout-centered.hide-labels {
+	#charts {
+		.chart table {
+			margin-left: 0px !important;
+		}
+	}
+}
+
+:root.layout-centered.hide-header {
+	#charts {
+		.chart {
+			min-height: 100vh !important;
+		}
+	}
+}
+
+#charts {
 	.central-wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -79,13 +129,13 @@
 		align-items: center;
 	}
 
-	.chart-section {
+	.chart {
 		min-width: 260px;
-		padding-top: 20px;
+		padding: 20px 0;
 		box-sizing: border-box;
 	}
 
-	.chart-header {
+	.chart-title {
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -126,24 +176,26 @@
 		background: var(--card-bg);
 		box-shadow: var(--chart-shadow);
 		border: 1px solid var(--border-color);
-		/* border-radius: 8px; */
 		margin-bottom: 10px;
-		overflow: hidden;
 	}
 
 	th, td {
 		border: 1px solid var(--border-color);
 		padding: 6px;
 		text-align: center;
-		/* width: 16.66%; */
 	}
 
-	.consonant-label, .vowel-header {
+	.label.consonant, .label.vowel {
 		color: var(--label-color);
 		background-color: var(--label-bg);
 		font-family: monospace;
 		font-weight: bold;
 		font-size: 0.8rem;
+	}
+
+	.label.consonant {
+		box-sizing: border-box;
+		width: 24px;
 	}
 
 	.kana {
@@ -187,7 +239,7 @@
 		color: var(--body-bg);
 	}
 
-	.empty-cell {
+	.cell.empty {
 		background-color: var(--body-bg);
 	}
 
