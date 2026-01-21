@@ -34,8 +34,10 @@
 :root.hide-obsolete {
 	#charts {
 		.obsolete {
-			/* !important to override table styling */
-			background-color: var(--body-bg) !important;
+			/* all: revert;	*/
+			background-color: transparent;
+			background: none;
+			box-shadow: none;
 
 			> * {
 				display: none !important;
@@ -153,7 +155,7 @@
 		display: flex;
 		justify-content: space-between;
 		text-transform: uppercase;
-		color: var(--header-color);
+		color: var(--chart-title-color);
 		align-items: baseline;
 	}
 
@@ -167,16 +169,17 @@
 		justify-content: space-between;
 		font-weight: bold;
 		font-family: var(--fancy-font);
-		color: var(--header-ja-color);
+		color: var(--chart-title-ja-color);
 	}
 
 	table {
 		width: 100%;
 		border-collapse: collapse;
-		background: var(--card-bg);
+		background: var(--cell-bg);
 		box-shadow: var(--chart-shadow);
 		border: 1px solid var(--border-color);
 		margin-bottom: 10px;
+		overflow: hidden;
 	}
 
 	th, td {
@@ -240,7 +243,9 @@
 	}
 
 	.cell.empty {
-		background-color: var(--body-bg);
+		background-color: transparent;
+		background: none;
+		box-shadow: none;
 	}
 
 	@media (max-width: 480px) {
