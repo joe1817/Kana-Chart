@@ -1,88 +1,17 @@
-/* Main Page */
-
 :root {
-	/* Kintsugi */
-	--kintsugi-black: #1A1A1A;   /* Matte Ceramic */
-	--kintsugi-stone: #242424;   /* Slightly lighter ceramic */
-	--bone-white: #E5E5E0;       /* Soft & Organic */
-	--kintsugi-gold: #EAC283;
-	--faded-gold: #85714D;       /* Muted Bronze */
-	--pale-gold: #f4e9d1;        /* Metallic Gold */
-	--gold-glow: #F97316;        /* Warm Amber */
-
-	/* Koshi */
-	--oyster-shell: #FFFFF3;
-	--fresh-washi: #F8F5F0;
-	--washi: #FAF9F6;
-	--koshi: #FDF5E6;
-	--polished-white: #F9F9F9;
-
-	/* Miko */
-	--miko-red: #BC242C;
-	--shinto-gold: #D4AF37;
-	--great-wave-blue: #19448E;
-
-	/* Mochi */
-	--mochi-flour: #FAF7F2;
-	--ichigo-pink: #F9D5D3;
-	--melon-green: #D4E9D7;
-	--taro-blue: #D1D1F0;
-	--mochi-cocoa: #5C5452;
-	--mochi-sugar: #A89F9D;
-
-	/* Sakura */
-	--sakura-petal: #FFF5F7;
-	--sakura-blossom: #FCE7F3;
-	--sakura-deep: #DF709D;
-	--sakura-branch: #4A373E;
-	--sakura-dust: #9F717C;
-	--sakura-border: #F9A8D4;
-
-	/* Shinjuku */
-	--indigo-void: #0F1726;
-	--indigo-cloth: #1E293B;
-	--denim-fade: #94A3B8;
-	--vintage-bone: #E0E4E8;
-	--coral-red: #FF4D4D;
-	--asagi-iro: #33A6B8;
-
-	/* Shodo */
-	--keshizumi-iro: #434343;
-	--warm-oil-soot: #3C2F2F;
-	--cool-pine-soot: #26282B;
-	--washed-ink: #323232;
-
-	/* Tatami */
-	--dried-straw: #E6E2CF;      /* Aged Tatami */
-	--fresh-igusa: #D9D4B8;      /* Slightly greener */
-	--woven-border: #4A5D4E;     /* The 'Heri' fabric edge */
-	--tatami-ink: #33312C;       /* Deep Carbon */
-	--faded-weave: #8C8878;      /* Dusty Straw */
-	--mat-border: #C2BEA9;       /* Subtle Divider */
-
-	/* Tsukiyo */
-	--midnight-forest: #060B10;  /* Deepest Navy-Teal */
-	--moon-shadow: #0F1720;      /* Dark Slate Blue */
-	--starlight-silver: #E2E8F0; /* Bright Silver */
-	--fog-blue: #475569;         /* Muted Blue-Grey */
-	--harvest-moon: #FB923C;     /* Vibrant Orange */
-	--ember-glow: #FDBA74;       /* Pale Orange */
-	--starlight-border: #1E293B;
-
 	--img-github-light: url("../imgs/github-mark-white.png");
 	--img-github-dark: url("../imgs/github-mark-black.png");
 
-
 	/******** Defaults ********/
 
-	--title-bg: #111;
+	--banner-bg: #111;
 	--body-bg: #111;
-	--card-bg: #111;
 	--label-bg: #111;
+	--cell-bg: #111;
 
-	--title-color: #EEE;
-	--header-color: #EEE;
-	--header-ja-color: #AAA;
+	--page-title-color: #EEE;
+	--chart-title-color: #EEE;
+	--chart-title-ja-color: #AAA;
 	--label-color: #AAA;
 	--hira-color: #EEE;
 	--kata-color: #EEE;
@@ -104,16 +33,98 @@
 	--fancy-font: "Hina Mincho", serif;
 }
 
+/* Rainy City */
+:root.theme-amemachi {
+	--asagi-iro: #33A6B8;
+	/* --bright-pink: #ED64A6; */
+
+    --banner-bg: #1E2229;      /* Dark slate gray */
+    --body-bg: #16191D;       /* Deep charcoal/midnight */
+    --label-bg: #4A5568;      /* Muted Umbrella blue-gray */
+    --cell-bg: #242930;       /* Slightly lighter gray with a blue tint */
+
+    --page-title-color: #A0AEC0;   /* Soft silver-gray */
+    --chart-title-color: #805AD5;  /* Pale violet (the Neon in the rain look) */
+    --chart-title-ja-color: #CBD5E0;
+    --label-color: #E2E8F0;
+
+    --hira-color: #F687B3;    /* Soft Cherry Blossom Pink */
+    --kata-color: #63B3ED;    /* Raindrop Blue */
+    --romaji-color: #718096;  /* Muted steel */
+
+    --accent-color: var(--asagi-iro);
+    --settings-color: #A0AEC0;
+
+    --border-color: #2D3748;
+    --chart-shadow: 0 -5px 20px rgba(99, 179, 237, 0.15); /* Soft blue mist */
+
+    --kana-font: "Hina Mincho", serif;
+    --mobile-kana-font: "Hina Mincho", serif;
+
+    --img-github: var(--img-github-dark);
+}
+
+/* Vending Machine */
+:root.theme-bendo {
+    /* Backgrounds: The dark metal frame and the glowing slot */
+    --banner-bg: #1A1C1E;      /* Dark metallic casing */
+    --body-bg: #121416;       /* Dark alleyway background */
+    --label-bg: #00CCFF;      /* The bright blue Cold indicator */
+    --cell-bg: #252A30;       /* The illuminated display shelf */
+
+    /* Text Colors: Backlit LED vibes */
+    --page-title-color: #FFFFFF;
+    --chart-title-color: #00CCFF;  /* Glowing blue */
+    --chart-title-ja-color: #FFFFFF;
+    --label-color: #002B36;   /* High contrast on blue label */
+
+    /* Kana: Mimicking different drink types (Matcha green and Soda orange) */
+    --hira-color: #39FF14;    /* Neon green Tea glow */
+    --kata-color: #FF9F00;    /* Warm Orange Soda glow */
+    --romaji-color: #B0BEC5;  /* Dimmer, utilitarian metal look */
+
+    --accent-color: #FF0055;  /* The Sold Out or Hot red button */
+    --settings-color: #FFFFFF;
+
+    /* Border & Glow */
+    --border-color: #333D47;
+    --chart-shadow: 0 0 15px rgba(0, 204, 255, 0.4); /* Blue backlit glow */
+
+    --img-github: var(--img-github-light);
+
+	.label {
+		border: 2px solid #00CCFF !important;
+	}
+
+	/* Text shadow to give it some depth */
+	.hira .kana {
+		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
+	}
+
+	.kata .kana {
+		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
+	}
+
+}
+
 /* Ceramic Cracks */
 :root.theme-kintsugi {
-	--title-bg: var(--kintsugi-black);
-	--body-bg: var(--kintsugi-black);
-	--card-bg: var(--kintsugi-stone);
-	--label-bg: #876852;
+	--kintsugi-black: #1A1A1A;
+	--kintsugi-stone: #242424;
+	--bone-white: #E5E5E0;
+	--kintsugi-gold: #EAC283;
+	--faded-gold: #85714D;
+	--pale-gold: #F4E9D1;
+	--gold-glow: #F97316;
 
-	--title-color: var(--bone-white);
-	--header-color: var(--bone-white);
-	--header-ja-color: var(--bone-white);
+	--banner-bg: var(--kintsugi-black);
+	--body-bg: var(--kintsugi-black);
+	--label-bg: #876852;
+	--cell-bg: var(--kintsugi-stone);
+
+	--page-title-color: var(--bone-white);
+	--chart-title-color: var(--bone-white);
+	--chart-title-ja-color: var(--bone-white);
 	--label-color: var(--kintsugi-black);
 	--hira-color: var(--pale-gold);
 	--kata-color: var(--pale-gold);
@@ -121,7 +132,7 @@
 	--accent-color: var(--kintsugi-gold);
 	--settings-color: var(--pale-gold);
 
-	--border-color: var(--pale-gold);
+	--border-color: var(--faded-gold);
 
 	--chart-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
 
@@ -153,14 +164,20 @@
 
 /* Ancient Paper */
 :root.theme-koshi {
-	--title-bg: var(--fresh-washi);
-	--body-bg: var(--fresh-washi);
-	--card-bg: var(--oyster-shell);
-	--label-bg: var(--koshi);
+	--oyster-shell: #FFFFF3;
+	--fresh-washi: #F8F5F0;
+	--washi: #FAF9F6;
+	--koshi: #FDF5E6;
+	--warm-oil-soot: #3C2F2F;
 
-	--title-color: var(--warm-oil-soot);
-	--header-color: var(--warm-oil-soot);
-	--header-ja-color: var(--warm-oil-soot);
+	--banner-bg: var(--fresh-washi);
+	--body-bg: var(--fresh-washi);
+	--label-bg: var(--koshi);
+	--cell-bg: var(--oyster-shell);
+
+	--page-title-color: var(--warm-oil-soot);
+	--chart-title-color: var(--warm-oil-soot);
+	--chart-title-ja-color: var(--warm-oil-soot);
 	--label-color: #8FA0B3;
 	--hira-color: var(--warm-oil-soot);
 	--kata-color: var(--warm-oil-soot);
@@ -173,6 +190,9 @@
 	--kana-font: "Hina Mincho", serif;
 	--mobile-kana-font: "Hina Mincho", serif;
 
+	/* Lifts it slightly off the baseline */
+	/* transform: translateY(-2px); */
+
 	--img-github: var(--img-github-dark);
 
 	.en {
@@ -180,16 +200,75 @@
 	}
 }
 
+/* Goth Pink */
+:root.theme-kuro-mochi {
+    --midnight-violet: #1A1625;
+	--obsidian: #0F0D14;
+	--magical-girl-pink: #FF007A;
+	--bright-pink: #FF79C6;
+	--neon-mint: #00FFCC;
+	--violet: #BD93F9;
+	--cation-yellow: #FFFF00;
+
+    --banner-bg: var(--midnight-violet);
+    --body-bg: var(--obsidian);
+    --label-bg: var(--magical-girl-pink);
+    --cell-bg: var(--magical-girl-pink);
+
+    --page-title-color: #FFFFFF;
+    --chart-title-color: var(--magical-girl-pink);
+    --chart-title-ja-color: var(--bright-pink);
+    --label-color: #FFFFFF;
+
+    --hira-color: var(--neon-mint);
+    --kata-color: var(--violet);
+    --romaji-color:  var(--bright-pink);
+
+    --accent-color: var(--neon-mint);
+    --settings-color: var(--bright-pink);
+
+    --border-color: transparent;
+    --chart-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
+
+    --img-github: var(--img-github-light);
+
+	table {
+		border-radius: 20px;
+	}
+
+	td {
+		border-radius: 20px;
+	}
+
+	.cell {
+		background: linear-gradient(145deg, rgb(62, 54, 83), rgb(37, 29, 58));
+		box-shadow: inset 2px 2px 5px rgba(255,255,255,0.05);
+	}
+
+	.kana {
+		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
+				drop-shadow(-1px -1px 0px var(--midnight-violet))
+				drop-shadow(3px 3px 10px rgba(255, 0, 122, 0.5));
+	}
+}
+
 /* Miko Shrine Maiden */
 :root.theme-miko {
-	--title-bg: var(--polished-white);
-	--body-bg: var(--polished-white);
-	--card-bg: var(--polished-white);
-	--label-bg: var(--polished-white);
+	--miko-red: #BC242C;
+	--shinto-gold: #D4AF37;
+	--great-wave-blue: #19448E;
+	--polished-white: #F9F9F9;
+	--washed-ink: #323232;
+	--washi: #FAF9F6;
 
-	--title-color: var(--miko-red);
-	--header-color: var(--miko-red);
-	--header-ja-color: var(--miko-red);
+	--banner-bg: var(--polished-white);
+	--body-bg: var(--polished-white);
+	--label-bg: var(--polished-white);
+	--cell-bg: var(--polished-white);
+
+	--page-title-color: var(--miko-red);
+	--chart-title-color: var(--miko-red);
+	--chart-title-ja-color: var(--miko-red);
 	--label-color: var(--washed-ink);
 	--hira-color: var(--washed-ink);
 	--kata-color: var(--washed-ink);
@@ -214,19 +293,26 @@
 }
 
 :root.theme-mochi {
-	--title-bg: var(--mochi-flour);
-	--body-bg: var(--mochi-flour);
-	--card-bg: var(--mochi-flour);
-	--label-bg: var(--mochi-flour);
+	--mochi-flour: #FAF7F2;
+	--ichigo-pink: #F9D5D3;
+	--melon-green: #D4E9D7;
+	--taro-blue: #D1D1F0;
+	--mochi-cocoa: #5C5452;
+	--mochi-sugar: #A89F9D;
 
-	--title-color: var(--mochi-cocoa);
-	--header-color: var(--mochi-cocoa);
-	--header-ja-color: var(--mochi-cocoa);
+	--banner-bg: var(--mochi-flour);
+	--body-bg: var(--mochi-flour);
+	--label-bg: var(--mochi-flour);
+	--cell-bg: var(--mochi-flour);
+
+	--page-title-color: var(--mochi-cocoa);
+	--chart-title-color: var(--mochi-cocoa);
+	--chart-title-ja-color: var(--mochi-cocoa);
 	--label-color: var(--mochi-cocoa);
 	--hira-color: var(--mochi-cocoa);
 	--kata-color: var(--mochi-cocoa);
 	--romaji-color: var(--mochi-cocoa);
-	--accent-color: #8ec576;
+	--accent-color: #8EC576;
 	--settings-color: var(--mochi-cocoa);
 
 	--border-color: var(--mochi-flour);
@@ -234,10 +320,6 @@
 	--chart-shadow: none;
 
 	--img-github: var(--img-github-dark);
-
-	table {
-		background-color: transparent;
-	}
 
 	td {
 		border-radius: 20px;
@@ -253,10 +335,10 @@
 		background-color: var(--taro-blue);
 	}
 	td:nth-child(5) {
-		background-color: #d6ae97;
+		background-color: #D6AE97;
 	}
 	td:nth-child(6){
-		background-color: #f6efd4;
+		background-color: #F6EFD4;
 	}
 
 	.cell.empty {
@@ -270,14 +352,14 @@
 
 /* Black Cat */
 :root.theme-sakamoto {
-	--title-bg: #111;
+	--banner-bg: #111;
 	--body-bg: #111;
-	--card-bg: #111;
 	--label-bg: #111;
+	--cell-bg: #111;
 
-	--title-color: #EEE;
-	--header-color: #EEE;
-	--header-ja-color: #AAA;
+	--page-title-color: #EEE;
+	--chart-title-color: #EEE;
+	--chart-title-ja-color: #AAA;
 	--label-color: #AAA;
 	--hira-color: #EEE;
 	--kata-color: #EEE;
@@ -295,14 +377,21 @@
 
 /* Cherry Blossoms */
 :root.theme-sakura {
-	--title-bg: var(--sakura-petal);
-	--body-bg: var(--sakura-petal);
-	--card-bg: var(--sakura-blossom);
-	--label-bg: var(--sakura-deep);
+	--sakura-petal: #FFF5F7;
+	--sakura-blossom: #FCE7F3;
+	--sakura-deep: #DF709D;
+	--sakura-branch: #4A373E;
+	--sakura-dust: #9F717C;
+	--sakura-border: #F9A8D4;
 
-	--title-color: var(--sakura-branch);
-	--header-color: var(--sakura-branch);
-	--header-ja-color: var(--sakura-branch);
+	--banner-bg: var(--sakura-blossom);
+	--body-bg: var(--sakura-petal);
+	--label-bg: var(--sakura-deep);
+	--cell-bg: var(--sakura-blossom);
+
+	--page-title-color: var(--sakura-branch);
+	--chart-title-color: var(--sakura-branch);
+	--chart-title-ja-color: var(--sakura-branch);
 	--label-color: #FFFFFF;      /* White text on the deep pink label */
 	--hira-color: var(--sakura-branch);
 	--kata-color: var(--sakura-branch);
@@ -317,14 +406,21 @@
 
 /* Neon City Lights */
 :root.theme-shinjuku {
-	--title-bg: var(--indigo-void);
-	--body-bg: var(--indigo-void);
-	--card-bg: var(--indigo-cloth);
-	--label-bg: #223044;
+	--indigo-void: #0F1726;
+	--indigo-cloth: #1E293B;
+	--denim-fade: #94A3B8;
+	--vintage-bone: #E0E4E8;
+	--coral-red: #FF4D4D;
+	--asagi-iro: #33A6B8;
 
-	--title-color: var(--vintage-bone);
-	--header-color: var(--vintage-bone);
-	--header-ja-color: var(--denim-fade);
+	--banner-bg: var(--indigo-void);
+	--body-bg: var(--indigo-void);
+	--label-bg: #223044;
+	--cell-bg: var(--indigo-cloth);
+
+	--page-title-color: var(--vintage-bone);
+	--chart-title-color: var(--vintage-bone);
+	--chart-title-ja-color: var(--denim-fade);
 	--label-color: var(--denim-fade);
 	--hira-color: var(--coral-red);
 	--kata-color: var(--asagi-iro);
@@ -337,16 +433,52 @@
 	--img-github: var(--img-github-light);
 }
 
+/* Bullet Train */
+:root.theme-shinkansen {
+    /* Backgrounds: Brushed metal and clean plastic */
+    --banner-bg: #F2F4F7;     /* Clean, off-white */
+    --body-bg: #E1E5EA;       /* Cool, architectural gray */
+    --label-bg: #003399;      /* The iconic JR Blue */
+    --cell-bg: #FFFFFF;       /* Pure white interior lighting */
+
+    --page-title-color: #1A1A1A;
+    --chart-title-color: #003399;
+    --chart-title-ja-color: #4A5568;
+    --label-color: #FFFFFF;
+
+    --hira-color: #2D3748;
+    --kata-color: #2D3748;
+    --romaji-color: #718096;
+
+    --accent-color: #0055FF;
+    --settings-color: #4A5568;
+
+    --border-color: #CBD5E0;
+    --chart-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    --img-github: var(--img-github-dark);
+
+	/* Etched letters */
+	.kana {
+		text-shadow: 0.5px 0.5px 0px #FFFFFF, -0.5px -0.5px 0px #A0AEC0;
+	}
+}
+
 /* Calligraphy */
 :root.theme-shodo {
-	--title-bg: var(--washi);
-	--body-bg: var(--washi);
-	--card-bg: var(--washi);
-	--label-bg: var(--washi);
+	--keshizumi-iro: #434343;
+	--warm-oil-soot: #3C2F2F;
+	--cool-pine-soot: #26282B;
+	--washi: #FAF9F6;
 
-	--title-color: var(--cool-pine-soot);
-	--header-color: var(--cool-pine-soot);
-	--header-ja-color: var(--keshizumi-iro);
+	--banner-bg: var(--washi);
+	--body-bg: var(--washi);
+	--label-bg: var(--washi);
+	--cell-bg: var(--washi);
+
+	--page-title-color: var(--cool-pine-soot);
+	--chart-title-color: var(--cool-pine-soot);
+	--chart-title-ja-color: var(--keshizumi-iro);
 	--label-color: var(--keshizumi-iro);
 	--hira-color: var(--cool-pine-soot);
 	--kata-color: var(--cool-pine-soot);
@@ -380,14 +512,21 @@
 
 /* Straw Flooring */
 :root.theme-tatami {
-	--title-bg: var(--dried-straw);
-	--body-bg: var(--dried-straw);
-	--card-bg: var(--fresh-igusa);
-	--label-bg: var(--woven-border);
+	--dried-straw: #E6E2CF;      /* Aged Tatami */
+	--fresh-igusa: #D9D4B8;      /* Slightly greener */
+	--woven-border: #4A5D4E;     /* The 'Heri' fabric edge */
+	--tatami-ink: #33312C;       /* Deep Carbon */
+	--faded-weave: #8C8878;      /* Dusty Straw */
+	--mat-border: #C2BEA9;       /* Subtle Divider */
 
-	--title-color: var(--tatami-ink);
-	--header-color: var(--tatami-ink);
-	--header-ja-color: var(--tatami-ink);
+	--banner-bg: var(--dried-straw);
+	--body-bg: var(--dried-straw);
+	--label-bg: var(--woven-border);
+	--cell-bg: var(--fresh-igusa);
+
+	--page-title-color: var(--tatami-ink);
+	--chart-title-color: var(--tatami-ink);
+	--chart-title-ja-color: var(--tatami-ink);
 	--label-color: #F1F0E8;
 	--hira-color: var(--tatami-ink);
 	--kata-color: var(--tatami-ink);
@@ -402,17 +541,25 @@
 
 /* Moonlit Forest Tones */
 :root.theme-tsukiyo {
-	--title-bg: var(--midnight-forest);
-	--body-bg: var(--midnight-forest);
-	--card-bg: var(--moon-shadow);
-	--label-bg: var(--starlight-border);
+	--midnight-forest: #060B10;  /* Deepest Navy-Teal */
+	--moon-shadow: #0F1720;      /* Dark Slate Blue */
+	--starlight-silver: #E2E8F0; /* Bright Silver */
+	--fog-blue: #475569;         /* Muted Blue-Grey */
+	--harvest-moon: #FB923C;     /* Vibrant Orange */
+	--ember-glow: #FDBA74;       /* Pale Orange */
+	--starlight-border: #1E293B;
 
-	--title-color: var(--starlight-silver);
-	--header-color: var(--starlight-silver);
-	--header-ja-color: var(--starlight-silver);
-	--label-color: var(--starlight-silver);
-	--hira-color: var(--harvest-moon);
-	--kata-color: var(--harvest-moon);
+	--banner-bg: var(--midnight-forest);
+	--body-bg: var(--midnight-forest);
+	--label-bg: var(--starlight-border);
+	--cell-bg: var(--moon-shadow);
+
+	--page-title-color: var(--starlight-silver);
+	--chart-title-color: var(--starlight-silver);
+	--chart-title-ja-color: var(--starlight-silver);
+	--label-color: var(--harvest-moon);
+	--hira-color: var(--starlight-silver);
+	--kata-color: var(--starlight-silver);
 	--romaji-color: var(--fog-blue);
 	--accent-color: var(--harvest-moon);
 	--settings-color: var(--starlight-silver);
@@ -424,8 +571,12 @@
 
 	--img-github: var(--img-github-light);
 
-	.chart-title {
+	#page-title, .chart-title {
 		text-shadow: 0 0 8px rgba(226, 232, 240, 0.3);
+	}
+
+	.label {
+		/* text-shadow: 0 0 8px rgb(253, 186, 116, 0.2); */
 	}
 
 	.kana {
@@ -547,8 +698,8 @@ h2 {
 
 .page-header {
 	font-family: var(--title-font);
-	color: var(--title-color);
-	background-color: var(--title-bg);
+	color: var(--page-title-color);
+	background-color: var(--banner-bg);
 	box-shadow: var(--page-header-shadow);
 }
 
@@ -593,7 +744,7 @@ h2 {
 	width: 300px;
 	max-width: 80%;
 	height: 100%;
-	background-color: var(--card-bg);
+	background-color: var(--body-bg);
 	box-shadow: -5px 0 15px rgba(0,0,0,0.1);
 	z-index: 2000;
 
@@ -613,7 +764,7 @@ h2 {
 }
 
 .drawer-content h2 {
-	color: var(--header-color);
+	color: var(--chart-title-color);
 	margin: 20px 0 0;
 }
 
