@@ -597,7 +597,7 @@
 	}
 
 	.view {
-		height: 100vh !important;
+		height: 100dvh !important;
 	}
 }
 
@@ -619,7 +619,7 @@ body {
 .view {
 	display: none;
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: calc(100dvh - 60px);
 	box-sizing: border-box;
 	transition: height 0.3s;
 	scrollbar-gutter: stable both-edges;

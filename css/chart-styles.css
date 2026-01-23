@@ -89,7 +89,7 @@
 		}
 
 		.chart {
-			min-height: calc(100vh - 60px) !important;
+			min-height: calc(100dvh - 60px) !important;
 		}
 
 		.chart table {
@@ -117,7 +117,7 @@
 :root.layout-centered.hide-header {
 	#charts {
 		.chart {
-			min-height: 100vh !important;
+			min-height: 100dvh !important;
 		}
 	}
 }
