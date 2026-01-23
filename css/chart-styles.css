@@ -7,7 +7,7 @@
 				font-size: 1.0rem !important;
 			}
 
-			th, td {
+			.label.vowel, .cell {
 				padding: 4px !important;
 			}
 
@@ -93,7 +93,7 @@
 		}
 
 		.chart table {
-			margin-left: -12px !important; /* ignore the consonant column when centering */
+			transform: translateX(-12px) !important;
 		}
 	}
 }
@@ -101,7 +101,7 @@
 :root.layout-centered.view-compact {
 	#charts {
 		.chart table {
-			margin-left: -12px !important; /* not sure why -8px (half of consonant label width) is not right here */
+			transform: translateX(-8px) !important;
 		}
 	}
 }
@@ -109,7 +109,7 @@
 :root.layout-centered.hide-labels {
 	#charts {
 		.chart table {
-			margin-left: 0px !important;
+			transform: translateX(0px) !important;
 		}
 	}
 }
@@ -184,8 +184,9 @@
 
 	th, td {
 		border: 1px solid var(--border-color);
-		padding: 6px;
 		text-align: center;
+		padding: 0;
+		box-sizing: border-box;
 	}
 
 	.label.consonant, .label.vowel {
@@ -196,8 +197,11 @@
 		font-size: 0.8rem;
 	}
 
+	.label.vowel, .cell {
+		padding: 6px;
+	}
+
 	.label.consonant {
-		box-sizing: border-box;
 		width: 24px;
 	}
 
