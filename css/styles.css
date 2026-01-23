@@ -17,7 +17,7 @@
 	--kata-color: #EEE;
 	--romaji-color: #AAA;
 	--accent-color: #BB3E3E;
-	--settings-color: #EEE;
+	--general-text-color: #EEE;
 
 	--border-color: #111;
 
@@ -53,7 +53,7 @@
     --romaji-color: #718096;  /* Muted steel */
 
     --accent-color: var(--asagi-iro);
-    --settings-color: #A0AEC0;
+    --general-text-color: #A0AEC0;
 
     --border-color: #2D3748;
     --chart-shadow: 0 -5px 20px rgba(99, 179, 237, 0.15); /* Soft blue mist */
@@ -84,7 +84,7 @@
     --romaji-color: #B0BEC5;  /* Dimmer, utilitarian metal look */
 
     --accent-color: #FF0055;  /* The Sold Out or Hot red button */
-    --settings-color: #FFFFFF;
+    --general-text-color: #FFFFFF;
 
     /* Border & Glow */
     --border-color: #333D47;
@@ -130,7 +130,7 @@
 	--kata-color: var(--pale-gold);
 	--romaji-color: var(--faded-gold);
 	--accent-color: var(--kintsugi-gold);
-	--settings-color: var(--pale-gold);
+	--general-text-color: var(--pale-gold);
 
 	--border-color: var(--faded-gold);
 
@@ -183,7 +183,7 @@
 	--kata-color: var(--warm-oil-soot);
 	--romaji-color: #8FA0B3;
 	--accent-color: var(--warm-oil-soot);
-	--settings-color: var(--warm-oil-soot);
+	--general-text-color: var(--warm-oil-soot);
 
 	--border-color: #CBD5E1;
 
@@ -225,7 +225,7 @@
     --romaji-color:  var(--bright-pink);
 
     --accent-color: var(--neon-mint);
-    --settings-color: var(--bright-pink);
+    --general-text-color: var(--bright-pink);
 
     --border-color: transparent;
     --chart-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
@@ -274,7 +274,7 @@
 	--kata-color: var(--washed-ink);
 	--romaji-color: var(--shinto-gold);
 	--accent-color: var(--miko-red);
-	--settings-color: var(--washed-ink);
+	--general-text-color: var(--washed-ink);
 
 	--border-color: var(--washi);
 
@@ -313,7 +313,7 @@
 	--kata-color: var(--mochi-cocoa);
 	--romaji-color: var(--mochi-cocoa);
 	--accent-color: #8EC576;
-	--settings-color: var(--mochi-cocoa);
+	--general-text-color: var(--mochi-cocoa);
 
 	--border-color: var(--mochi-flour);
 
@@ -365,7 +365,7 @@
 	--kata-color: #EEE;
 	--romaji-color: #AAA;
 	--accent-color: #BB3E3E;
-	--settings-color: #EEE;
+	--general-text-color: #EEE;
 
 	--border-color: #111;
 
@@ -397,7 +397,7 @@
 	--kata-color: var(--sakura-branch);
 	--romaji-color: var(--sakura-dust);
 	--accent-color: var(--sakura-deep);
-	--settings-color: var(--sakura-branch);
+	--general-text-color: var(--sakura-branch);
 
 	--border-color: var(--sakura-border);
 
@@ -426,7 +426,7 @@
 	--kata-color: var(--asagi-iro);
 	--romaji-color: var(--denim-fade);
 	--accent-color: var(--coral-red);
-	--settings-color: var(--vintage-bone);
+	--general-text-color: var(--vintage-bone);
 
 	--border-color: #334155;
 
@@ -451,7 +451,7 @@
     --romaji-color: #718096;
 
     --accent-color: #0055FF;
-    --settings-color: #4A5568;
+    --general-text-color: #4A5568;
 
     --border-color: #CBD5E0;
     --chart-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -484,7 +484,7 @@
 	--kata-color: var(--cool-pine-soot);
 	--romaji-color: var(--keshizumi-iro);
 	--accent-color: var(--cool-pine-soot);
-	--settings-color: var(--cool-pine-soot);
+	--general-text-color: var(--cool-pine-soot);
 
 	--border-color: var(--washi);
 
@@ -532,7 +532,7 @@
 	--kata-color: var(--tatami-ink);
 	--romaji-color: var(--faded-weave);
 	--accent-color: var(--woven-border);
-	--settings-color: var(--tatami-ink);
+	--general-text-color: var(--tatami-ink);
 
 	--border-color: var(--mat-border);
 
@@ -562,7 +562,7 @@
 	--kata-color: var(--starlight-silver);
 	--romaji-color: var(--fog-blue);
 	--accent-color: var(--harvest-moon);
-	--settings-color: var(--starlight-silver);
+	--general-text-color: var(--starlight-silver);
 
 	--border-color: var(--starlight-border);
 
@@ -799,7 +799,7 @@ h2 {
 	align-items: center;
 	padding: 10px 0;
 	border-bottom: 1px solid var(--border-color);
-	color: var(--settings-color);
+	color: var(--general-text-color);
 }
 
 /* The Switch Container */
@@ -881,7 +881,7 @@ select {
 	/* Modern Box Styling */
 	width: 100%;
 	padding: 10px 15px;
-	color: var(--settings-color);
+	color: var(--general-text-color);
 	background-color: var(--body-bg);
 	border: 1px solid var(--accent-color);
 	border-radius: 8px;
@@ -895,7 +895,7 @@ select {
 
 button {
 	padding: 10px 15px;
-	color: var(--settings-color);
+	color: var(--general-text-color);
 	background-color: var(--body-bg);
 	border: 1px solid var(--accent-color);
 	border-radius: 8px;
