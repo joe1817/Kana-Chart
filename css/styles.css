@@ -38,7 +38,7 @@
 	--asagi-iro: #33A6B8;
 	/* --bright-pink: #ED64A6; */
 
-    --banner-bg: #1E2229;      /* Dark slate gray */
+    --banner-bg: #1E2229;     /* Dark slate gray */
     --body-bg: #16191D;       /* Deep charcoal/midnight */
     --label-bg: #4A5568;      /* Muted Umbrella blue-gray */
     --cell-bg: #242930;       /* Slightly lighter gray with a blue tint */
@@ -62,23 +62,28 @@
     --mobile-kana-font: "Hina Mincho", serif;
 
     --img-github: var(--img-github-dark);
+
+	.kana {
+		transform: translateY(-2px);
+	}
+
+	.solid-button {
+		color: #EEE;
+	}
 }
 
 /* Vending Machine */
 :root.theme-bendo {
-    /* Backgrounds: The dark metal frame and the glowing slot */
-    --banner-bg: #1A1C1E;      /* Dark metallic casing */
+    --banner-bg: #1A1C1E;     /* Dark metallic casing */
     --body-bg: #121416;       /* Dark alleyway background */
     --label-bg: #00CCFF;      /* The bright blue Cold indicator */
     --cell-bg: #252A30;       /* The illuminated display shelf */
 
-    /* Text Colors: Backlit LED vibes */
     --page-title-color: #FFFFFF;
     --chart-title-color: #00CCFF;  /* Glowing blue */
     --chart-title-ja-color: #FFFFFF;
     --label-color: #002B36;   /* High contrast on blue label */
 
-    /* Kana: Mimicking different drink types (Matcha green and Soda orange) */
     --hira-color: #39FF14;    /* Neon green Tea glow */
     --kata-color: #FF9F00;    /* Warm Orange Soda glow */
     --romaji-color: #B0BEC5;  /* Dimmer, utilitarian metal look */
@@ -86,7 +91,6 @@
     --accent-color: #FF0055;  /* The Sold Out or Hot red button */
     --general-text-color: #FFFFFF;
 
-    /* Border & Glow */
     --border-color: #333D47;
     --chart-shadow: 0 0 15px rgba(0, 204, 255, 0.4); /* Blue backlit glow */
 
@@ -96,7 +100,6 @@
 		border: 2px solid #00CCFF !important;
 	}
 
-	/* Text shadow to give it some depth */
 	.hira .kana {
 		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
 	}
@@ -105,6 +108,9 @@
 		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
 	}
 
+	.solid-button {
+		color: #EEE;
+	}
 }
 
 /* Ceramic Cracks */
@@ -160,43 +166,9 @@
 	.solid-button {
 		color: var(--kintsugi-black) !important;
 	}
-}
 
-/* Ancient Paper */
-:root.theme-koshi {
-	--oyster-shell: #FFFFF3;
-	--fresh-washi: #F8F5F0;
-	--washi: #FAF9F6;
-	--koshi: #FDF5E6;
-	--warm-oil-soot: #3C2F2F;
-
-	--banner-bg: var(--fresh-washi);
-	--body-bg: var(--fresh-washi);
-	--label-bg: var(--koshi);
-	--cell-bg: var(--oyster-shell);
-
-	--page-title-color: var(--warm-oil-soot);
-	--chart-title-color: var(--warm-oil-soot);
-	--chart-title-ja-color: var(--warm-oil-soot);
-	--label-color: #8FA0B3;
-	--hira-color: var(--warm-oil-soot);
-	--kata-color: var(--warm-oil-soot);
-	--romaji-color: #8FA0B3;
-	--accent-color: var(--warm-oil-soot);
-	--general-text-color: var(--warm-oil-soot);
-
-	--border-color: #CBD5E1;
-
-	--kana-font: "Hina Mincho", serif;
-	--mobile-kana-font: "Hina Mincho", serif;
-
-	/* Lifts it slightly off the baseline */
-	/* transform: translateY(-2px); */
-
-	--img-github: var(--img-github-dark);
-
-	.en {
-		font-family: var(--title-font);
+	.kana {
+		transform: translateY(-2px);
 	}
 }
 
@@ -290,6 +262,10 @@
 	.page-header {
 		border-bottom: 2px dashed var(--miko-red);
 	}
+
+	.kana {
+		transform: translateY(-2px);
+	}
 }
 
 :root.theme-mochi {
@@ -373,6 +349,10 @@
 	--chart-shadow: none;
 
 	--img-github: var(--img-github-light);
+
+	.solid-button {
+		color: #EEE;
+	}
 }
 
 /* Cherry Blossoms */
@@ -392,7 +372,7 @@
 	--page-title-color: var(--sakura-branch);
 	--chart-title-color: var(--sakura-branch);
 	--chart-title-ja-color: var(--sakura-branch);
-	--label-color: #FFFFFF;      /* White text on the deep pink label */
+	--label-color: #FFFFFF;
 	--hira-color: var(--sakura-branch);
 	--kata-color: var(--sakura-branch);
 	--romaji-color: var(--sakura-dust);
@@ -431,6 +411,10 @@
 	--border-color: #334155;
 
 	--img-github: var(--img-github-light);
+
+	.solid-button {
+		color: #EEE;
+	}
 }
 
 /* Bullet Train */
@@ -498,6 +482,10 @@
 
 	.en {
 		font-family: var(--title-font);
+	}
+
+	.kana {
+		transform: translateY(-2px);
 	}
 
 	/*
@@ -580,7 +568,51 @@
 	}
 
 	.kana {
+		transform: translateY(-2px);
 		text-shadow: 0 0 8px rgba(249, 115, 22, 0.2);
+	}
+
+	.solid-button {
+		color: #EEE;
+	}
+}
+
+/* Ancient Paper */
+:root.theme-washi {
+	--washi: #F2E7D5;
+	--fresh-washi: #F8F5F0;
+	--koshi: #FDF5E6;
+	--warm-oil-soot: #3C2F2F;
+	--smokey-blue: #8FA0B3;
+
+	--banner-bg: var(--fresh-washi);
+	--body-bg: var(--fresh-washi);
+	--label-bg: var(--washi);
+	--cell-bg: var(--koshi);
+
+	--page-title-color: var(--warm-oil-soot);
+	--chart-title-color: var(--warm-oil-soot);
+	--chart-title-ja-color: var(--warm-oil-soot);
+	--label-color: var(--smokey-blue);
+	--hira-color: var(--warm-oil-soot);
+	--kata-color: var(--warm-oil-soot);
+	--romaji-color: var(--smokey-blue);
+	--accent-color: var(--smokey-blue);
+	--general-text-color: var(--warm-oil-soot);
+
+	--border-color: #CBD5E1;
+
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
+
+	--img-github: var(--img-github-dark);
+
+	.en {
+		font-family: var(--title-font);
+	}
+
+	.kana {
+		transform: translateY(-2px);
 	}
 }
 
@@ -597,7 +629,7 @@
 	}
 
 	.view {
-		height: 100vh !important;
+		height: 100dvh !important;
 	}
 }
 
@@ -619,7 +651,7 @@ body {
 .view {
 	display: none;
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: calc(100dvh - 60px);
 	box-sizing: border-box;
 	transition: height 0.3s;
 	scrollbar-gutter: stable both-edges;
@@ -906,6 +938,6 @@ button {
 }
 
 .solid-button {
-	color: white;
+	color: var(--body-bg);
 	background-color: var(--accent-color);
 }

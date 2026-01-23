@@ -7,6 +7,10 @@
 				font-size: 1.0rem !important;
 			}
 
+			.chart-title .ja {
+				font-size: 0.7rem !important;
+			}
+
 			.label.vowel, .cell {
 				padding: 4px !important;
 			}
@@ -89,7 +93,7 @@
 		}
 
 		.chart {
-			min-height: calc(100vh - 60px) !important;
+			min-height: calc(100dvh - 60px) !important;
 		}
 
 		.chart table {
@@ -117,7 +121,7 @@
 :root.layout-centered.hide-header {
 	#charts {
 		.chart {
-			min-height: 100vh !important;
+			min-height: 100dvh !important;
 		}
 	}
 }
@@ -144,12 +148,12 @@
 		margin-bottom: 10px;
 	}
 
-	.j-word {
+	.chart-title .j-word {
 		display: inline-flex;
 		flex-direction: column;
 	}
 
-	.en {
+	.chart-title .en {
 		font-size: 1.1rem;
 		padding: 0;
 		display: flex;
@@ -159,8 +163,8 @@
 		align-items: baseline;
 	}
 
-	.ja {
-		font-size: 0.6rem;
+	.chart-title .ja {
+		font-size: 0.8rem;
 		margin: 0;
 		padding: 0 4px;
 		line-height: 0.9;
