@@ -4,11 +4,11 @@
 	const savedHiragana = localStorage.getItem("kana.hiragana") || "show";
 	const savedKatakana = localStorage.getItem("kana.katakana") || "show";
 	const savedObsolete = localStorage.getItem("kana.obsolete") || "hide";
-	const savedTheme    = localStorage.getItem("kana.theme")    || (systemPrefersDark ? "shinjuku" : "koshi");
+	const savedTheme    = localStorage.getItem("kana.theme")    || (systemPrefersDark ? "amemachi" : "miko");
 	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
-	const savedColumns  = localStorage.getItem("kana.layout")  || "auto";
+	const savedColumns  = localStorage.getItem("kana.layout")   || "auto";
 	const savedMode     = localStorage.getItem("kana.mode")     || "finite";
 
 	if (savedHiragana === "hide") document.documentElement.classList.add("hide-hiragana");
