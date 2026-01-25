@@ -62,6 +62,10 @@
     --mobile-kana-font: "Hina Mincho", serif;
 
     --img-github: var(--img-github-dark);
+
+	.kana {
+		transform: translateY(-2px);
+	}
 }
 
 /* Vending Machine */
@@ -160,29 +164,33 @@
 	.solid-button {
 		color: var(--kintsugi-black) !important;
 	}
+
+	.kana {
+		transform: translateY(-2px);
+	}
 }
 
 /* Ancient Paper */
-:root.theme-koshi {
-	--oyster-shell: #FFFFF3;
+:root.theme-washi {
+	--washi: #F2E7D5;
 	--fresh-washi: #F8F5F0;
-	--washi: #FAF9F6;
 	--koshi: #FDF5E6;
 	--warm-oil-soot: #3C2F2F;
+	--smokey-blue: #8FA0B3;
 
 	--banner-bg: var(--fresh-washi);
 	--body-bg: var(--fresh-washi);
-	--label-bg: var(--koshi);
-	--cell-bg: var(--oyster-shell);
+	--label-bg: var(--washi);
+	--cell-bg: var(--koshi);
 
 	--page-title-color: var(--warm-oil-soot);
 	--chart-title-color: var(--warm-oil-soot);
 	--chart-title-ja-color: var(--warm-oil-soot);
-	--label-color: #8FA0B3;
+	--label-color: var(--smokey-blue);
 	--hira-color: var(--warm-oil-soot);
 	--kata-color: var(--warm-oil-soot);
-	--romaji-color: #8FA0B3;
-	--accent-color: var(--warm-oil-soot);
+	--romaji-color: var(--smokey-blue);
+	--accent-color: var(--smokey-blue);
 	--general-text-color: var(--warm-oil-soot);
 
 	--border-color: #CBD5E1;
@@ -190,13 +198,14 @@
 	--kana-font: "Hina Mincho", serif;
 	--mobile-kana-font: "Hina Mincho", serif;
 
-	/* Lifts it slightly off the baseline */
-	/* transform: translateY(-2px); */
-
 	--img-github: var(--img-github-dark);
 
 	.en {
 		font-family: var(--title-font);
+	}
+
+	.kana {
+		transform: translateY(-2px);
 	}
 }
 
@@ -289,6 +298,10 @@
 
 	.page-header {
 		border-bottom: 2px dashed var(--miko-red);
+	}
+
+	.kana {
+		transform: translateY(-2px);
 	}
 }
 
@@ -500,6 +513,10 @@
 		font-family: var(--title-font);
 	}
 
+	.kana {
+		transform: translateY(-2px);
+	}
+
 	/*
 	.kana {
 		text-shadow:
@@ -580,6 +597,7 @@
 	}
 
 	.kana {
+		transform: translateY(-2px);
 		text-shadow: 0 0 8px rgba(249, 115, 22, 0.2);
 	}
 }
