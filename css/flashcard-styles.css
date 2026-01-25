@@ -120,8 +120,6 @@
 		width: 200px;
 		margin-bottom: 20px;
 		padding: 10px 25px;
-		background: var(--accent-color);
-		color: white; /* TODO */
 		border: none;
 		border-radius: 50px;
 		font-weight: bold;
@@ -194,11 +192,12 @@
 	}
 
 	#results-hints {
+		max-width: 600px;
 		margin-top: 20px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		align-items: center;
+		justify-content: center;
 		gap: 8px;
 	}
 
