@@ -1,3 +1,8 @@
+function goBack() {
+	initDeck();
+	window.location = "#flashcards";
+}
+
 const hiraData = [
 	{ k: "あ", r: "a", c: "hira"},
 	{ k: "い", r: "i", c: "hira"},
@@ -127,161 +132,156 @@ const obsoleteKataData = [
 	{ k: "ヱ", r: "we", c: "kata"},
 ];
 
-const STACK_BUFFER_LIMIT = 5; // How many cards to keep "ready"
+class DeckManager {
+	constructor(data, isEndless) {
+		this.mainDeck = [...data];
+		this.focusDeck = [];
+		this.isEndless = isEndless;
+		this.totalCount = this.mainDeck.length;
+		this.remainingCount = this.totalCount;
+		this._iterator = null;
+	}
 
-let deck = [];
-let currentIndex = 0; // Track which card we are on
-let totalCount = 0;
-let remainingCount = 0;
-let startX, startY, holdTimer;
+	*createIterator() {
+		while (this.mainDeck.length > 0 || this.focusDeck.length > 0) {
+			let pool;
+			let isFocusPull = false;
+
+			if (this.isEndless) {
+				if (this.focusDeck.length > 0 && Math.random() < 0.3) {
+					pool = this.focusDeck;
+				} else {
+					pool = this.mainDeck;
+				}
+			} else {
+				pool = this.mainDeck;
+			}
+
+			if (pool.length === 0) break;
+
+			const randomIndex = Math.floor(Math.random() * pool.length);
+			const item = pool[randomIndex];
+
+			if (!this.isEndless) {
+				pool.splice(randomIndex, 1);
+				this.remainingCount--;
+			}
+
+			yield item;
+		}
+	}
+
+	iterator() {
+		if (this._iterator == null) {
+			this._iterator = this.createIterator();
+		}
+		return this._iterator;
+	}
+
+	addToFocus(cardData) {
+		if (!this.focusDeck.includes(cardData)) {
+			this.focusDeck.push(cardData);
+		}
+	}
+
+	removeFromFocus(cardData) {
+		const idx = this.focusDeck.indexOf(cardData);
+		if (idx > -1) {
+			this.focusDeck.splice(idx, 1);
+		}
+	}
+}
+
+let deckManager;
 
 function initDeck() {
-    const stack = document.getElementById("stack");
     const summary = document.getElementById("results-summary");
     const hints = document.getElementById("results-hints");
+	const stack = document.getElementById("stack");
+	const includeHiragana = document.getElementById("toggle-hiragana").checked;
+	const includeKatakana = document.getElementById("toggle-katakana").checked;
+	const includeObsolete = document.getElementById("toggle-obsolete").checked;
+	const isEndless = document.getElementById("toggle-endless").checked;
 
-    stack.style.display = "block";
+	const combinedData = [];
+	if (includeHiragana) combinedData.push(...hiraData);
+	if (includeHiragana && includeObsolete) combinedData.push(...obsoleteHiraData);
+	if (includeKatakana) combinedData.push(...kataData);
+	if (includeKatakana && includeObsolete) combinedData.push(...obsoleteKataData);
+
+	deckManager = new DeckManager(combinedData, isEndless);
+
     summary.innerText = "✨No hints used. Congrats!✨";
     hints.replaceChildren();
-
-    const includeHiragana = document.getElementById("toggle-hiragana").checked;
-    const includeKatakana = document.getElementById("toggle-katakana").checked;
-    const includeObsolete = document.getElementById("toggle-obsolete").checked;
-
-    deck = [];
-    if (includeHiragana) deck = [...deck, ...hiraData];
-    if (includeHiragana && includeObsolete) deck = [...deck, ...obsoleteHiraData];
-    if (includeKatakana) deck = [...deck, ...kataData];
-    if (includeKatakana && includeObsolete) deck = [...deck, ...obsoleteKataData];
-
-    totalCount = deck.length;
-    remainingCount = totalCount;
-    currentIndex = 0;
-    updateCounter();
-
-    // Shuffle the data array
-    for (let i = deck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [deck[i], deck[j]] = [deck[j], deck[i]];
-    }
-
-    stack.innerHTML = "";
-
-    fillBuffer();
-}
-
-function goBack() {
-	initDeck();
-	window.location = "#flashcards";
-}
-
-function fillBuffer() {
-    const stack = document.getElementById("stack");
-    const isEndless = document.getElementById("toggle-endless").checked;
-
-    let activeCards = Array.from(stack.children).filter(c => !c.classList.contains("exit"));
-
-    while (activeCards.length < STACK_BUFFER_LIMIT) {
-        if (currentIndex >= deck.length) {
-            if (isEndless) {
-                // Reset stack pointer
-                currentIndex = 0;
-
-                // Shuffle everything EXCEPT the items currently in the buffer
-                // This prevents a card in the 'waiting' stack from being
-                // swapped with a duplicate from the reshuffled deck.
-                const protectedCount = activeCards.length;
-                shuffleDeckPartially(deck, protectedCount);
-            } else {
-                break;
-            }
-        }
-
-        renderNextCard();
-        activeCards.length++;
-    }
-}
-
-// Shuffles the deck but leaves the first 'skip' elements alone
-function shuffleDeckPartially(array, skip) {
-    for (let i = array.length - 1; i > skip; i--) {
-        const j = Math.floor(Math.random() * (i - skip + 1)) + skip;
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+    stack.replaceChildren();
+	renderNextCard();
+	updateCounter(0, deckManager.totalCount);
 }
 
 function renderNextCard() {
-    const stack = document.getElementById("stack");
+	const stack = document.getElementById("stack");
+	const next = deckManager.iterator().next();
 
-    if (currentIndex >= deck.length) return;
+	if (next.done) return false;
 
-    const item = deck[currentIndex];
-    const card = document.createElement("div");
+	const item = next.value;
+	const card = document.createElement("div");
 
-    card.className = "kana-card " + item.c;
-    card.cardData = item;
-    card.innerHTML = `
-        <div class="romaji noselect">${item.r}</div>
-        <div class="kana noselect">${item.k}</div>
-    `;
+	card.className = "kana-card " + item.c;
+	card.cardData = item;
+	card.innerHTML = `
+		<div class="romaji noselect">${item.r}</div>
+		<div class="kana noselect">${item.k}</div>
+	`;
 
-    setupCardEvents(card, item);
-    stack.prepend(card);
-
-    currentIndex++;
+	setupCardEvents(card, item);
+	stack.prepend(card);
+	return true;
 }
 
 function dismissCard(card) {
-	const stack = document.getElementById("stack");
-	const isEndless = document.getElementById("toggle-endless").checked;
+	const cardData = card.cardData;
+	const wasHinted = card.dataset.hinted === "true";
+
+	if (wasHinted) {
+		deckManager.addToFocus(cardData);
+	} else {
+		deckManager.removeFromFocus(cardData);
+	}
+
+	const cardAvailable = renderNextCard();
 
 	card.classList.add("exit");
-
-	fillBuffer();
-
 	if (navigator.vibrate) navigator.vibrate(10);
 
-	if (isEndless) {
-		const wasHinted = card.dataset.hinted === "true";
-		const cardData = card.cardData;
-
-		// Remove the old instance of the data to keep deck size consistent
-		deck.splice(deck.indexOf(cardData), 1);
-		currentIndex--;
-
-		if (wasHinted) {
-			// Insert it 5-10 positions ahead, wrapping around if necessary
-			const targetPos = (STACK_BUFFER_LIMIT + Math.floor(Math.random() * 5)) % deck.length;
-			deck.splice(targetPos, 0, cardData);
-		} else {
-			// push it to the very end of the array, where it will be included in an upcomng shuffle
-			deck.push(cardData);
-		}
-	} else {
-		remainingCount--;
-		updateCounter();
+	if (!deckManager.isEndless) {
+		const remaining = deckManager.remainingCount;
+		const total = deckManager.totalCount;
+		const progress = total - remaining - (cardAvailable ? 1 : 0);
+		updateCounter(progress, total);
 	}
 
 	setTimeout(() => {
 		card.remove();
-		if (!isEndless && remainingCount === 0 && stack.children.length === 0) {
-			stack.style.display = "none";
+		// If no cards are left in the DOM and the iterator is exhausted
+		if (!cardAvailable) {
+			window.location = "#results";
 		}
-	}, 600);
+	}, 500);
 }
 
-function updateCounter() {
-	const counterElement = document.getElementById("cards-left");
-	counterElement.innerText = `${(totalCount - remainingCount)} / ${totalCount}`;
+function updateCounter(progress, total) {
+	const percentage = (progress / total) * 100;
+	document.getElementById("progress-bar").style.width = percentage + "%";
+	document.getElementById("cards-left").innerText = `${progress} / ${total}`;
 
-	const progressBar = document.getElementById("progress-bar");
-	const percentage = ((totalCount - remainingCount) / totalCount) * 100;
-	progressBar.style.width = percentage + "%";
 }
 
 function setupCardEvents(card, item) {
 	const summary = document.getElementById("results-summary");
 	const hints = document.getElementById("results-hints");
+
+	let startX, startY;
 
 	card.addEventListener("pointerdown", (e) => {
 		startX = e.clientX;
@@ -293,7 +293,6 @@ function setupCardEvents(card, item) {
 
 			card.classList.add("show-romaji");
 			if (navigator.vibrate) navigator.vibrate(20);
-			// TODO add to array of hinted kana
 
 			summary.innerText = "You asked for hints on these:";
 			const hinted = document.createElement("div");
@@ -315,17 +314,13 @@ function setupCardEvents(card, item) {
 		const distance = Math.sqrt(diffX**2 + diffY**2);
 
 		if (distance > 50) {
-			// Logic for Swipe
+			// swipe
 			if ((isPortrait && diffX > 30) || (!isPortrait && diffY < -30)) {
 				dismissCard(card);
-				if (!remainingCount)
-					window.location = "#results";
 			}
 		} else {
-			// It was a simple tap
+			// tap
 			dismissCard(card);
-			if (!remainingCount)
-				window.location = "#results";
 		}
 	});
 
