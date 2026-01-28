@@ -34,6 +34,7 @@ window.addEventListener("hashchange", () => {
 		switchViewButton.href = "#flashcards";
 		switchViewButton.title = "Flashcards";
 	} else if (currentHash === "#flashcards") {
+		initDeck();
 		document.title = "Kana Flashcards";
 		pageTitle.innerText = "Kana Flashcards";
 		switchViewButton.href = "#charts";
