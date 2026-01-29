@@ -208,19 +208,24 @@
 		border-radius: 20px;
 	}
 
-	td {
+	.chart .cell {
 		border-radius: 20px;
 	}
 
-	.cell {
+	.cell:not(.empty) {
 		background: linear-gradient(145deg, rgb(62, 54, 83), rgb(37, 29, 58));
 		box-shadow: inset 2px 2px 5px rgba(255,255,255,0.05);
 	}
 
-	.kana {
+	.chart .kana {
 		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
 				drop-shadow(-1px -1px 0px var(--midnight-violet))
 				drop-shadow(3px 3px 10px rgba(255, 0, 122, 0.5));
+	}
+
+	.kana-card .kana {
+		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
+				drop-shadow(-1px -1px 0px var(--midnight-violet));
 	}
 }
 
@@ -263,8 +268,16 @@
 		border-bottom: 2px dashed var(--miko-red);
 	}
 
+	.kana-card {
+		box-shadow: var(--chart-shadow);
+	}
+
 	.kana {
 		transform: translateY(-2px);
+	}
+
+	.hint {
+		box-shadow: var(--chart-shadow);
 	}
 }
 
@@ -297,32 +310,32 @@
 
 	--img-github: var(--img-github-dark);
 
-	td {
+	.chart .cell {
 		border-radius: 20px;
 	}
 
-	td:nth-child(2) {
+	.chart .cell:nth-child(2):not(.empty) {
 		background-color: var(--ichigo-pink);
 	}
-	td:nth-child(3) {
+	.chart .cell:nth-child(3):not(.empty) {
 		background-color: var(--melon-green);
 	}
-	td:nth-child(4) {
+	.chart .cell:nth-child(4):not(.empty) {
 		background-color: var(--taro-blue);
 	}
-	td:nth-child(5) {
+	.chart .cell:nth-child(5):not(.empty) {
 		background-color: #D6AE97;
 	}
-	td:nth-child(6){
+	.chart .cell:nth-child(6):not(.empty) {
 		background-color: #F6EFD4;
 	}
 
-	.cell.empty {
-		background-color: transparent !important;
+	.kana {
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 	}
 
-	.kana {
-		text-shadow:  0 0 5px rgba(255, 255, 255, 0.7);
+	.hint {
+		border: 1px solid var(--accent-color);
 	}
 }
 
@@ -352,6 +365,10 @@
 
 	.solid-button {
 		color: #EEE;
+	}
+
+	.hint {
+		border: 1px solid var(--accent-color);
 	}
 }
 
@@ -496,6 +513,10 @@
 			1px 1px 6px rgba(0, 0, 0, 0.08);
 	}
 	*/
+
+	.hint {
+		border: 1px solid var(--accent-color);
+	}
 }
 
 /* Straw Flooring */
@@ -642,6 +663,7 @@ body {
 	margin: 0;
 	padding-bottom: 0 0 10px;
 	font-family: var(--default-font);
+	color: var(--general-text-color);
 	background-color: var(--body-bg);
 	display: flex;
 	flex-direction: column;
@@ -656,10 +678,6 @@ body {
 	transition: height 0.3s;
 	scrollbar-gutter: stable both-edges;
 	overflow-y: auto;
-}
-
-.central-wrapper {
-	padding: 0px 16px;
 }
 
 h1 {
@@ -831,7 +849,6 @@ h2 {
 	align-items: center;
 	padding: 10px 0;
 	border-bottom: 1px solid var(--border-color);
-	color: var(--general-text-color);
 }
 
 /* The Switch Container */
