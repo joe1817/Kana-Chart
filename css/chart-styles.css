@@ -206,13 +206,13 @@ th, td {
 }
 
 :root.hide-hiragana {
-	.chart .hira {
+	.chart.hira {
 		display: none;
 	}
 }
 
 :root.hide-katakana {
-	.chart .kata {
+	.chart.kata {
 		display: none;
 	}
 }
