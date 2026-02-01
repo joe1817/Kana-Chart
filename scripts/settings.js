@@ -205,8 +205,24 @@ window.addEventListener("load", () => {
 	hiraganaToggle.disabled = !katakanaToggle.checked;
 	katakanaToggle.disabled = !hiraganaToggle.checked;
 
+	const charts = document.getElementsByClassName("chart");
+	const views = document.getElementsByClassName("view");
 	document.getElementById("button-hide-header").addEventListener("click", function() {
+		for (const chart of charts) {
+			chart.style.transition = "min-height 0.3s ease-out";
+		}
+		for (const view of views) {
+			view.style.transition = "min-height 0.3s ease-out";
+		}
 		document.documentElement.classList.toggle("hide-header");
 		this.innerText = (this.innerText === "[-]" ? "[+]" : "[-]");
+		setTimeout(() => {
+			for (const chart of charts) {
+				chart.style.transition = "none";
+			}
+			for (const view of views) {
+				view.style.transition = "none";
+			}
+		}, 300);
 	});
 });
