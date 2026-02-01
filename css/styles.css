@@ -38,30 +38,30 @@
 	--asagi-iro: #33A6B8;
 	/* --bright-pink: #ED64A6; */
 
-    --banner-bg: #1E2229;     /* Dark slate gray */
-    --body-bg: #16191D;       /* Deep charcoal/midnight */
-    --label-bg: #4A5568;      /* Muted Umbrella blue-gray */
-    --cell-bg: #242930;       /* Slightly lighter gray with a blue tint */
+	--banner-bg: #1E2229;     /* Dark slate gray */
+	--body-bg: #16191D;       /* Deep charcoal/midnight */
+	--label-bg: #4A5568;      /* Muted Umbrella blue-gray */
+	--cell-bg: #242930;       /* Slightly lighter gray with a blue tint */
 
-    --page-title-color: #A0AEC0;   /* Soft silver-gray */
-    --chart-title-color: #805AD5;  /* Pale violet (the Neon in the rain look) */
-    --chart-title-ja-color: #CBD5E0;
-    --label-color: #E2E8F0;
+	--page-title-color: #A0AEC0;   /* Soft silver-gray */
+	--chart-title-color: #805AD5;  /* Pale violet (the Neon in the rain look) */
+	--chart-title-ja-color: #CBD5E0;
+	--label-color: #E2E8F0;
 
-    --hira-color: #F687B3;    /* Soft Cherry Blossom Pink */
-    --kata-color: #63B3ED;    /* Raindrop Blue */
-    --romaji-color: #718096;  /* Muted steel */
+	--hira-color: #F687B3;    /* Soft Cherry Blossom Pink */
+	--kata-color: #63B3ED;    /* Raindrop Blue */
+	--romaji-color: #718096;  /* Muted steel */
 
-    --accent-color: var(--asagi-iro);
-    --general-text-color: #A0AEC0;
+	--accent-color: var(--asagi-iro);
+	--general-text-color: #A0AEC0;
 
-    --border-color: #2D3748;
-    --chart-shadow: 0 -5px 20px rgba(99, 179, 237, 0.15); /* Soft blue mist */
+	--border-color: #2D3748;
+	--chart-shadow: 0 -5px 20px rgba(99, 179, 237, 0.15); /* Soft blue mist */
 
-    --kana-font: "Hina Mincho", serif;
-    --mobile-kana-font: "Hina Mincho", serif;
+	--kana-font: "Hina Mincho", serif;
+	--mobile-kana-font: "Hina Mincho", serif;
 
-    --img-github: var(--img-github-dark);
+	--img-github: var(--img-github-dark);
 
 	.kana {
 		transform: translateY(-2px);
@@ -74,27 +74,27 @@
 
 /* Vending Machine */
 :root.theme-bendo {
-    --banner-bg: #1A1C1E;     /* Dark metallic casing */
-    --body-bg: #121416;       /* Dark alleyway background */
-    --label-bg: #00CCFF;      /* The bright blue Cold indicator */
-    --cell-bg: #252A30;       /* The illuminated display shelf */
+	--banner-bg: #1A1C1E;     /* Dark metallic casing */
+	--body-bg: #121416;       /* Dark alleyway background */
+	--label-bg: #00CCFF;      /* The bright blue Cold indicator */
+	--cell-bg: #252A30;       /* The illuminated display shelf */
 
-    --page-title-color: #FFFFFF;
-    --chart-title-color: #00CCFF;  /* Glowing blue */
-    --chart-title-ja-color: #FFFFFF;
-    --label-color: #002B36;   /* High contrast on blue label */
+	--page-title-color: #FFFFFF;
+	--chart-title-color: #00CCFF;  /* Glowing blue */
+	--chart-title-ja-color: #FFFFFF;
+	--label-color: #002B36;   /* High contrast on blue label */
 
-    --hira-color: #39FF14;    /* Neon green Tea glow */
-    --kata-color: #FF9F00;    /* Warm Orange Soda glow */
-    --romaji-color: #B0BEC5;  /* Dimmer, utilitarian metal look */
+	--hira-color: #39FF14;    /* Neon green Tea glow */
+	--kata-color: #FF9F00;    /* Warm Orange Soda glow */
+	--romaji-color: #B0BEC5;  /* Dimmer, utilitarian metal look */
 
-    --accent-color: #FF0055;  /* The Sold Out or Hot red button */
-    --general-text-color: #FFFFFF;
+	--accent-color: #FF0055;  /* The Sold Out or Hot red button */
+	--general-text-color: #FFFFFF;
 
-    --border-color: #333D47;
-    --chart-shadow: 0 0 15px rgba(0, 204, 255, 0.4); /* Blue backlit glow */
+	--border-color: #333D47;
+	--chart-shadow: 0 0 15px rgba(0, 204, 255, 0.4); /* Blue backlit glow */
 
-    --img-github: var(--img-github-light);
+	--img-github: var(--img-github-light);
 
 	.label {
 		border: 2px solid #00CCFF !important;
@@ -174,7 +174,7 @@
 
 /* Goth Pink */
 :root.theme-kuro-mochi {
-    --midnight-violet: #1A1625;
+	--midnight-violet: #1A1625;
 	--obsidian: #0F0D14;
 	--magical-girl-pink: #FF007A;
 	--bright-pink: #FF79C6;
@@ -182,45 +182,50 @@
 	--violet: #BD93F9;
 	--cation-yellow: #FFFF00;
 
-    --banner-bg: var(--midnight-violet);
-    --body-bg: var(--obsidian);
-    --label-bg: var(--magical-girl-pink);
-    --cell-bg: var(--magical-girl-pink);
+	--banner-bg: var(--midnight-violet);
+	--body-bg: var(--obsidian);
+	--label-bg: var(--magical-girl-pink);
+	--cell-bg: var(--magical-girl-pink);
 
-    --page-title-color: #FFFFFF;
-    --chart-title-color: var(--magical-girl-pink);
-    --chart-title-ja-color: var(--bright-pink);
-    --label-color: #FFFFFF;
+	--page-title-color: #FFFFFF;
+	--chart-title-color: var(--magical-girl-pink);
+	--chart-title-ja-color: var(--bright-pink);
+	--label-color: #FFFFFF;
 
-    --hira-color: var(--neon-mint);
-    --kata-color: var(--violet);
-    --romaji-color:  var(--bright-pink);
+	--hira-color: var(--neon-mint);
+	--kata-color: var(--violet);
+	--romaji-color:  var(--bright-pink);
 
-    --accent-color: var(--neon-mint);
-    --general-text-color: var(--bright-pink);
+	--accent-color: var(--neon-mint);
+	--general-text-color: var(--bright-pink);
 
-    --border-color: transparent;
-    --chart-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
+	--border-color: transparent;
+	--chart-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
 
-    --img-github: var(--img-github-light);
+	--img-github: var(--img-github-light);
 
 	table {
 		border-radius: 20px;
 	}
 
-	td {
+	.chart .cell {
 		border-radius: 20px;
 	}
 
-	.cell {
+	.cell:not(.empty) {
 		background: linear-gradient(145deg, rgb(62, 54, 83), rgb(37, 29, 58));
 		box-shadow: inset 2px 2px 5px rgba(255,255,255,0.05);
 	}
 
-	.kana {
+	.chart .kana {
 		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
 				drop-shadow(-1px -1px 0px var(--midnight-violet))
 				drop-shadow(3px 3px 10px rgba(255, 0, 122, 0.5));
+	}
+
+	.kana-card .kana {
+		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
+				drop-shadow(-1px -1px 0px var(--midnight-violet));
 	}
 }
 
@@ -263,8 +268,16 @@
 		border-bottom: 2px dashed var(--miko-red);
 	}
 
+	.kana-card {
+		box-shadow: var(--chart-shadow);
+	}
+
 	.kana {
 		transform: translateY(-2px);
+	}
+
+	.hint {
+		box-shadow: var(--chart-shadow);
 	}
 }
 
@@ -297,32 +310,32 @@
 
 	--img-github: var(--img-github-dark);
 
-	td {
+	.chart .cell {
 		border-radius: 20px;
 	}
 
-	td:nth-child(2) {
+	.chart .cell:nth-child(2):not(.empty) {
 		background-color: var(--ichigo-pink);
 	}
-	td:nth-child(3) {
+	.chart .cell:nth-child(3):not(.empty) {
 		background-color: var(--melon-green);
 	}
-	td:nth-child(4) {
+	.chart .cell:nth-child(4):not(.empty) {
 		background-color: var(--taro-blue);
 	}
-	td:nth-child(5) {
+	.chart .cell:nth-child(5):not(.empty) {
 		background-color: #D6AE97;
 	}
-	td:nth-child(6){
+	.chart .cell:nth-child(6):not(.empty) {
 		background-color: #F6EFD4;
 	}
 
-	.cell.empty {
-		background-color: transparent !important;
+	.kana {
+		text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 	}
 
-	.kana {
-		text-shadow:  0 0 5px rgba(255, 255, 255, 0.7);
+	.hint {
+		border: 1px solid var(--accent-color);
 	}
 }
 
@@ -352,6 +365,10 @@
 
 	.solid-button {
 		color: #EEE;
+	}
+
+	.hint {
+		border: 1px solid var(--accent-color);
 	}
 }
 
@@ -419,28 +436,28 @@
 
 /* Bullet Train */
 :root.theme-shinkansen {
-    /* Backgrounds: Brushed metal and clean plastic */
-    --banner-bg: #F2F4F7;     /* Clean, off-white */
-    --body-bg: #E1E5EA;       /* Cool, architectural gray */
-    --label-bg: #003399;      /* The iconic JR Blue */
-    --cell-bg: #FFFFFF;       /* Pure white interior lighting */
+	/* Backgrounds: Brushed metal and clean plastic */
+	--banner-bg: #F2F4F7;     /* Clean, off-white */
+	--body-bg: #E1E5EA;       /* Cool, architectural gray */
+	--label-bg: #003399;      /* The iconic JR Blue */
+	--cell-bg: #FFFFFF;       /* Pure white interior lighting */
 
-    --page-title-color: #1A1A1A;
-    --chart-title-color: #003399;
-    --chart-title-ja-color: #4A5568;
-    --label-color: #FFFFFF;
+	--page-title-color: #1A1A1A;
+	--chart-title-color: #003399;
+	--chart-title-ja-color: #4A5568;
+	--label-color: #FFFFFF;
 
-    --hira-color: #2D3748;
-    --kata-color: #2D3748;
-    --romaji-color: #718096;
+	--hira-color: #2D3748;
+	--kata-color: #2D3748;
+	--romaji-color: #718096;
 
-    --accent-color: #0055FF;
-    --general-text-color: #4A5568;
+	--accent-color: #0055FF;
+	--general-text-color: #4A5568;
 
-    --border-color: #CBD5E0;
-    --chart-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--border-color: #CBD5E0;
+	--chart-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-    --img-github: var(--img-github-dark);
+	--img-github: var(--img-github-dark);
 
 	/* Etched letters */
 	.kana {
@@ -496,6 +513,10 @@
 			1px 1px 6px rgba(0, 0, 0, 0.08);
 	}
 	*/
+
+	.hint {
+		border: 1px solid var(--accent-color);
+	}
 }
 
 /* Straw Flooring */
@@ -638,10 +659,10 @@
 }
 
 body {
-	height: 100vh;
+	height: 100dvh;
 	margin: 0;
-	padding-bottom: 0 0 10px;
 	font-family: var(--default-font);
+	color: var(--general-text-color);
 	background-color: var(--body-bg);
 	display: flex;
 	flex-direction: column;
@@ -649,17 +670,15 @@ body {
 }
 
 .view {
+	flex-grow: 1;
 	display: none;
+	flex-direction: column;
 	width: 100%;
 	height: calc(100dvh - 60px);
+	transition: height 0.3s ease-out;
 	box-sizing: border-box;
-	transition: height 0.3s;
 	scrollbar-gutter: stable both-edges;
 	overflow-y: auto;
-}
-
-.central-wrapper {
-	padding: 0px 16px;
 }
 
 h1 {
@@ -740,7 +759,7 @@ h2 {
 	width: 100%;
 	height: 60px;
 	overflow: hidden;
-	transition: height 0.3s ease-out;
+	transition: all 0.3s ease-out;
 }
 
 .button-group {
@@ -831,7 +850,6 @@ h2 {
 	align-items: center;
 	padding: 10px 0;
 	border-bottom: 1px solid var(--border-color);
-	color: var(--general-text-color);
 }
 
 /* The Switch Container */

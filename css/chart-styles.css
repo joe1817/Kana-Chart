@@ -1,264 +1,260 @@
+#charts .central-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.chart {
+	min-width: 260px;
+	padding: 20px 0;
+	box-sizing: border-box;
+}
+
+.chart-title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.chart-title .j-word {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.chart-title .en {
+	font-size: 1.1rem;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+	color: var(--chart-title-color);
+	align-items: baseline;
+}
+
+.chart-title .ja {
+	font-size: 0.8rem;
+	margin: 0;
+	padding: 0 4px;
+	line-height: 0.9;
+	letter-spacing: 0;
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+	font-family: var(--fancy-font);
+	color: var(--chart-title-ja-color);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--cell-bg);
+	box-shadow: var(--chart-shadow);
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+th, td {
+	box-sizing: border-box;
+	padding: 0;
+	text-align: center;
+}
+
+.label {
+	color: var(--label-color);
+	background-color: var(--label-bg);
+	border: 1px solid var(--border-color);
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 0.8rem;
+}
+
+.label.vowel, .cell {
+	padding: 6px;
+}
+
+.label.consonant {
+	width: 24px;
+}
+
+.cell {
+	background: var(--cell-bg);
+	border: 1px solid var(--border-color);
+}
+
+.kana {
+	font-family: var(--kana-font);
+}
+
+.chart .kana {
+	font-size: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.hira .kana {
+	color: var(--hira-color);
+}
+
+.kata .kana {
+	color: var(--kata-color);
+}
+
+.hira .kana::selection {
+	background-color: var(--hira-color);
+	color: var(--body-bg);
+}
+
+.kata .kana::selection {
+	background-color: var(--kata-color);
+	color: var(--body-bg);
+}
+
+.romaji {
+	color: var(--romaji-color);
+}
+
+.chart .romaji {
+	font-size: 0.7rem;
+}
+
+.hira .romaji::selection {
+	background-color: var(--hira-color);
+	color: var(--body-bg);
+}
+
+.kata .romaji::selection {
+	background-color: var(--kata-color);
+	color: var(--body-bg);
+}
+
+.cell.empty {
+	background-color: transparent;
+	background: none;
+	box-shadow: none;
+
+	> * {
+		display: none !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.chart .kana {
+		font-family: var(--mobile-kana-font);
+	}
+}
+
+
+
+/***************** Conditional *****************/
+
+
+
 :root.view-compact {
-	#charts {
-		.chart {
-			min-width: 0 !important;
+	.chart {
+		min-width: 0;
+	}
 
-			.chart-title .en {
-				font-size: 1.0rem !important;
-			}
+	.chart-title .en {
+		font-size: 1.0rem;
+	}
 
-			.chart-title .ja {
-				font-size: 0.7rem !important;
-			}
+	.chart-title .ja {
+		font-size: 0.7rem;
+	}
 
-			.label.vowel, .cell {
-				padding: 4px !important;
-			}
+	.label {
+		font-size: 0.7rem;
+	}
 
-			.label.consonant, .label.vowel {
-				font-size: 0.7rem !important;
-			}
+	.label.consonant {
+		width: 16px;
+	}
 
-			.label.consonant {
-				width: 16px !important;
-			}
+	.label.vowel, .cell {
+		padding: 4px;
+	}
 
-			.kana {
-				font-size: 1.4rem !important;
-				line-height: 1.4rem !important;
-			}
+	.chart .kana {
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+	}
 
-			.romaji {
-				font-size: 0.6rem !important;
-			}
-		}
+	.chart .romaji {
+		font-size: 0.6rem;
 	}
 }
 
 :root.hide-obsolete {
-	#charts {
-		.obsolete {
-			/* all: revert;	*/
-			background-color: transparent;
-			background: none;
-			box-shadow: none;
+	.obsolete {
+		/* all: revert;	*/
+		background-color: transparent !important;
+		background: none !important;
+		box-shadow: none !important;
 
-			> * {
-				display: none !important;
-			}
+		> * {
+			display: none !important;
 		}
 	}
 }
 
 :root.hide-romaji {
-	#charts {
-		.romaji {
-			display: none !important;
-		}
+	.chart .romaji {
+		display: none;
 	}
 }
 
 :root.hide-hiragana {
-	#charts {
-		.hira {
-			display: none !important;
-		}
+	.chart.hira {
+		display: none;
 	}
 }
 
 :root.hide-katakana {
-	#charts {
-		.kata {
-			display: none !important;
-		}
+	.chart.kata {
+		display: none;
 	}
 }
 
 :root.hide-labels {
-	#charts {
-		.chart-title {
-			margin-bottom: 15px !important;
-		}
+	.chart-title {
+		margin-bottom: 15px;
+	}
 
-		.label.vowel, .label.consonant {
-			display: none !important;
-		}
+	.label.vowel, .label.consonant {
+		display: none;
 	}
 }
 
 :root.layout-centered {
-	#charts {
-		.central-wrapper {
-			flex-direction: column !important;
-		}
+	#charts .central-wrapper {
+		flex-direction: column !important;
+	}
 
-		.chart {
-			min-height: calc(100dvh - 60px) !important;
-		}
+	.chart {
+		min-height: calc(100dvh - 60px);
+	}
 
-		.chart table {
-			transform: translateX(-12px) !important;
-		}
+	.chart table {
+		transform: translateX(-12px);
 	}
 }
 
 :root.layout-centered.view-compact {
-	#charts {
-		.chart table {
-			transform: translateX(-8px) !important;
-		}
+	.chart table {
+		transform: translateX(-8px);
 	}
 }
 
 :root.layout-centered.hide-labels {
-	#charts {
-		.chart table {
-			transform: translateX(0px) !important;
-		}
+	.chart table {
+		transform: translateX(0px);
 	}
 }
 
 :root.layout-centered.hide-header {
-	#charts {
-		.chart {
-			min-height: 100dvh !important;
-		}
-	}
-}
-
-#charts {
-	.central-wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
-		justify-content: center;
-		align-items: center;
-	}
-
 	.chart {
-		min-width: 260px;
-		padding: 20px 0;
-		box-sizing: border-box;
-	}
-
-	.chart-title {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		margin-bottom: 10px;
-	}
-
-	.chart-title .j-word {
-		display: inline-flex;
-		flex-direction: column;
-	}
-
-	.chart-title .en {
-		font-size: 1.1rem;
-		padding: 0;
-		display: flex;
-		justify-content: space-between;
-		text-transform: uppercase;
-		color: var(--chart-title-color);
-		align-items: baseline;
-	}
-
-	.chart-title .ja {
-		font-size: 0.8rem;
-		margin: 0;
-		padding: 0 4px;
-		line-height: 0.9;
-		letter-spacing: 0;
-		display: flex;
-		justify-content: space-between;
-		font-weight: bold;
-		font-family: var(--fancy-font);
-		color: var(--chart-title-ja-color);
-	}
-
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		background: var(--cell-bg);
-		box-shadow: var(--chart-shadow);
-		border: 1px solid var(--border-color);
-		margin-bottom: 10px;
-		overflow: hidden;
-	}
-
-	th, td {
-		border: 1px solid var(--border-color);
-		text-align: center;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	.label.consonant, .label.vowel {
-		color: var(--label-color);
-		background-color: var(--label-bg);
-		font-family: monospace;
-		font-weight: bold;
-		font-size: 0.8rem;
-	}
-
-	.label.vowel, .cell {
-		padding: 6px;
-	}
-
-	.label.consonant {
-		width: 24px;
-	}
-
-	.kana {
-		display: block;
-		font-family: var(--kana-font);
-		font-size: 1.6rem;
-		line-height: 1.6rem;
-	}
-
-	.hira .kana {
-		color: var(--hira-color);
-	}
-
-	.kata .kana {
-		color: var(--kata-color);
-	}
-
-	.hira .kana::selection {
-		background-color: var(--hira-color);
-		color: var(--body-bg);
-	}
-
-	.kata .kana::selection {
-		background-color: var(--kata-color);
-		color: var(--body-bg);
-	}
-
-	.romaji {
-		display: block; /* inline will cause a ghost space, where some vertical space is reserved for character descenders */
-		color: var(--romaji-color);
-		font-size: 0.7rem;
-	}
-
-	.hira .romaji::selection {
-		background-color: var(--hira-color);
-		color: var(--body-bg);
-	}
-
-	.kata .romaji::selection {
-		background-color: var(--kata-color);
-		color: var(--body-bg);
-	}
-
-	.cell.empty {
-		background-color: transparent;
-		background: none;
-		box-shadow: none;
-	}
-
-	@media (max-width: 480px) {
-		.kana {
-			font-family: var(--mobile-kana-font);
-		}
+		min-height: 100dvh;
 	}
 }
