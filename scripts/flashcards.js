@@ -227,7 +227,7 @@ function renderNextCard() {
 	const item = next.value;
 	const card = document.createElement("div");
 
-	card.className = "kana-card " + item.c;
+	card.className = "cell kana-card " + item.c;
 	card.cardData = item;
 	card.innerHTML = `
 		<div class="romaji noselect">${item.r}</div>
@@ -296,8 +296,11 @@ function setupCardEvents(card, item) {
 
 			summary.innerText = "You asked for hints on these:";
 			const hinted = document.createElement("div");
-			hinted.className = "hint";
-			hinted.innerText = `${item.k} ${item.r}`;
+			hinted.className = `cell hint ${item.c}`;
+			hinted.innerHTML = `
+				<span class="kana noselect">${item.k}</span>
+				<span class="romaji noselect">${item.r}</span>
+			`;
 			hints.appendChild(hinted);
 		}, 200);
 	});

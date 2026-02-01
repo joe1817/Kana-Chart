@@ -52,7 +52,7 @@ window.addEventListener("hashchange", () => {
 
 	const activeView = document.querySelector(currentHash);
 	if (activeView) {
-		activeView.style.display = "block";
+		activeView.style.display = "flex";
 	}
 });
 
