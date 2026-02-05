@@ -147,12 +147,23 @@
 
 	--img-github: var(--img-github-light);
 
-	.en {
-		font-family: var(--title-font);
+	.page-header {
+		position: relative;
 	}
 
-	.page-header {
+	.page-header::after {
+		/* A border on a pseudo element solves two problems. */
+		/* 1. It stops a scraollbar from momentarily flashing when the menu bar expands. */
+		/* 2. The border will hide completely when the menu bar collapses. */
+		content: "";
+		width: 100%;
+		position: absolute;
+		bottom: 1px;
 		border-bottom: 1px solid var(--pale-gold);
+	}
+
+	.en {
+		font-family: var(--title-font);
 	}
 
 	table {
@@ -265,6 +276,14 @@
 	--img-github: var(--img-github-dark);
 
 	.page-header {
+		position: relative;
+	}
+
+	.page-header::after {
+		content: "";
+		width: 100%;
+		position: absolute;
+		bottom: 2px;
 		border-bottom: 2px dashed var(--miko-red);
 	}
 
