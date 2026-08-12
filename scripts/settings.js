@@ -8,6 +8,7 @@
 	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
+	const savedChart    = localStorage.getItem("kana.chart")    || "normal";
 	const savedMode     = localStorage.getItem("kana.mode")     || "finite";
 
 	if (savedHiragana === "hide") document.documentElement.classList.add("hide-hiragana");
@@ -17,16 +18,17 @@
 	if (savedLabels === "hide") document.documentElement.classList.add("hide-labels");
 	if (savedRomaji === "hide") document.documentElement.classList.add("hide-romaji");
 	if (savedView === "compact") document.documentElement.classList.add("view-compact");
+	if (savedChart === "extended") document.documentElement.classList.add("show-extended");
 	if (savedMode === "endless") document.documentElement.classList.add("mode-endless");
 })();
 
 window.addEventListener("hashchange", () => {
-	const currentHash = window.location.hash || "#charts";
+	const currentHash = window.location.hash || "#chart-groups";
 
 	const pageTitle = document.getElementById("page-title");
 	const switchViewButton = document.getElementById("switch-view-btn");
 
-	if (currentHash === "#charts") {
+	if (currentHash === "#chart-groups") {
 		document.title = "Kana Chart";
 		pageTitle.innerText = "Kana Chart";
 		switchViewButton.href = "#flashcards";
@@ -35,12 +37,12 @@ window.addEventListener("hashchange", () => {
 		initDeck();
 		document.title = "Kana Flashcards";
 		pageTitle.innerText = "Kana Flashcards";
-		switchViewButton.href = "#charts";
+		switchViewButton.href = "#chart-groups";
 		switchViewButton.title = "Chart";
 	} else {
 		document.title = "Flashcard Results";
 		pageTitle.innerText = "Kana Flashcards";
-		switchViewButton.href = "#charts";
+		switchViewButton.href = "#chart-groups";
 		switchViewButton.title = "Chart";
 	}
 
@@ -86,6 +88,7 @@ window.addEventListener("load", () => {
 	const labelsToggle = document.getElementById("toggle-labels");
 	const romajiToggle = document.getElementById("toggle-romaji");
 	const compactToggle = document.getElementById("toggle-compact");
+	const extendedToggle = document.getElementById("toggle-extended");
 	const endlessToggle = document.getElementById("toggle-endless");
 
 	hiraganaToggle.addEventListener("change", function() {
@@ -164,6 +167,16 @@ window.addEventListener("load", () => {
 		}
 	});
 
+	extendedToggle.addEventListener("change", function() {
+		if (this.checked) {
+			document.documentElement.classList.add("show-extended");
+			localStorage.setItem("kana.chart", "extended");
+		} else {
+			document.documentElement.classList.remove("show-extended");
+			localStorage.setItem("kana.chart", "normal");
+		}
+	});
+
 	endlessToggle.addEventListener("change", function() {
 		if (this.checked) {
 			document.documentElement.classList.add("mode-endless");
@@ -184,12 +197,13 @@ window.addEventListener("load", () => {
 	labelsToggle.checked    = !document.documentElement.classList.contains("hide-labels");
 	romajiToggle.checked    = !document.documentElement.classList.contains("hide-romaji");
 	compactToggle.checked   = document.documentElement.classList.contains("view-compact");
+	extendedToggle.checked  = document.documentElement.classList.contains("show-extended");
 	endlessToggle.checked   = document.documentElement.classList.contains("mode-endless");
 
 	hiraganaToggle.disabled = !katakanaToggle.checked;
 	katakanaToggle.disabled = !hiraganaToggle.checked;
 
-	const charts = document.getElementsByClassName("chart");
+	const charts = document.getElementsByClassName("chart-group");
 	const views = document.getElementsByClassName("view");
 	document.getElementById("button-hide-header").addEventListener("click", function() {
 		for (const chart of charts) {
