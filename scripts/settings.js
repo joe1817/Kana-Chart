@@ -8,7 +8,6 @@
 	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
-	const savedColumns  = localStorage.getItem("kana.layout")   || "auto";
 	const savedMode     = localStorage.getItem("kana.mode")     || "finite";
 
 	if (savedHiragana === "hide") document.documentElement.classList.add("hide-hiragana");
@@ -18,7 +17,6 @@
 	if (savedLabels === "hide") document.documentElement.classList.add("hide-labels");
 	if (savedRomaji === "hide") document.documentElement.classList.add("hide-romaji");
 	if (savedView === "compact") document.documentElement.classList.add("view-compact");
-	if (savedColumns === "centered") document.documentElement.classList.add("layout-centered");
 	if (savedMode === "endless") document.documentElement.classList.add("mode-endless");
 })();
 
@@ -88,7 +86,6 @@ window.addEventListener("load", () => {
 	const labelsToggle = document.getElementById("toggle-labels");
 	const romajiToggle = document.getElementById("toggle-romaji");
 	const compactToggle = document.getElementById("toggle-compact");
-	const buttonLayout = document.getElementById("button-layout");
 	const endlessToggle = document.getElementById("toggle-endless");
 
 	hiraganaToggle.addEventListener("change", function() {
@@ -167,18 +164,6 @@ window.addEventListener("load", () => {
 		}
 	});
 
-	buttonLayout.addEventListener("click", function() {
-		if (this.innerText === "Auto") {
-			document.documentElement.classList.add("layout-centered");
-			buttonLayout.innerText = "Centered";
-			localStorage.setItem("kana.layout", "centered");
-		} else {
-			document.documentElement.classList.remove("layout-centered");
-			buttonLayout.innerText = "Auto";
-			localStorage.setItem("kana.layout", "auto");
-		}
-	});
-
 	endlessToggle.addEventListener("change", function() {
 		if (this.checked) {
 			document.documentElement.classList.add("mode-endless");
@@ -199,7 +184,6 @@ window.addEventListener("load", () => {
 	labelsToggle.checked    = !document.documentElement.classList.contains("hide-labels");
 	romajiToggle.checked    = !document.documentElement.classList.contains("hide-romaji");
 	compactToggle.checked   = document.documentElement.classList.contains("view-compact");
-	buttonLayout.innerText  = document.documentElement.classList.contains("layout-centered") ? "Centered" : "Auto";
 	endlessToggle.checked   = document.documentElement.classList.contains("mode-endless");
 
 	hiraganaToggle.disabled = !katakanaToggle.checked;
