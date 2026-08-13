@@ -134,7 +134,7 @@
 							<td class="cell obsolete"><div class="kana">ゐ</div><div class="romaji">wi</div></td>
 							<td class="cell empty"></td>
 							<td class="cell obsolete"><div class="kana">ゑ</div><div class="romaji">we</div></td>
-							<td class="cell"><div class="kana">を</div><div class="romaji">o</div></td></tr>
+							<td class="cell"><div class="kana">を</div><div class="romaji">o<span class="type-hint">wo</span></div></td></tr>
 						<tr>
 							<td class="label consonant noselect">N</td>
 							<td class="cell empty"></td>
@@ -160,8 +160,8 @@
 						<tr class="extended dakuten">
 							<td class="label consonant noselect">D</td>
 							<td class="cell"><div class="kana">だ</div><div class="romaji">da</div></td>
-							<td class="cell"><div class="kana">ぢ</div><div class="romaji">ji</div></td>
-							<td class="cell"><div class="kana">づ</div><div class="romaji">zu</div></td>
+							<td class="cell"><div class="kana">ぢ</div><div class="romaji">ji<span class="type-hint">di</span></div></td>
+							<td class="cell"><div class="kana">づ</div><div class="romaji">zu<span class="type-hint">du</span></div></td>
 							<td class="cell"><div class="kana">で</div><div class="romaji">de</div></td>
 							<td class="cell"><div class="kana">ど</div><div class="romaji">do</div></td></tr>
 						<tr class="extended dakuten">
@@ -350,7 +350,7 @@
 							<td class="cell obsolete"><div class="kana">ヰ</div><div class="romaji">wi</div></td>
 							<td class="cell empty"></td>
 							<td class="cell obsolete"><div class="kana">ヱ</div><div class="romaji">we</div></td></td>
-							<td class="cell"><div class="kana">ヲ</div><div class="romaji">o</div></td></tr>
+							<td class="cell"><div class="kana">ヲ</div><div class="romaji">o<span class="type-hint">wo</span></div></td></tr>
 						<tr>
 							<td class="label consonant noselect">N</td>
 							<td class="cell empty"></td>
@@ -376,8 +376,8 @@
 						<tr class="extended dakuten">
 							<td class="label consonant noselect">D</td>
 							<td class="cell"><div class="kana">ダ</div><div class="romaji">da</div></td>
-							<td class="cell"><div class="kana">ヂ</div><div class="romaji">ji</div></td>
-							<td class="cell"><div class="kana">ヅ</div><div class="romaji">zu</div></td>
+							<td class="cell"><div class="kana">ヂ</div><div class="romaji">ji<span class="type-hint">di</span></div></td>
+							<td class="cell"><div class="kana">ヅ</div><div class="romaji">zu<span class="type-hint">du</span></div></td>
 							<td class="cell"><div class="kana">デ</div><div class="romaji">de</div></td>
 							<td class="cell"><div class="kana">ド</div><div class="romaji">do</div></td></tr>
 						<tr class="extended dakuten">
@@ -431,9 +431,9 @@
 							<!-- TODO obsolete
 							<tr>
 								<td class="label consonant noselect">J</td>
-								<td class="cell"><div class="kana">ヂャ</div><div class="romaji">jya</div></td>
-								<td class="cell"><div class="kana">ヂュ</div><div class="romaji">jyu</div></td>
-								<td class="cell"><div class="kana">ヂョ</div><div class="romaji">jyo</div></td>
+								<td class="cell"><div class="kana">ヂャ</div><div class="romaji">jya<span class="type-hint">dya</span></div></td>
+								<td class="cell"><div class="kana">ヂュ</div><div class="romaji">jyu<span class="type-hint">dyu</span></div></td>
+								<td class="cell"><div class="kana">ヂョ</div><div class="romaji">jyo<span class="type-hint">dyo</span></div></td>
 							</tr>
 							-->
 							<tr>
@@ -481,7 +481,7 @@
 								<td class="cell empty"></td>
 								<td class="cell"><div class="kana">ウィ</div><div class="romaji">wi</div></td>
 								<td class="cell"><div class="kana">ウェ</div><div class="romaji">we</div></td>
-								<td class="cell"><div class="kana">ウォ</div><div class="romaji">wo</div></td>
+								<td class="cell"><div class="kana">ウォ</div><div class="romaji">wo<span class="type-hint">uxo</span></div></td>
 							</tr>
 							<tr>
 								<td class="label consonant noselect">F</td>
@@ -513,9 +513,9 @@
 							</tr>
 							<tr>
 								<td class="label consonant empty noselect"></td>
-								<td class="cell"><div class="kana">ティ</div><div class="romaji">ti</div></td>
+								<td class="cell"><div class="kana">ティ</div><div class="romaji">ti<span class="type-hint">thi</span></div></td>
 								<td class="cell"><div class="kana">トゥ</div><div class="romaji">twu</div></td>
-								<td class="cell"><div class="kana">ディ</div><div class="romaji">di</div></td>
+								<td class="cell"><div class="kana">ディ</div><div class="romaji">di<span class="type-hint">dhi</span></div></td>
 								<td class="cell"><div class="kana">ドゥ</div><div class="romaji">dwu</div></td>
 							</tr>
 						</table>
@@ -628,6 +628,14 @@
 				<span class="noselect">Show Romaji</span>
 				<label class="switch">
 					<input type="checkbox" id="toggle-romaji" checked>
+					<span class="slider"></span>
+				</label>
+			</div>
+
+			<div class="settings-item">
+				<span class="noselect">Show Typing Hints</span>
+				<label class="switch">
+					<input type="checkbox" id="toggle-hints" checked>
 					<span class="slider"></span>
 				</label>
 			</div>

@@ -7,6 +7,7 @@
 	const savedTheme    = localStorage.getItem("kana.theme")    || (systemPrefersDark ? "amemachi" : "miko");
 	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
+	const savedHints    = localStorage.getItem("kana.hints")    || "hide";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
 	const savedChart    = localStorage.getItem("kana.chart")    || "normal";
 	const savedMode     = localStorage.getItem("kana.mode")     || "finite";
@@ -17,6 +18,7 @@
 	document.documentElement.classList.add(`theme-${savedTheme}`);
 	if (savedLabels === "hide") document.documentElement.classList.add("hide-labels");
 	if (savedRomaji === "hide") document.documentElement.classList.add("hide-romaji");
+	if (savedHints === "hide") document.documentElement.classList.add("hide-hints");
 	if (savedView === "compact") document.documentElement.classList.add("view-compact");
 	if (savedChart === "extended") document.documentElement.classList.add("show-extended");
 	if (savedMode === "endless") document.documentElement.classList.add("mode-endless");
@@ -87,6 +89,7 @@ window.addEventListener("load", () => {
 	const themeSelect = document.getElementById("select-theme");
 	const labelsToggle = document.getElementById("toggle-labels");
 	const romajiToggle = document.getElementById("toggle-romaji");
+	const hintsToggle = document.getElementById("toggle-hints");
 	const compactToggle = document.getElementById("toggle-compact");
 	const extendedToggle = document.getElementById("toggle-extended");
 	const endlessToggle = document.getElementById("toggle-endless");
@@ -157,6 +160,16 @@ window.addEventListener("load", () => {
 		}
 	});
 
+	hintsToggle.addEventListener("change", function() {
+		if (this.checked) {
+			document.documentElement.classList.remove("hide-hints");
+			localStorage.setItem("kana.hints", "show");
+		} else {
+			document.documentElement.classList.add("hide-hints");
+			localStorage.setItem("kana.hints", "hide");
+		}
+	});
+
 	compactToggle.addEventListener("change", function() {
 		if (this.checked) {
 			document.documentElement.classList.add("view-compact");
@@ -196,6 +209,7 @@ window.addEventListener("load", () => {
 	themeSelect.value       = themeName;
 	labelsToggle.checked    = !document.documentElement.classList.contains("hide-labels");
 	romajiToggle.checked    = !document.documentElement.classList.contains("hide-romaji");
+	hintsToggle.checked     = !document.documentElement.classList.contains("hide-hints");
 	compactToggle.checked   = document.documentElement.classList.contains("view-compact");
 	extendedToggle.checked  = document.documentElement.classList.contains("show-extended");
 	endlessToggle.checked   = document.documentElement.classList.contains("mode-endless");

@@ -147,6 +147,13 @@ th, td {
 	color: var(--body-bg);
 }
 
+.type-hint {
+	border: 1px solid var(--romaji-color);
+	border-radius: 4px;
+	margin-left: 1px;
+	padding: 1px;
+}
+
 .cell.empty {
 	background-color: transparent;
 	background: none;
@@ -262,6 +269,12 @@ th, td {
 
 :root.hide-romaji {
 	.chart-group .romaji {
+		display: none;
+	}
+}
+
+:root.hide-hints {
+	.chart-group .type-hint {
 		display: none;
 	}
 }
