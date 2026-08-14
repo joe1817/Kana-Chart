@@ -82,20 +82,20 @@ th, td {
 	text-align: center;
 }
 
-.label {
-	color: var(--label-color);
-	background-color: var(--label-bg);
+.header {
+	color: var(--header-color);
+	background-color: var(--header-bg);
 	border: 1px solid var(--border-color);
 	font-family: monospace;
 	font-weight: bold;
 	font-size: 0.8rem;
 }
 
-.label.vowel, .cell {
+.header.vowel, .cell {
 	padding: 6px 8px;
 }
 
-.label.consonant {
+.header.consonant {
 	width: 24px;
 }
 
@@ -163,15 +163,15 @@ th, td {
 		display: none;
 	}
 
-	.label {
+	.header {
 		font-size: 0.7rem;
 	}
 
-	.label.consonant {
+	.header.consonant {
 		width: 16px;
 	}
 
-	.label.vowel, .cell {
+	.header.vowel, .cell {
 		padding: 4px;
 	}
 
@@ -196,7 +196,7 @@ th, td {
 		transform: translateX(0);
 	}
 
-	.label.vowel, .cell {
+	.header.vowel, .cell {
 		padding: 3px 4px;
 	}
 
@@ -206,7 +206,7 @@ th, td {
 }
 
 :root.view-compact.show-extended #charts {
-	.label.vowel, .cell {
+	.header.vowel, .cell {
 		padding: 2px;
 	}
 }
@@ -254,12 +254,12 @@ th, td {
 	}
 }
 
-:root.hide-labels #charts {
+:root.hide-headers #charts {
 	.chart-title {
 		margin-bottom: 15px;
 	}
 
-	.label.vowel, .label.consonant {
+	.header.vowel, .header.consonant {
 		display: none;
 	}
 }

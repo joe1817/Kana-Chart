@@ -5,7 +5,7 @@
 	const savedKatakana = localStorage.getItem("kana.katakana") || "show";
 	const savedObsolete = localStorage.getItem("kana.obsolete") || "hide";
 	const savedTheme    = localStorage.getItem("kana.theme")    || (systemPrefersDark ? "amemachi" : "miko");
-	const savedLabels   = localStorage.getItem("kana.labels")   || "show";
+	const savedHeaders  = localStorage.getItem("kana.headers")  || "show";
 	const savedRomaji   = localStorage.getItem("kana.romaji")   || "show";
 	const savedHints    = localStorage.getItem("kana.hints")    || "hide";
 	const savedView     = localStorage.getItem("kana.view")     || "relaxed";
@@ -16,7 +16,7 @@
 	if (savedKatakana === "hide") document.documentElement.classList.add("hide-katakana");
 	if (savedObsolete === "hide") document.documentElement.classList.add("hide-obsolete");
 	document.documentElement.classList.add(`theme-${savedTheme}`);
-	if (savedLabels === "hide") document.documentElement.classList.add("hide-labels");
+	if (savedHeaders === "hide") document.documentElement.classList.add("hide-headers");
 	if (savedRomaji === "hide") document.documentElement.classList.add("hide-romaji");
 	if (savedHints === "hide") document.documentElement.classList.add("hide-hints");
 	if (savedView === "compact") document.documentElement.classList.add("view-compact");
@@ -87,7 +87,7 @@ window.addEventListener("load", () => {
 	const katakanaToggle = document.getElementById("toggle-katakana");
 	const obsoleteToggle = document.getElementById("toggle-obsolete");
 	const themeSelect = document.getElementById("select-theme");
-	const labelsToggle = document.getElementById("toggle-labels");
+	const headersToggle = document.getElementById("toggle-headers");
 	const romajiToggle = document.getElementById("toggle-romaji");
 	const hintsToggle = document.getElementById("toggle-hints");
 	const compactToggle = document.getElementById("toggle-compact");
@@ -140,13 +140,13 @@ window.addEventListener("load", () => {
 		localStorage.setItem("kana.theme", this.value);
 	});
 
-	labelsToggle.addEventListener("change", function() {
+	headersToggle.addEventListener("change", function() {
 		if (this.checked) {
-			document.documentElement.classList.remove("hide-labels");
-			localStorage.setItem("kana.labels", "show");
+			document.documentElement.classList.remove("hide-headers");
+			localStorage.setItem("kana.headers", "show");
 		} else {
-			document.documentElement.classList.add("hide-labels");
-			localStorage.setItem("kana.labels", "hide");
+			document.documentElement.classList.add("hide-headers");
+			localStorage.setItem("kana.headers", "hide");
 		}
 	});
 
@@ -207,7 +207,7 @@ window.addEventListener("load", () => {
 	katakanaToggle.checked  = !document.documentElement.classList.contains("hide-katakana");
 	obsoleteToggle.checked  = !document.documentElement.classList.contains("hide-obsolete");
 	themeSelect.value       = themeName;
-	labelsToggle.checked    = !document.documentElement.classList.contains("hide-labels");
+	headersToggle.checked   = !document.documentElement.classList.contains("hide-headers");
 	romajiToggle.checked    = !document.documentElement.classList.contains("hide-romaji");
 	hintsToggle.checked     = !document.documentElement.classList.contains("hide-hints");
 	compactToggle.checked   = document.documentElement.classList.contains("view-compact");
