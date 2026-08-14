@@ -1,4 +1,6 @@
-#chart-groups .central-wrapper {
+#charts {
+
+.central-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -6,14 +8,14 @@
 	gap: 20px;
 }
 
-.chart-group {
+.chart {
 	min-width: 260px;
 	padding: 20px 0;
 	box-sizing: border-box;
 	min-height: calc(100dvh - 60px);
 }
 
-.charts {
+.chart-tables {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -22,7 +24,7 @@
 	flex-wrap: wrap;
 }
 
-.vert-charts {
+.vert-chart-tables {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -30,29 +32,29 @@
 	gap: 5px;
 }
 
-.chart-group-title {
+.chart-title {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 10px;
 }
 
-.chart-group-title .j-word {
+.chart-title .j-word {
 	display: inline-flex;
 	flex-direction: column;
 }
 
-.chart-group-title .en {
+.chart-title .en {
 	font-size: 1.1rem;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
 	text-transform: uppercase;
-	color: var(--chart-group-title-color);
+	color: var(--chart-title-color);
 	align-items: baseline;
 }
 
-.chart-group-title .ja {
+.chart-title .ja {
 	font-size: 0.8rem;
 	margin: 0;
 	padding: 0 4px;
@@ -62,10 +64,10 @@
 	justify-content: space-between;
 	font-weight: bold;
 	font-family: var(--fancy-font);
-	color: var(--chart-group-title-ja-color);
+	color: var(--chart-title-ja-color);
 }
 
-.chart-group table {
+table {
 	border-collapse: collapse;
 	background: var(--cell-bg);
 	box-shadow: var(--chart-shadow);
@@ -97,54 +99,13 @@ th, td {
 	width: 24px;
 }
 
-.cell {
-	background: var(--cell-bg);
-	border: 1px solid var(--border-color);
-}
-
 .kana {
-	font-family: var(--kana-font);
-}
-
-.chart-group .kana {
 	font-size: 1.6rem;
 	line-height: 1.6rem;
 }
 
-.hira .kana {
-	color: var(--hira-color);
-}
-
-.kata .kana {
-	color: var(--kata-color);
-}
-
-.hira .kana::selection {
-	background-color: var(--hira-color);
-	color: var(--body-bg);
-}
-
-.kata .kana::selection {
-	background-color: var(--kata-color);
-	color: var(--body-bg);
-}
-
 .romaji {
-	color: var(--romaji-color);
-}
-
-.chart-group .romaji {
 	font-size: 0.7rem;
-}
-
-.hira .romaji::selection {
-	background-color: var(--hira-color);
-	color: var(--body-bg);
-}
-
-.kata .romaji::selection {
-	background-color: var(--kata-color);
-	color: var(--body-bg);
 }
 
 .type-hint {
@@ -165,9 +126,11 @@ th, td {
 }
 
 @media (max-width: 480px) {
-	.chart-group .kana {
+	.kana {
 		font-family: var(--mobile-kana-font);
 	}
+}
+
 }
 
 
@@ -176,26 +139,26 @@ th, td {
 
 
 
-:root.view-compact {
-	.chart-group {
+:root.view-compact #charts {
+	.chart {
 		min-width: 0;
 	}
 
-	.chart-group table {
+	table {
 		transform: translateX(0);
 	}
 
-	.chart-group-title {
+	.chart-title {
 		transform: translateX(8px);
 		width: calc(100% - 8px);
 		margin-bottom: 5px;
 	}
 
-	.chart-group-title .en {
+	.chart-title .en {
 		font-size: 0.9rem;
 	}
 
-	.chart-group-title .ja {
+	.chart-title .ja {
 		/* font-size: 0.7rem; */
 		display: none;
 	}
@@ -212,24 +175,24 @@ th, td {
 		padding: 4px;
 	}
 
-	.chart-group .kana {
+	.kana {
 		font-size: 1.3rem;
 		line-height: 1.3rem;
 	}
 
-	.chart-group .romaji {
+	.romaji {
 		font-size: 0.5rem;
 	}
 }
 
-:root:not(.show-extended) {
+:root:not(.show-extended) #charts {
 	.extended {
 		display: none;
 	}
 }
 
-:root.show-extended {
-	.chart-group table {
+:root.show-extended #charts {
+	table {
 		transform: translateX(0);
 	}
 
@@ -242,19 +205,19 @@ th, td {
 	}
 }
 
-:root.view-compact.show-extended {
+:root.view-compact.show-extended #charts {
 	.label.vowel, .cell {
 		padding: 2px;
 	}
 }
 
-:root.hide-header {
-	.chart-group {
+:root.hide-header #charts {
+	.chart {
 		min-height: 100dvh;
 	}
 }
 
-:root.hide-obsolete {
+:root.hide-obsolete #charts {
 	.obsolete {
 		/* all: revert;	*/
 		background-color: transparent !important;
@@ -267,32 +230,32 @@ th, td {
 	}
 }
 
-:root.hide-romaji {
-	.chart-group .romaji {
+:root.hide-romaji #charts {
+	.romaji {
 		display: none;
 	}
 }
 
-:root.hide-hints {
-	.chart-group .type-hint {
+:root.hide-hints #charts {
+	.type-hint {
 		display: none;
 	}
 }
 
-:root.hide-hiragana {
-	.chart-group.hira {
+:root.hide-hiragana #charts {
+	.chart.hira {
 		display: none;
 	}
 }
 
-:root.hide-katakana {
-	.chart-group.kata {
+:root.hide-katakana #charts {
+	.chart.kata {
 		display: none;
 	}
 }
 
-:root.hide-labels {
-	.chart-group-title {
+:root.hide-labels #charts {
+	.chart-title {
 		margin-bottom: 15px;
 	}
 

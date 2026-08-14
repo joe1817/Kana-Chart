@@ -1,8 +1,8 @@
+/********** Defaults **********/
+
 :root {
 	--img-github-light: url("../imgs/github-mark-white.png");
 	--img-github-dark: url("../imgs/github-mark-black.png");
-
-	/******** Defaults ********/
 
 	--banner-bg: #111;
 	--body-bg: #111;
@@ -33,7 +33,8 @@
 	--fancy-font: "Hina Mincho", serif;
 }
 
-/* Rainy City */
+/********** Rainy City **********/
+
 :root.theme-amemachi {
 	--asagi-iro: #33A6B8;
 	/* --bright-pink: #ED64A6; */
@@ -72,7 +73,8 @@
 	}
 }
 
-/* Vending Machine */
+/********** Vending Machine **********/
+
 :root.theme-bendo {
 	--banner-bg: #1A1C1E;     /* Dark metallic casing */
 	--body-bg: #121416;       /* Dark alleyway background */
@@ -101,11 +103,11 @@
 	}
 
 	.hira .kana {
-		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
+		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5) !important;
 	}
 
 	.kata .kana {
-		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5);
+		text-shadow: 1px 1px 0px #111, 2px 2px 0px #222, 3px 5px 10px rgba(0,0,0,0.5) !important;
 	}
 
 	.solid-button {
@@ -113,7 +115,8 @@
 	}
 }
 
-/* Ceramic Cracks */
+/********** Ceramic Cracks **********/
+
 :root.theme-kintsugi {
 	--kintsugi-black: #1A1A1A;
 	--kintsugi-stone: #242424;
@@ -183,7 +186,8 @@
 	}
 }
 
-/* Goth Pink */
+/********** Goth Pink **********/
+
 :root.theme-kuro-mochi {
 	--midnight-violet: #1A1625;
 	--obsidian: #0F0D14;
@@ -215,32 +219,37 @@
 
 	--img-github: var(--img-github-light);
 
-	table {
-		border-radius: 20px;
-	}
-
-	.chart .cell {
-		border-radius: 20px;
+	.cell {
+		border-radius: 20px !important;
 	}
 
 	.cell:not(.empty) {
-		background: linear-gradient(145deg, rgb(62, 54, 83), rgb(37, 29, 58));
-		box-shadow: inset 2px 2px 5px rgba(255,255,255,0.05);
+		background: linear-gradient(145deg, rgb(62, 54, 83), rgb(37, 29, 58)) !important;
+		box-shadow: inset 2px 2px 5px rgba(255,255,255,0.05) !important;
 	}
 
-	.chart .kana {
-		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
-				drop-shadow(-1px -1px 0px var(--midnight-violet))
-				drop-shadow(3px 3px 10px rgba(255, 0, 122, 0.5));
+	#charts {
+		table {
+			border-radius: 20px;
+		}
+
+		.kana {
+			filter: drop-shadow(2px 2px 0px var(--midnight-violet))
+					drop-shadow(-1px -1px 0px var(--midnight-violet))
+					drop-shadow(3px 3px 10px rgba(255, 0, 122, 0.5));
+		}
 	}
 
-	.kana-card .kana {
-		filter: drop-shadow(2px 2px 0px var(--midnight-violet))
-				drop-shadow(-1px -1px 0px var(--midnight-violet));
+	#flashcards {
+		.kana {
+			filter: drop-shadow(2px 2px 0px var(--midnight-violet))
+					drop-shadow(-1px -1px 0px var(--midnight-violet));
+		}
 	}
 }
 
-/* Miko Shrine Maiden */
+/********** Miko Shrine Maiden **********/
+
 :root.theme-miko {
 	--miko-red: #BC242C;
 	--shinto-gold: #D4AF37;
@@ -300,6 +309,8 @@
 	}
 }
 
+/********** Mochi Rice Cakes **********/
+
 :root.theme-mochi {
 	--mochi-flour: #FAF7F2;
 	--ichigo-pink: #F9D5D3;
@@ -328,37 +339,42 @@
 	--chart-shadow: none;
 
 	--img-github: var(--img-github-dark);
-
-	.chart .cell {
+	
+	.cell {
 		border-radius: 20px;
-	}
-
-	.chart .cell:nth-child(2):not(.empty) {
-		background-color: var(--ichigo-pink);
-	}
-	.chart .cell:nth-child(3):not(.empty) {
-		background-color: var(--melon-green);
-	}
-	.chart .cell:nth-child(4):not(.empty) {
-		background-color: var(--taro-blue);
-	}
-	.chart .cell:nth-child(5):not(.empty) {
-		background-color: #D6AE97;
-	}
-	.chart .cell:nth-child(6):not(.empty) {
-		background-color: #F6EFD4;
 	}
 
 	.kana {
 		text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 	}
 
-	.hint {
-		border: 1px solid var(--accent-color);
+	#charts {
+		.cell:nth-child(2):not(.empty) {
+			background-color: var(--ichigo-pink);
+		}
+		.cell:nth-child(3):not(.empty) {
+			background-color: var(--melon-green);
+		}
+		.cell:nth-child(4):not(.empty) {
+			background-color: var(--taro-blue);
+		}
+		.cell:nth-child(5):not(.empty) {
+			background-color: #D6AE97;
+		}
+		.cell:nth-child(6):not(.empty) {
+			background-color: #F6EFD4;
+		}
+	}
+
+	#results {
+		.hint {
+			border: 1px solid var(--accent-color);
+		}
 	}
 }
 
-/* Black Cat */
+/********** Black Cat **********/
+
 :root.theme-sakamoto {
 	--banner-bg: #111;
 	--body-bg: #111;
@@ -391,7 +407,8 @@
 	}
 }
 
-/* Cherry Blossoms */
+/********** Cherry Blossoms **********/
+
 :root.theme-sakura {
 	--sakura-petal: #FFF5F7;
 	--sakura-blossom: #FCE7F3;
@@ -420,7 +437,8 @@
 	--img-github: var(--img-github-dark);
 }
 
-/* Neon City Lights */
+/********** Neon City Lights **********/
+
 :root.theme-shinjuku {
 	--indigo-void: #0F1726;
 	--indigo-cloth: #1E293B;
@@ -453,7 +471,8 @@
 	}
 }
 
-/* Bullet Train */
+/********** Bullet Train **********/
+
 :root.theme-shinkansen {
 	/* Backgrounds: Brushed metal and clean plastic */
 	--banner-bg: #F2F4F7;     /* Clean, off-white */
@@ -484,7 +503,8 @@
 	}
 }
 
-/* Calligraphy */
+/********** Calligraphy **********/
+
 :root.theme-shodo {
 	--keshizumi-iro: #434343;
 	--warm-oil-soot: #3C2F2F;
@@ -538,7 +558,8 @@
 	}
 }
 
-/* Straw Flooring */
+/********** Straw Flooring **********/
+
 :root.theme-tatami {
 	--dried-straw: #E6E2CF;      /* Aged Tatami */
 	--fresh-igusa: #D9D4B8;      /* Slightly greener */
@@ -567,7 +588,8 @@
 	--img-github: var(--img-github-dark);
 }
 
-/* Moonlit Forest Tones */
+/********** Moonlit Forest **********/
+
 :root.theme-tsukiyo {
 	--midnight-forest: #060B10;  /* Deepest Navy-Teal */
 	--moon-shadow: #0F1720;      /* Dark Slate Blue */
@@ -617,7 +639,8 @@
 	}
 }
 
-/* Ancient Paper */
+/********** Ancient Paper **********/
+
 :root.theme-washi {
 	--washi: #F2E7D5;
 	--fresh-washi: #F8F5F0;
@@ -718,7 +741,7 @@ h2 {
 	-webkit-user-select: none;
 }
 
-/* Title Bar */
+/********** Title Bar **********/
 
 .text-button {
 	background: none;
@@ -805,7 +828,7 @@ h2 {
 	z-index: 1000;
 }
 
-/* Settings Drawer */
+/********** Settings Drawer **********/
 
 .drawer {
 	position: fixed;
@@ -837,7 +860,7 @@ h2 {
 	margin: 20px 0 0;
 }
 
-/* Darken the background behind the menu */
+/********** Darken the background behind the menu **********/
 .overlay {
 	position: fixed;
 	top: 0;
@@ -859,7 +882,7 @@ h2 {
 	visibility: visible;
 }
 
-/* Slider Toggle */
+/********** Slider Toggle **********/
 
 /* Layout for the menu row */
 .settings-item {
@@ -938,7 +961,7 @@ input:disabled + .slider {
 	cursor: not-allowed;
 }
 
-/* Dropdown */
+/********** Dropdown **********/
 
 select {
 	/* Remove default styling */
@@ -959,7 +982,7 @@ select {
 	/* transition: all 0.1s ease; */
 }
 
-/* Button */
+/********** Button **********/
 
 button {
 	padding: 10px 15px;
@@ -976,4 +999,47 @@ button {
 .solid-button {
 	color: var(--body-bg);
 	background-color: var(--accent-color);
+}
+
+/********** Default Colors **********/
+
+.cell {
+	background: var(--cell-bg);
+	border: 1px solid var(--border-color);
+}
+
+.kana {
+	font-family: var(--kana-font);
+}
+
+.hira .kana {
+	color: var(--hira-color);
+}
+
+.kata .kana {
+	color: var(--kata-color);
+}
+
+.romaji {
+	color: var(--romaji-color);
+}
+
+.hira .kana::selection {
+	background-color: var(--hira-color);
+	color: var(--body-bg);
+}
+
+.kata .kana::selection {
+	background-color: var(--kata-color);
+	color: var(--body-bg);
+}
+
+.hira .romaji::selection {
+	background-color: var(--hira-color);
+	color: var(--body-bg);
+}
+
+.kata .romaji::selection {
+	background-color: var(--kata-color);
+	color: var(--body-bg);
 }
