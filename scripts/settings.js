@@ -25,12 +25,12 @@
 })();
 
 window.addEventListener("hashchange", () => {
-	const currentHash = window.location.hash || "#chart-groups";
+	const currentHash = window.location.hash || "#charts";
 
 	const pageTitle = document.getElementById("page-title");
 	const switchViewButton = document.getElementById("switch-view-btn");
 
-	if (currentHash === "#chart-groups") {
+	if (currentHash === "#charts") {
 		document.title = "Kana Chart";
 		pageTitle.innerText = "Kana Chart";
 		switchViewButton.href = "#flashcards";
@@ -39,12 +39,12 @@ window.addEventListener("hashchange", () => {
 		initDeck();
 		document.title = "Kana Flashcards";
 		pageTitle.innerText = "Kana Flashcards";
-		switchViewButton.href = "#chart-groups";
+		switchViewButton.href = "#charts";
 		switchViewButton.title = "Chart";
 	} else {
 		document.title = "Flashcard Results";
 		pageTitle.innerText = "Kana Flashcards";
-		switchViewButton.href = "#chart-groups";
+		switchViewButton.href = "#charts";
 		switchViewButton.title = "Chart";
 	}
 
