@@ -172,18 +172,7 @@
 
 	--img-github: var(--img-github-light);
 
-	.page-header {
-		position: relative;
-	}
-
-	.page-header::after {
-		/* A border on a pseudo element solves two problems. */
-		/* 1. It stops a scrollbar from momentarily flashing when the menu bar expands. */
-		/* 2. The border will hide completely when the menu bar collapses. */
-		content: "";
-		width: 100%;
-		position: absolute;
-		bottom: 1px;
+	.page-header {;
 		border-bottom: 1px solid var(--pale-gold);
 	}
 
