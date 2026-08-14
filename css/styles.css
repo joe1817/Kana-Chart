@@ -195,10 +195,6 @@
 		border: 2px solid var(--pale-gold) !important;
 	}
 
-	td, th {
-		border: 1px solid var(--faded-gold) !important;
-	}
-
 	.solid-button {
 		color: var(--kintsugi-black) !important;
 	}
@@ -1043,7 +1039,6 @@ button {
 
 .cell {
 	background: var(--cell-bg);
-	border: 1px solid var(--border-color);
 }
 
 .kana {
