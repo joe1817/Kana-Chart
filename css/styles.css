@@ -9,10 +9,10 @@
 	--header-bg: #111;
 	--cell-bg: #111;
 
-	--page-title-color: #EEE;
-	--chart-title-color: #EEE;
-	--chart-title-ja-color: #AAA;
-	--header-color: #AAA;
+	--page-header-color: #EEE;
+	--chart-header-color: #EEE;
+	--chart-header-ja-color: #AAA;
+	--table-header-color: #AAA;
 	--hira-color: #EEE;
 	--kata-color: #EEE;
 	--romaji-color: #AAA;
@@ -44,10 +44,10 @@
 	--header-bg: #4A5568;      /* Muted Umbrella blue-gray */
 	--cell-bg: #242930;       /* Slightly lighter gray with a blue tint */
 
-	--page-title-color: #A0AEC0;   /* Soft silver-gray */
-	--chart-title-color: #805AD5;  /* Pale violet (the Neon in the rain look) */
-	--chart-title-ja-color: #CBD5E0;
-	--header-color: #E2E8F0;
+	--page-header-color: #A0AEC0;   /* Soft silver-gray */
+	--chart-header-color: #805AD5;  /* Pale violet (the Neon in the rain look) */
+	--chart-header-ja-color: #CBD5E0;
+	--table-header-color: #E2E8F0;
 
 	--hira-color: #F687B3;    /* Soft Cherry Blossom Pink */
 	--kata-color: #63B3ED;    /* Raindrop Blue */
@@ -81,10 +81,10 @@
 	--header-bg: #00CCFF;      /* The bright blue Cold indicator */
 	--cell-bg: #252A30;       /* The illuminated display shelf */
 
-	--page-title-color: #FFFFFF;
-	--chart-title-color: #00CCFF;  /* Glowing blue */
-	--chart-title-ja-color: #FFFFFF;
-	--header-color: #002B36;   /* High contrast on blue label */
+	--page-header-color: #FFFFFF;
+	--chart-header-color: #00CCFF;  /* Glowing blue */
+	--chart-header-ja-color: #FFFFFF;
+	--table-header-color: #002B36;   /* High contrast on blue label */
 
 	--hira-color: #39FF14;    /* Neon green Tea glow */
 	--kata-color: #FF9F00;    /* Warm Orange Soda glow */
@@ -131,10 +131,10 @@
 	--header-bg: #876852;
 	--cell-bg: var(--kintsugi-stone);
 
-	--page-title-color: var(--bone-white);
-	--chart-title-color: var(--bone-white);
-	--chart-title-ja-color: var(--bone-white);
-	--header-color: var(--kintsugi-black);
+	--page-header-color: var(--bone-white);
+	--chart-header-color: var(--bone-white);
+	--chart-header-ja-color: var(--bone-white);
+	--table-header-color: var(--kintsugi-black);
 	--hira-color: var(--pale-gold);
 	--kata-color: var(--pale-gold);
 	--romaji-color: var(--faded-gold);
@@ -202,10 +202,10 @@
 	--header-bg: var(--magical-girl-pink);
 	--cell-bg: var(--magical-girl-pink);
 
-	--page-title-color: #FFFFFF;
-	--chart-title-color: var(--magical-girl-pink);
-	--chart-title-ja-color: var(--bright-pink);
-	--header-color: #FFFFFF;
+	--page-header-color: #FFFFFF;
+	--chart-header-color: var(--magical-girl-pink);
+	--chart-header-ja-color: var(--bright-pink);
+	--table-header-color: #FFFFFF;
 
 	--hira-color: var(--neon-mint);
 	--kata-color: var(--violet);
@@ -263,10 +263,10 @@
 	--header-bg: var(--polished-white);
 	--cell-bg: var(--polished-white);
 
-	--page-title-color: var(--miko-red);
-	--chart-title-color: var(--miko-red);
-	--chart-title-ja-color: var(--miko-red);
-	--header-color: var(--washed-ink);
+	--page-header-color: var(--miko-red);
+	--chart-header-color: var(--miko-red);
+	--chart-header-ja-color: var(--miko-red);
+	--table-header-color: var(--washed-ink);
 	--hira-color: var(--washed-ink);
 	--kata-color: var(--washed-ink);
 	--romaji-color: var(--shinto-gold);
@@ -324,10 +324,10 @@
 	--header-bg: var(--mochi-flour);
 	--cell-bg: var(--mochi-flour);
 
-	--page-title-color: var(--mochi-cocoa);
-	--chart-title-color: var(--mochi-cocoa);
-	--chart-title-ja-color: var(--mochi-cocoa);
-	--header-color: var(--mochi-cocoa);
+	--page-header-color: var(--mochi-cocoa);
+	--chart-header-color: var(--mochi-cocoa);
+	--chart-header-ja-color: var(--mochi-cocoa);
+	--table-header-color: var(--mochi-cocoa);
 	--hira-color: var(--mochi-cocoa);
 	--kata-color: var(--mochi-cocoa);
 	--romaji-color: var(--mochi-cocoa);
@@ -381,10 +381,10 @@
 	--header-bg: #111;
 	--cell-bg: #111;
 
-	--page-title-color: #EEE;
-	--chart-title-color: #EEE;
-	--chart-title-ja-color: #AAA;
-	--header-color: #AAA;
+	--page-header-color: #EEE;
+	--chart-header-color: #EEE;
+	--chart-header-ja-color: #AAA;
+	--table-header-color: #AAA;
 	--hira-color: #EEE;
 	--kata-color: #EEE;
 	--romaji-color: #AAA;
@@ -422,10 +422,10 @@
 	--header-bg: var(--sakura-deep);
 	--cell-bg: var(--sakura-blossom);
 
-	--page-title-color: var(--sakura-branch);
-	--chart-title-color: var(--sakura-branch);
-	--chart-title-ja-color: var(--sakura-branch);
-	--header-color: #FFFFFF;
+	--page-header-color: var(--sakura-branch);
+	--chart-header-color: var(--sakura-branch);
+	--chart-header-ja-color: var(--sakura-branch);
+	--table-header-color: #FFFFFF;
 	--hira-color: var(--sakura-branch);
 	--kata-color: var(--sakura-branch);
 	--romaji-color: var(--sakura-dust);
@@ -452,10 +452,10 @@
 	--header-bg: #223044;
 	--cell-bg: var(--indigo-cloth);
 
-	--page-title-color: var(--vintage-bone);
-	--chart-title-color: var(--vintage-bone);
-	--chart-title-ja-color: var(--denim-fade);
-	--header-color: var(--denim-fade);
+	--page-header-color: var(--vintage-bone);
+	--chart-header-color: var(--vintage-bone);
+	--chart-header-ja-color: var(--denim-fade);
+	--table-header-color: var(--denim-fade);
 	--hira-color: var(--coral-red);
 	--kata-color: var(--asagi-iro);
 	--romaji-color: var(--denim-fade);
@@ -480,10 +480,10 @@
 	--header-bg: #003399;      /* The iconic JR Blue */
 	--cell-bg: #FFFFFF;       /* Pure white interior lighting */
 
-	--page-title-color: #1A1A1A;
-	--chart-title-color: #003399;
-	--chart-title-ja-color: #4A5568;
-	--header-color: #FFFFFF;
+	--page-header-color: #1A1A1A;
+	--chart-header-color: #003399;
+	--chart-header-ja-color: #4A5568;
+	--table-header-color: #FFFFFF;
 
 	--hira-color: #2D3748;
 	--kata-color: #2D3748;
@@ -516,10 +516,10 @@
 	--header-bg: var(--washi);
 	--cell-bg: var(--washi);
 
-	--page-title-color: var(--cool-pine-soot);
-	--chart-title-color: var(--cool-pine-soot);
-	--chart-title-ja-color: var(--keshizumi-iro);
-	--header-color: var(--keshizumi-iro);
+	--page-header-color: var(--cool-pine-soot);
+	--chart-header-color: var(--cool-pine-soot);
+	--chart-header-ja-color: var(--keshizumi-iro);
+	--table-header-color: var(--keshizumi-iro);
 	--hira-color: var(--cool-pine-soot);
 	--kata-color: var(--cool-pine-soot);
 	--romaji-color: var(--keshizumi-iro);
@@ -573,10 +573,10 @@
 	--header-bg: var(--woven-border);
 	--cell-bg: var(--fresh-igusa);
 
-	--page-title-color: var(--tatami-ink);
-	--chart-title-color: var(--tatami-ink);
-	--chart-title-ja-color: var(--tatami-ink);
-	--header-color: #F1F0E8;
+	--page-header-color: var(--tatami-ink);
+	--chart-header-color: var(--tatami-ink);
+	--chart-header-ja-color: var(--tatami-ink);
+	--table-header-color: #F1F0E8;
 	--hira-color: var(--tatami-ink);
 	--kata-color: var(--tatami-ink);
 	--romaji-color: var(--faded-weave);
@@ -604,10 +604,10 @@
 	--header-bg: var(--starlight-border);
 	--cell-bg: var(--moon-shadow);
 
-	--page-title-color: var(--starlight-silver);
-	--chart-title-color: var(--starlight-silver);
-	--chart-title-ja-color: var(--starlight-silver);
-	--header-color: var(--harvest-moon);
+	--page-header-color: var(--starlight-silver);
+	--chart-header-color: var(--starlight-silver);
+	--chart-header-ja-color: var(--starlight-silver);
+	--table-header-color: var(--harvest-moon);
 	--hira-color: var(--starlight-silver);
 	--kata-color: var(--starlight-silver);
 	--romaji-color: var(--fog-blue);
@@ -621,7 +621,7 @@
 
 	--img-github: var(--img-github-light);
 
-	#page-title, .chart-title {
+	#page-title, .chart-header {
 		text-shadow: 0 0 8px rgba(226, 232, 240, 0.3);
 	}
 
@@ -653,10 +653,10 @@
 	--header-bg: var(--washi);
 	--cell-bg: var(--koshi);
 
-	--page-title-color: var(--warm-oil-soot);
-	--chart-title-color: var(--warm-oil-soot);
-	--chart-title-ja-color: var(--warm-oil-soot);
-	--header-color: var(--smokey-blue);
+	--page-header-color: var(--warm-oil-soot);
+	--chart-header-color: var(--warm-oil-soot);
+	--chart-header-ja-color: var(--warm-oil-soot);
+	--table-header-color: var(--smokey-blue);
 	--hira-color: var(--warm-oil-soot);
 	--kata-color: var(--warm-oil-soot);
 	--romaji-color: var(--smokey-blue);
@@ -789,7 +789,7 @@ h2 {
 
 .page-header {
 	font-family: var(--title-font);
-	color: var(--page-title-color);
+	color: var(--page-header-color);
 	background-color: var(--banner-bg);
 	box-shadow: var(--page-header-shadow);
 }
@@ -856,7 +856,7 @@ h2 {
 }
 
 .drawer-content h2 {
-	color: var(--chart-title-color);
+	color: var(--chart-header-color);
 	margin: 20px 0 0;
 }
 
