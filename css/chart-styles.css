@@ -151,6 +151,7 @@ tr:not(:last-child) td {
 :root.view-compact #charts {
 	.chart {
 		min-width: 0;
+		padding: 10px 0 0;
 	}
 
 	table {
@@ -168,12 +169,11 @@ tr:not(:last-child) td {
 	}
 
 	.chart-header .ja {
-		/* font-size: 0.7rem; */
 		display: none;
 	}
 
 	.table-header {
-		font-size: 0.7rem;
+		font-size: 0.6rem;
 	}
 
 	.table-header.consonant {
@@ -190,7 +190,8 @@ tr:not(:last-child) td {
 	}
 
 	.romaji {
-		font-size: 0.5rem;
+		font-size: 0.6rem;
+		line-height: 0.6rem;
 	}
 }
 
