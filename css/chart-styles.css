@@ -215,9 +215,22 @@ tr:not(:last-child) td {
 	}
 }
 
-:root.view-compact.show-extended #charts {
+:root.show-extended.view-compact #charts {
+	@media (max-width: 400px) {
+		.kata .vert-chart-tables.extended {
+			display: contents;
+		}
+	}
 	.table-header.vowel, .cell {
 		padding: 2px;
+	}
+}
+
+:root.show-extended:not(.view-compact) #charts {
+	@media (max-width: 500px) {
+		.kata .vert-chart-tables.extended {
+			display: contents;
+		}
 	}
 }
 
