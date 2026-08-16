@@ -74,7 +74,6 @@ table {
 	box-shadow: var(--chart-shadow);
 	margin-bottom: 10px;
 	overflow: hidden;
-	transform: translateX(-12px);
 }
 
 th, td {
@@ -154,13 +153,7 @@ tr:not(:last-child) td {
 		padding: 10px 0 0;
 	}
 
-	table {
-		transform: translateX(0);
-	}
-
 	.chart-header {
-		transform: translateX(8px);
-		width: calc(100% - 8px);
 		margin-bottom: 5px;
 	}
 
@@ -202,10 +195,6 @@ tr:not(:last-child) td {
 }
 
 :root.show-extended #charts {
-	table {
-		transform: translateX(0);
-	}
-
 	.table-header.vowel, .cell {
 		padding: 3px 4px;
 	}
