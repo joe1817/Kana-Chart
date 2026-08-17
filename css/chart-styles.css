@@ -234,7 +234,7 @@ tr:not(:last-child) td {
 	}
 }
 
-:root.hide-header #charts {
+:root.hide-page-header #charts {
 	.chart {
 		min-height: 100dvh;
 	}
