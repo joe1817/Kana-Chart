@@ -115,13 +115,6 @@ tr:not(:last-child) td {
 	font-size: 0.7rem;
 }
 
-.type-hint {
-	border: 1px solid var(--romaji-color);
-	border-radius: 4px;
-	margin-left: 1px;
-	padding: 1px;
-}
-
 .cell.empty {
 	background-color: transparent;
 	background: none;
