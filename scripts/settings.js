@@ -226,7 +226,7 @@ window.addEventListener("load", () => {
 		for (const view of views) {
 			view.style.transition = "min-height 0.3s ease-out";
 		}
-		document.documentElement.classList.toggle("hide-header");
+		document.documentElement.classList.toggle("hide-page-header");
 		this.innerText = (this.innerText === "[-]" ? "[+]" : "[-]");
 		setTimeout(() => {
 			for (const chart of charts) {
