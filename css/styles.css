@@ -1046,22 +1046,12 @@ button {
 	color: var(--romaji-color);
 }
 
-.hira .kana::selection {
+.hira *::selection {
 	background-color: var(--hira-color);
 	color: var(--body-bg);
 }
 
-.kata .kana::selection {
-	background-color: var(--kata-color);
-	color: var(--body-bg);
-}
-
-.hira .romaji::selection {
-	background-color: var(--hira-color);
-	color: var(--body-bg);
-}
-
-.kata .romaji::selection {
+.kata *::selection {
 	background-color: var(--kata-color);
 	color: var(--body-bg);
 }
