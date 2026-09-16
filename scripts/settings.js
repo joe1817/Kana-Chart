@@ -219,7 +219,11 @@ window.addEventListener("load", () => {
 
 	const charts = document.getElementsByClassName("chart-group");
 	const views = document.getElementsByClassName("view");
-	document.getElementById("button-hide-header").addEventListener("click", function() {
+	let selectionOnMouseDown = false;
+	document.addEventListener("mousedown", () => {
+		selectionOnMouseDown = window.getSelection() ? window.getSelection().toString().length > 0 : false;
+	});
+	const toggleHeader = (event) => {
 		for (const chart of charts) {
 			chart.style.transition = "min-height 0.3s ease-out";
 		}
@@ -227,7 +231,6 @@ window.addEventListener("load", () => {
 			view.style.transition = "min-height 0.3s ease-out";
 		}
 		document.documentElement.classList.toggle("hide-page-header");
-		this.innerText = (this.innerText === "[-]" ? "[+]" : "[-]");
 		setTimeout(() => {
 			for (const chart of charts) {
 				chart.style.transition = "none";
@@ -236,5 +239,19 @@ window.addEventListener("load", () => {
 				view.style.transition = "none";
 			}
 		}, 300);
+	};
+	document.getElementById("button-hide-header").addEventListener("click", event => {
+		toggleHeader();
+		event.stopPropagation();
 	});
+	const showHeaderIfNoSelection = event => {
+		setTimeout(() => {
+			const selectionOnClick = window.getSelection() ? window.getSelection().toString().length > 0 : false;
+			const headerHidden = document.documentElement.classList.contains("hide-page-header");
+			if (!selectionOnMouseDown && !selectionOnClick && headerHidden) {
+				toggleHeader(event);
+			}
+		}, 200); // delay in case the user double-clicked to make a selection
+	};
+	document.addEventListener("click", showHeaderIfNoSelection);
 });
