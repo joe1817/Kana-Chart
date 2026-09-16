@@ -709,11 +709,6 @@
 		box-shadow: none;
 	}
 
-	#button-hide-header {
-		top: 20px;
-		opacity: 0.3;
-	}
-
 	.view {
 		min-height: 100dvh;
 	}
@@ -843,11 +838,6 @@ h2 {
 	font-family: monospace;
 	font-size: 1em;
 	color: var(--accent-color);
-	position: absolute;
-	left: 10px;
-	top: 80px;
-	transition: all 0.3s ease-out;
-	z-index: 1000;
 }
 
 /********** Settings Drawer **********/

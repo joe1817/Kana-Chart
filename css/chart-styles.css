@@ -11,6 +11,7 @@
 
 .chart {
 	min-height: calc(100dvh - 60px);
+	transition: min-height 0.3s ease-out;
 	padding: 20px 0;
 	box-sizing: border-box;
 }
