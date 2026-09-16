@@ -783,6 +783,8 @@ h2 {
 .tri-part-header {
 	display: flex;
 	width: 100%;
+	padding: 0 30px;
+	gap: 20px;
 }
 
 .tri-part-header > * {
@@ -792,20 +794,17 @@ h2 {
 
 .tri-part-header > *:nth-child(1) {
 	flex: 1;
-	padding-left: 30px;
 	display: flex;
 	justify-content: flex-start;
 }
 
 .tri-part-header > *:nth-child(2) {
 	flex: 0 0 auto;
-	padding: 0 20px;
 	justify-content: center;
 }
 
 .tri-part-header > *:nth-child(3) {
 	flex: 1;
-	padding-right: 30px;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -883,6 +882,22 @@ h2 {
 	margin: 20px 0 0;
 }
 
+.settings-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.settings-item:has(> *:only-child) {
+	justify-content: center;
+}
+
+.drawer hr {
+	margin-top: 2rem;
+}
+
 /********** Darken the background behind the menu **********/
 .overlay {
 	position: fixed;
@@ -906,15 +921,6 @@ h2 {
 }
 
 /********** Slider Toggle **********/
-
-/* Layout for the menu row */
-.settings-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 0;
-	border-bottom: 1px solid var(--border-color);
-}
 
 /* The Switch Container */
 .switch {
