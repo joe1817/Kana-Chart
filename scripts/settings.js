@@ -99,10 +99,12 @@ window.addEventListener("load", () => {
 			document.documentElement.classList.remove("hide-hiragana");
 			localStorage.setItem("kana.hiragana", "show");
 			katakanaToggle.disabled = false;
+			katakanaToggle.closest("label").title = "";
 		} else {
 			document.documentElement.classList.add("hide-hiragana");
 			localStorage.setItem("kana.hiragana", "hide");
 			katakanaToggle.disabled = true;
+			katakanaToggle.closest("label").title = "Enable katakana to unlock";
 		}
 	});
 
@@ -111,10 +113,12 @@ window.addEventListener("load", () => {
 			document.documentElement.classList.remove("hide-katakana");
 			localStorage.setItem("kana.katakana", "show");
 			hiraganaToggle.disabled = false;
+			hiraganaToggle.closest("label").title = "";
 		} else {
 			document.documentElement.classList.add("hide-katakana");
 			localStorage.setItem("kana.katakana", "hide");
 			hiraganaToggle.disabled = true;
+			hiraganaToggle.closest("label").title = "Enable hiragana to unlock";
 		}
 	});
 
@@ -216,6 +220,8 @@ window.addEventListener("load", () => {
 
 	hiraganaToggle.disabled = !katakanaToggle.checked;
 	katakanaToggle.disabled = !hiraganaToggle.checked;
+	hiraganaToggle.dispatchEvent(new Event("change"));
+	katakanaToggle.dispatchEvent(new Event("change"));
 
 	const charts = document.getElementsByClassName("chart-group");
 	const views = document.getElementsByClassName("view");
