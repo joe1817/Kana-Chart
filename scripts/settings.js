@@ -251,6 +251,9 @@ window.addEventListener("load", () => {
 		event.stopPropagation();
 	});
 	const showHeaderIfNoSelection = event => {
+		if (event.target.closest(".kana-card") !== null || event.target.closest("button") !== null) {
+			return;
+		}
 		setTimeout(() => {
 			const selectionOnClick = window.getSelection() ? window.getSelection().toString().length > 0 : false;
 			const headerHidden = document.documentElement.classList.contains("hide-page-header");
