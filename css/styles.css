@@ -877,6 +877,9 @@ h2 {
 	justify-content: space-between;
 	align-items: center;
 	padding: 8px 0;
+}
+
+.settings-item:has(+ .settings-item) {
 	border-bottom: 1px solid var(--border-color);
 }
 
@@ -886,6 +889,9 @@ h2 {
 
 .drawer hr {
 	margin-top: 2rem;
+	border: none;
+	height: 1px;
+	border-bottom: 1px solid var(--border-color);
 }
 
 /********** Darken the background behind the menu **********/
