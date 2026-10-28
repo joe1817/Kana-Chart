@@ -166,6 +166,9 @@ window.addEventListener("load", () => {
 
 	hintsToggle.addEventListener("change", function() {
 		if (this.checked) {
+			if (!romajiToggle.checked) {
+				romajiToggle.click();
+			}
 			document.documentElement.classList.remove("hide-hints");
 			localStorage.setItem("kana.hints", "show");
 		} else {
